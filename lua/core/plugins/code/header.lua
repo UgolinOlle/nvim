@@ -2,8 +2,8 @@ return {
 	"Diogo-ss/42-header.nvim",
 
 	opts = {
-		login = "uolle",
-		email = "uolle@student.42bangkok.com",
+		user = "uolle",
+		mail = "uolle@student.42bangkok.com",
 	},
 
 	keys = {
