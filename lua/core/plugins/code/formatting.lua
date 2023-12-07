@@ -16,7 +16,6 @@ return {
 			markdown = { "prettier" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
-			c = { "c_formatter_42" },
 		},
 
 		format_on_save = {
