@@ -1,10 +1,13 @@
 return {
 	"neovim/nvim-lspconfig",
+
 	event = { "BufReadPre", "BufNewFile" },
+
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
+
 	config = function()
 		local lsp_status, lspconfig = pcall(require, "lspconfig")
 		if not lsp_status then
@@ -18,6 +21,7 @@ return {
 
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
+
 		local on_attach = function(_, bufnr)
 			opts.buffer = bufnr
 
@@ -66,12 +70,14 @@ return {
 
 		local capabilities = cmp.default_capabilities()
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
 		local servers = { "clangd", "pyright", "bashls", "tsserver", "tailwindcss" }
+
 		for _, lsp in ipairs(servers) do
 			lspconfig[lsp].setup({
 				capabilities = capabilities,
