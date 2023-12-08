@@ -23,6 +23,7 @@
   "mason-null-ls.nvim": { "branch": "main", "commit": "d1f7258f80867f718d643d88eee66959671a4bef" },
   "mason-tool-installer.nvim": { "branch": "main", "commit": "8b70e7f1e0a4119c1234c3bde4a01c241cabcc74" },
   "mason.nvim": { "branch": "main", "commit": "41e75af1f578e55ba050c863587cffde3556ffa6" },
+  "monokai-pro.nvim": { "branch": "master", "commit": "145d34da12be4365d4ea7c0d9eaf0cfad5fb9300" },
   "navigator.lua": { "branch": "master", "commit": "29d5f05bf9094cd0770018e19a27da81c247c503" },
   "none-ls.nvim": { "branch": "main", "commit": "7bf88cd3b37a411fdacfdca1745408a77a420493" },
   "norminette42.nvim": { "branch": "main", "commit": "46d8b4180381b198c541e96dfbdd8109e2976010" },
