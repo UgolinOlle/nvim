@@ -20,4 +20,7 @@ return {
 			{ "<LEADER>he", "<CMD>Stdheader<CR>", desc = "Set official 42 header.", mode = "n" },
 		},
 	},
+	{
+		"cacharle/c_formatter_42.vim",
+	},
 }
