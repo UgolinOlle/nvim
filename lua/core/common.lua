@@ -24,10 +24,11 @@ local options = {
 	number = true,
 	relativenumber = false,
 	numberwidth = 4,
-
+	termguicolors = true,
 	signcolumn = "yes",
 	wrap = false,
 	linebreak = true,
+	linespace = 10,
 }
 
 for key, value in pairs(options) do
@@ -37,6 +38,8 @@ end
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
+
+vim.g.icons_enabled = true
 
 vim.o.autored = true
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
