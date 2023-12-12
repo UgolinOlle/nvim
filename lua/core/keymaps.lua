@@ -64,3 +64,7 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 -- NeoTree
 opts.desc = "Toggle file explorer"
 keymap("n", "<LEADER>e", "<CMD>Neotree toggle<CR>", opts)
+
+-- 42 formatter
+opts.desc = "Format with 42 formatter"
+keymap("n", "<LEADER>42", "<CMD>CFormatter42<CR>", opts)
