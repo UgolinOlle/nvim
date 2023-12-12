@@ -7,7 +7,10 @@ return {
 		build = ":TSUpdate",
 
 		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
 			"windwp/nvim-ts-autotag",
+			"windwp/nvim-autopairs",
+			"hiphish/rainbow-delimiters.nvim",
 		},
 
 		opts = {
@@ -28,6 +31,10 @@ return {
 			},
 
 			autotag = {
+				enable = true,
+			},
+
+			autopairs = {
 				enable = true,
 			},
 
