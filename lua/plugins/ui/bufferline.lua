@@ -10,8 +10,8 @@ return {
 			options = {
 				offsets = {
 					{
-						filetype = "NvimTree",
-						text = "File Tree",
+						filetype = "neo-tree",
+						text = "Explorer",
 						highlight = "Directory",
 						separator = true, -- use a "true" to enable the default, or set your own character
 					},
