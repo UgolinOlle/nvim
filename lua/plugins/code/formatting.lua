@@ -23,12 +23,5 @@ return {
 			async = false,
 			timeout_ms = 1000,
 		},
-
-		formatters = {
-			c_formatter_42 = {
-				command = "c_formatter_42",
-				args = { "$FILENAME" },
-			},
-		},
 	},
 }

@@ -76,7 +76,7 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		local servers = { "clangd", "pyright", "bashls", "tsserver", "tailwindcss" }
+		local servers = { "pyright", "bashls", "tsserver", "tailwindcss" }
 
 		for _, lsp in ipairs(servers) do
 			lspconfig[lsp].setup({
@@ -95,6 +95,16 @@ return {
 					},
 				},
 			},
+		})
+
+		lspconfig["clangd"].setup({
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				client.resolved_capabilities.document_formatting = false
+				client.resolved_capabilities.document_range_formatting = false
+
+				on_attach(client, bufnr)
+			end,
 		})
 	end,
 }
