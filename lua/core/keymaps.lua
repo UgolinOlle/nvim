@@ -58,3 +58,9 @@ keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+
+-- Plugins --
+
+-- NeoTree
+opts.desc = "Toggle file explorer"
+keymap("n", "<LEADER>e", "<CMD>Neotree toggle<CR>", opts)
