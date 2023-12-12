@@ -12,6 +12,9 @@ return {
 	end,
 
 	opts = function()
+		local utils = require("whoa.utils")
+		local get_icons = utils.get_icons
+
 		return {
 			auto_clean_after_session_restore = true,
 			close_if_last_window = true,
@@ -21,10 +24,10 @@ return {
 				winbar = true,
 				content_layout = "center",
 				sources = {
-					{ source = "filesystem", display_name = "" .. "File" },
-					{ source = "buffers", display_name = "󰈙" .. "Bufs" },
-					{ source = "git_status", display_name = "󰊢" .. "Git" },
-					{ source = "diagnostics", display_name = "󰒡" .. "Diagnostic" },
+					{ source = "filesystem", display_name = get_icons("FolderClosed", 1) .. "File" },
+					{ source = "buffers", display_name = get_icons("DefaultFile", 1) .. "Bufs" },
+					{ source = "git_status", display_name = get_icons("Git", 1) .. "Git" },
+					{ source = "diagnostics", display_name = get_icons("Diagnostic", 1) .. "Diagnostic" },
 				},
 			},
 
