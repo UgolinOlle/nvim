@@ -12,20 +12,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "core.plugins.code" },
-	{ import = "core.plugins.git" },
-	{ import = "core.plugins.lsp" },
-	{ import = "core.plugins.misc" },
-	{ import = "core.plugins.navigation" },
-	{ import = "core.plugins.ui" },
+	{ import = "plugins.code" },
+	{ import = "plugins.git" },
+	{ import = "plugins.lsp" },
+	{ import = "plugins.misc" },
+	{ import = "plugins.navigation" },
+	{ import = "plugins.ui" },
 
 	checker = {
-		enabled = true,
 		notify = false, -- get a notification when new updates are found
 	},
 
 	change_detection = {
-		enabled = true,
 		notify = false,
 	},
 })
