@@ -1,18 +1,14 @@
 return function(_, opts)
-	local active, alpha = pcall(require, "alpha")
-	if not active then
-		return
-	end
+	require("alpha").setup(opts.config)
 
 	vim.api.nvim_create_autocmd("User", {
 		pattern = "LazyVimStarted",
-		desc = "Add Whoa dashboard footer",
+		desc = "Add Alpha dashboard footer",
 		once = true,
-
 		callback = function()
 			local stats = require("lazy").stats()
 			local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
-			opts.section.footer.val = { "Whoa loaded " .. stats.count .. " plugins  in " .. ms .. "ms" }
+			opts.section.footer.val = { "AstroNvim loaded " .. stats.count .. " plugins  in " .. ms .. "ms" }
 			pcall(vim.cmd.AlphaRedraw)
 		end,
 	})
