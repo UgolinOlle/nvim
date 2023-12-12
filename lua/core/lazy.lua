@@ -20,9 +20,9 @@ require("lazy").setup({
 	{ import = "plugins.ui" },
 
 	checker = {
-		notify = false, -- get a notification when new updates are found
+		enabled = true,
+		notify = false,
 	},
-
 	change_detection = {
 		notify = false,
 	},
