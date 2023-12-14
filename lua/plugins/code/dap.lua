@@ -18,7 +18,7 @@ return {
 
 			opts = { floating = { border = "rounded" } },
 
-			config = require("plugins.configs.nvim-dap-ui"),
+			config = require("plugins.configs.dap-ui"),
 		},
 
 		{
