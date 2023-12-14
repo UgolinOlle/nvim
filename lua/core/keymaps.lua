@@ -21,8 +21,8 @@ keymap("n", "sv", "<CMD>vsplit<CR>", opts)
 
 -- Tab navigation
 keymap("n", "<S-t>", "<CMD>tabnew<CR>", opts)
-keymap("n", "<Tab>", "<CMD>tabnext<CR>", opts)
-keymap("n", "<S-Tab>", "<CMD>tabprevious<CR>", opts)
+keymap("n", "<Tab>", "<CMD>BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
