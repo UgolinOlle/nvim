@@ -122,7 +122,7 @@ return {
 			keymap("n", "<LEADER>fn", "<CMD>Telescope notify<CR>", opts)
 
 			opts.desc = "Use GPT to chat"
-			keymap("n", "<LEADER>gc", "<CMD>Telescope gpt<CR>", opts)
+			keymap("n", "<LEADER>fgg", "<CMD>Telescope gpt<CR>", opts)
 		end,
 	},
 }
