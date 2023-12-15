@@ -5,9 +5,10 @@ vim.g.mapleader = ","
 
 -- NORMAL
 -- Save
-keymap("n", "<LEADER>w", "<CMD>w<ENTER>", opts)
+keymap("n", "<LEADER>w", "<CMD>confirm w<ENTER>", opts)
 keymap("n", "<LEADER>wq", "<CMD>wqa<ENTER>", opts)
-keymap("n", "<LEADER>q", "<CMD>q!<ENTER>", opts)
+keymap("n", "<LEADER>q", "<CMD>confirm bd<ENTER>", opts)
+keymap("n", "<LEADER>qq", "<CMD>confirm q<CR>", opts)
 
 -- Window navigation
 keymap("n", "<S-h>", "<C-w>h", opts)
