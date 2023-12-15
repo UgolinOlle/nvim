@@ -6,9 +6,7 @@ vim.g.mapleader = ","
 -- NORMAL
 -- Save
 keymap("n", "<LEADER>w", "<CMD>confirm w<ENTER>", opts)
-keymap("n", "<LEADER>wq", "<CMD>wqa<ENTER>", opts)
-keymap("n", "<LEADER>q", "<CMD>confirm bd<ENTER>", opts)
-keymap("n", "<LEADER>qq", "<CMD>confirm q<CR>", opts)
+keymap("n", "<LEADER>q", "<CMD>confirm q<ENTER>", opts)
 
 -- Window navigation
 keymap("n", "<S-h>", "<C-w>h", opts)
@@ -61,6 +59,10 @@ keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Plugins --
+
+-- Lazy
+opts.desc = "Plugin install"
+keymap("n", "<LEADER>pi", "<CMD>LazyInstall<CR>", opts)
 
 -- NeoTree
 opts.desc = "Toggle file explorer"
