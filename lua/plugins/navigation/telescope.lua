@@ -1,9 +1,5 @@
 return {
 	{
-		"HPRIOR/telescope-gpt",
-		dependencies = { "nvim-telescope/telescope.nvim", "jackMort/ChatGPT.nvim" },
-	},
-	{
 		"nvim-telescope/telescope.nvim",
 
 		branch = "0.1.x",
@@ -50,25 +46,6 @@ return {
 						},
 					},
 
-					extensions = {
-						gpt = {
-							title = "Gpt Actions",
-							commands = {
-								"add_tests",
-								"chat",
-								"docstring",
-								"explain_code",
-								"fix_bugs",
-								"grammar_correction",
-								"interactive",
-								"optimize_code",
-								"summarize",
-								"translate",
-							},
-							theme = require("telescope.themes").get_dropdown({}),
-						},
-					},
-
 					prompt_prefix = "  ",
 					selection_caret = "  ",
 					entry_prefix = "  ",
@@ -95,7 +72,6 @@ return {
 
 			telescope.load_extension("fzf")
 			telescope.load_extension("notify")
-			telescope.load_extension("gpt")
 
 			local keymap = vim.keymap.set
 			local opts = { noremap = true, silent = true }
@@ -120,9 +96,6 @@ return {
 
 			opts.desc = "Find all notifications"
 			keymap("n", "<LEADER>fn", "<CMD>Telescope notify<CR>", opts)
-
-			opts.desc = "Use GPT to chat"
-			keymap("n", "<LEADER>fgg", "<CMD>Telescope gpt<CR>", opts)
 		end,
 	},
 }
