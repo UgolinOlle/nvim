@@ -1,0 +1,3 @@
+return {
+	"ugolinolle/whoa-tabber",
+}
