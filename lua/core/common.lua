@@ -38,6 +38,7 @@ local options = {
 
 	o = {
 		autored = true,
+		background = "dark",
 	},
 }
 
