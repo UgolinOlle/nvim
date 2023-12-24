@@ -58,10 +58,5 @@ return {
 				"codelldb",
 			},
 		})
-
-		local keymap = vim.keymap.set
-		local opts = { noremap = true, silent = true }
-
-		keymap("n", "<LEADER>ms", "<CMD>Mason<CR>", opts)
 	end,
 }
