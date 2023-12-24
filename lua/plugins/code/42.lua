@@ -1,14 +1,5 @@
 return {
 	{
-		"hardyrafael17/norminette42.nvim",
-
-		lazy = false,
-
-		opts = {
-			runOnSave = true,
-		},
-	},
-	{
 		"Diogo-ss/42-header.nvim",
 
 		opts = {
