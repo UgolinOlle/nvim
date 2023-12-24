@@ -63,6 +63,13 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Plugins --
 
+-- Mason
+opts.desc = "Mason home"
+keymap("n", "<LEADER>pm", "<CMD>Mason<CR>", opts)
+
+opts.desc = "Mason clear"
+keymap("n", "<LEADER>pM", "<CMD>MasonUpdate<CR>", opts)
+
 -- NeoTree
 opts.desc = "Toggle file explorer"
 keymap("n", "<LEADER>e", "<CMD>Neotree toggle<CR>", opts)

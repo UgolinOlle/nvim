@@ -17,12 +17,6 @@ return {
 						highlight = "Directory",
 						separator = true, -- use a "true" to enable the default, or set your own character
 					},
-					{
-						filetype = "Outline",
-						text = "Symbols",
-						highlight = "Directory",
-						separator = true,
-					},
 				},
 				diagnostics = "nvim_lsp",
 				separator_style = { "", "" },

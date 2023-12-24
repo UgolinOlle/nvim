@@ -19,6 +19,8 @@ return {
 			return
 		end
 
+		local utils = require("whoa.utils")
+		local get_icons = utils.get_icons
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
 
@@ -69,7 +71,12 @@ return {
 		end
 
 		local capabilities = cmp.default_capabilities()
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+		local signs = {
+			Error = get_icons("DiagnosticError"),
+			Warn = get_icons("DiagnosticWarn"),
+			Hint = get_icons("DiagnosticHint"),
+			Info = get_icons("DiagnosticInfo"),
+		}
 
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type

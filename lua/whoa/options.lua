@@ -51,5 +51,5 @@ end
 -- Specific options
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
+vim.opt.fillchars:append({ eob = " " })
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
-vim.cmd([[colorscheme gruvbox]])
