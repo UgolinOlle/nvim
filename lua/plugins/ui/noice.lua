@@ -16,7 +16,13 @@ return {
 		},
 
 		format = {
-			cmdline = { pattern = "^:", icon = require("whoa.utils").get_icons("Command"), lang = "vim" },
+			cmdline = {
+				pattern = "^:",
+				icon = function()
+					require("whoa.utils").get_icons("Command")
+				end,
+				lang = "vim",
+			},
 		},
 
 		presets = {

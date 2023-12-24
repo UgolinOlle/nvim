@@ -12,9 +12,9 @@ return {
 
 		lualine.setup({
 			options = {
+				theme = "gruvbox",
 				icons_enabled = true,
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 				always_divide_middle = true,
 				globalstatus = true,
 				refresh = {

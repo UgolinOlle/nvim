@@ -52,3 +52,4 @@ end
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
+vim.cmd([[colorscheme gruvbox]])

@@ -1,7 +1,8 @@
-local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
+local opts = { silent = true, noremap = true }
 
 vim.g.mapleader = ","
+vim.g.maplocalleader = ","
 
 -- NORMAL
 -- Save
@@ -62,14 +63,6 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Plugins --
 
--- Lazy
-opts.desc = "Plugin install"
-keymap("n", "<LEADER>pi", "<CMD>LazyInstall<CR>", opts)
-
 -- NeoTree
 opts.desc = "Toggle file explorer"
 keymap("n", "<LEADER>e", "<CMD>Neotree toggle<CR>", opts)
-
--- 42 formatter
-opts.desc = "Format with 42 formatter"
-keymap("n", "<LEADER>42", "<CMD>CFormatter42<CR>", opts)

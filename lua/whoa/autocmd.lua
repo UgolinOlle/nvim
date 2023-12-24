@@ -1,8 +1,4 @@
 local autocmd = vim.api.nvim_create_autocmd
-local cmd = vim.api.nvim_command
-
--- Adding theme (gruvbox).
-vim.cmd([[colorscheme gruvbox]])
 
 -- Adding 42 norm on C file.
 autocmd("FileType", {
@@ -18,5 +14,3 @@ autocmd("TermOpen", {
 		vim.opt.signcolumn = "no"
 	end,
 })
-
--- Open symbol-outline on startup.
