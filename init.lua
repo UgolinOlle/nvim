@@ -3,11 +3,11 @@ if vim.loader and vim.fn.has("nvim-0.9.1") == 1 then
 end
 
 for _, source in ipairs({
-	"whoa.mappings",
-	"whoa.autocmd",
 	"whoa.bootstrap",
-	"whoa.lazy",
 	"whoa.options",
+	"whoa.mappings",
+	"whoa.lazy",
+	"whoa.autocmd",
 }) do
 	local active, fault = pcall(require, source)
 	if not active then
