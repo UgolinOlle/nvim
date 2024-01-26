@@ -1,3 +1,0 @@
-return {
-	"ugolinolle/whoa-tabber",
-}
