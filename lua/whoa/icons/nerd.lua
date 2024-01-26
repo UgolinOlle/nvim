@@ -18,6 +18,7 @@ return {
 	DiagnosticHint = "󰌵",
 	DiagnosticInfo = "󰋼",
 	DiagnosticWarn = "",
+	DiagnosticPerf = "",
 	Ellipsis = "…",
 	FileNew = "",
 	FileModified = "",
