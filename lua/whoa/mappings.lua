@@ -8,8 +8,8 @@ vim.g.maplocalleader = ","
 -- Save
 keymap("n", "<LEADER>w", "<CMD>confirm w<ENTER>", opts)
 keymap("n", "<LEADER>q", "<CMD>confirm q<ENTER>", opts)
-keymap("n", "<LEADER>Q", "<CMD>confirm qall<ENTER>", opts)
 keymap("n", "<C-s>", "<CMD>confirm w!<ENTER>", opts)
+keymap("n", "<LEADER>x", "<CMD>bdelete<ENTR>", opts)
 
 -- Window navigation
 keymap("n", "<S-h>", "<C-w>h", opts)
