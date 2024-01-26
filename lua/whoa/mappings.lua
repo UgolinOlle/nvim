@@ -9,7 +9,7 @@ vim.g.maplocalleader = ","
 keymap("n", "<LEADER>w", "<CMD>confirm w<ENTER>", opts)
 keymap("n", "<LEADER>q", "<CMD>confirm q<ENTER>", opts)
 keymap("n", "<C-s>", "<CMD>confirm w!<ENTER>", opts)
-keymap("n", "<LEADER>x", "<CMD>bdelete<ENTR>", opts)
+keymap("n", "<LEADER>d", "<CMD>bdelete<CR>", opts)
 
 -- Window navigation
 keymap("n", "<S-h>", "<C-w>h", opts)
@@ -80,3 +80,14 @@ keymap("n", "<LEADER>db", "<CMD>DapToggleBreakpoint<CR>", opts)
 
 opts.desc = "Dap continue"
 keymap("n", "<LEADER>dr", "<CMD>DapContinue<CR>", opts)
+
+-- Todo comments
+opts.desc = "Jump to next todo"
+keymap("n", "]t", function()
+	require("todo-comments").jump_next()
+end, opts)
+
+opts.desc = "Jump to previous todo"
+keymap("n", "[t", function()
+	require("todo-comments").jump_prev()
+end, opts)
