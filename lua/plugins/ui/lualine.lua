@@ -15,6 +15,7 @@ return {
 				theme = "gruvbox",
 				icons_enabled = true,
 				section_separators = { left = "", right = "" },
+				component_separators = { left = "", right = "" },
 				always_divide_middle = true,
 				globalstatus = true,
 				refresh = {
