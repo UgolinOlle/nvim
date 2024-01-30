@@ -54,7 +54,7 @@ return {
 				["<A-k>"] = cmp.mapping.scroll_docs(-4),
 				["<A-j>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-				["<S-e>"] = cmp.mapping.abort(), -- close completion window
+				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 			}),
 
@@ -69,6 +69,9 @@ return {
 				format = lspkind.cmp_format({
 					maxwidth = 50,
 					ellipsis_char = "...",
+					menu = {
+						nvim_lsp = "[LSP]",
+					},
 				}),
 			},
 		})
