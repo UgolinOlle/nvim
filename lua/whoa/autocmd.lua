@@ -1,4 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
+local cmd = vim.api.nvim_create_user_command
 
 -- Adding 42 norm on C file.
 autocmd("FileType", {
@@ -14,3 +15,11 @@ autocmd("TermOpen", {
 		vim.opt.signcolumn = "no"
 	end,
 })
+
+-- CUSTOM --
+
+-- Health cmd
+-- FIXME: This is not working.
+cmd("WhoaHealth", function()
+	require("whoa.health").checkup()
+end, { desc = "Checking Whoa health status." })
