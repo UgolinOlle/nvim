@@ -17,6 +17,8 @@ return {
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
 			python = { "pylint" },
+			codespell = { "codespell" },
+			dotenv = { "dotenv_linter" },
 		}
 
 		local lint_autogroup = vim.api.nvim_create_augroup("lint", { clear = true })
