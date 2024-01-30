@@ -74,13 +74,6 @@ keymap("n", "<LEADER>pM", "<CMD>MasonUpdate<CR>", opts)
 opts.desc = "Toggle file explorer"
 keymap("n", "<LEADER>e", "<CMD>Neotree toggle<CR>", opts)
 
--- Dap
-opts.desc = "Add breakpoint"
-keymap("n", "<LEADER>db", "<CMD>DapToggleBreakpoint<CR>", opts)
-
-opts.desc = "Dap continue"
-keymap("n", "<LEADER>dr", "<CMD>DapContinue<CR>", opts)
-
 -- Todo comments
 opts.desc = "Jump to next todo"
 keymap("n", "]t", function()
