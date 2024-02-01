@@ -16,12 +16,21 @@ return {
 			markdown = { "prettier" },
 			lua = { "stylua" },
 			python = { "isort", "black" },
+			c = { "c_formatter_42" },
 		},
 
 		format_on_save = {
 			lsp_fallback = true,
 			async = false,
 			timeout_ms = 1000,
+		},
+
+		formatters = {
+			c_formatter_42 = {
+				command = "c_formatter_42",
+				args = { "$FILENAME" },
+				stdin = false,
+			},
 		},
 	},
 }
