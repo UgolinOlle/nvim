@@ -15,11 +15,3 @@ autocmd("TermOpen", {
 		vim.opt.signcolumn = "no"
 	end,
 })
-
--- CUSTOM --
-
--- Health cmd
--- FIXME: This is not working.
-cmd("WhoaHealth", function()
-	require("whoa.health").checkup()
-end, { desc = "Checking Whoa health status." })
