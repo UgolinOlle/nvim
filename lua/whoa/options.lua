@@ -2,7 +2,6 @@ local options = {
 	opt = {
 		backup = false,
 		clipboard = "unnamedplus",
-		cmdheight = 2,
 		completeopt = { "menuone", "noselect" },
 		fileencoding = "utf-8",
 		hlsearch = true,
@@ -30,6 +29,7 @@ local options = {
 		wrap = false,
 		linebreak = true,
 		linespace = 10,
+		cmdheight = 0,
 	},
 
 	g = {
