@@ -1,4 +1,4 @@
---- ### Whoa utilities
+--- ## Whoa utilities
 --
 -- Many utility functions
 --
@@ -41,6 +41,21 @@ function M.notify(content, type, opts)
 	vim.schedule(function()
 		vim.notify(content, type, M.extend_opts({ title = "Whoa" }, opts))
 	end)
+end
+
+-- Execute a shell command and return the output
+-- @param cmd string The command to execute
+-- @return string The output of the command
+function M.execute(cmd)
+	if type(cmd) == "string" then
+		cmd = { cmd }
+	end
+	local res = vim.fn.system(cmd)
+	local success = vim.v.shell_error == 0
+	if not success then
+		vim.api.nvim_err_writeln("Error running command: " .. table.concat(cmd, " "), res)
+	end
+	return success and res:gsub("[\27\155][][()#;?%d]*[A-PRZcf-ntqry=><~]", "") or nil
 end
 
 return M
