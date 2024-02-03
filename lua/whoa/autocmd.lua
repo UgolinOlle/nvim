@@ -1,5 +1,4 @@
 local autocmd = vim.api.nvim_create_autocmd
-local cmd = vim.api.nvim_create_user_command
 
 -- Adding 42 norm on C file.
 autocmd("FileType", {
