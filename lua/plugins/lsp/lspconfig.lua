@@ -66,7 +66,6 @@ return {
 
 			opts.desc = "Go to declaration"
 			keymap.set("n", "gD", function()
-				vim.api.nvim_exec("tabnew")
 				vim.lsp.buf.declaration()
 			end, opts)
 
@@ -92,13 +91,13 @@ return {
 			keymap.set("n", "<LEADER>di", "<CMD>Telescope diagnostics bufnr=0<CR>", opts)
 
 			opts.desc = "Go to previous diagnostics"
-			keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+			keymap.set("n", "[d", vim.diagnostics.goto_prev, opts)
 
 			opts.desc = "Go to next diagnostics"
-			keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+			keymap.set("n", "]d", vim.diagnostics.goto_next, opts)
 
 			opts.desc = "Show diagnostics in floating window"
-			keymap.set("n", "[w", vim.diagnostic.open_float, opts)
+			keymap.set("n", "[w", vim.diagnostics.open_float, opts)
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<LEADER>rs", "<CMD>LspRestart<CR>", opts)
