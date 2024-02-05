@@ -5,25 +5,12 @@ return {
 		opts = true,
 	},
 	{
-		"folke/noice.nvim",
+		"norcalli/nvim-colorizer.lua",
 
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
+		opts = true,
 
-		event = "VeryLazy",
-
-		opts = {
-			routes = {
-				{
-					filter = { event = "notify", find = "No information available" },
-					opts = { skip = true },
-				},
-			},
-			presets = {
-				lsp_doc_border = true,
-			},
-		},
+		config = function()
+			require("colorizer").setup()
+		end,
 	},
 }
