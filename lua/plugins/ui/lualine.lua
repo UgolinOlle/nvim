@@ -8,14 +8,23 @@ return {
 		if not status then
 			return
 		end
-		local lazy_status = require("lazy.status")
+
+		local utils = require("whoa.utils")
+		local get_icons = utils.get_icons
+		local solarized_dark = require("lualine.themes.solarized_dark")
 
 		lualine.setup({
+			extensions = {
+				"neo-tree",
+				"lazy",
+				"symbols-outline",
+			},
 			options = {
-				theme = "gruvbox",
+				theme = solarized_dark,
 				icons_enabled = true,
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
+				disabled_filetypes = { statusline = { "NvimTree", "alpha" } },
 				always_divide_middle = true,
 				globalstatus = true,
 				refresh = {
@@ -25,20 +34,42 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { "filename" },
-				lualine_y = { "progress" },
-				lualine_z = { "location" },
+				lualine_a = { { "mode", padding = { left = 1 } } },
+				lualine_b = { "branch" },
+				lualine_c = {
+					{ "filename", path = 1 },
+					{
+						"diff",
+						on_click = function()
+							require("gitsigns").setloclist()
+						end,
+					},
+				},
 				lualine_x = {
 					{
-						lazy_status.updates,
-						cond = lazy_status.has_updates,
+						require("lazy.status").updates,
+						cond = require("lazy.status").has_updates,
+						on_click = function()
+							require("lazy.status").home()
+						end,
 					},
-					{ "encoding" },
-					{ "fileformat" },
-					{ "filetype" },
+					{
+						"diagnostic",
+						update_in_insert = true,
+						symbols = {
+							error = get_icons("DiagnosticError", 1),
+							warn = get_icons("DiagnosticWarn", 1),
+							info = get_icons("DiagnosticInfo", 1),
+							hint = get_icons("DiagnosticHint", 1),
+						},
+						on_click = function()
+							vim.diagnostic.setloclist()
+						end,
+					},
+					{ "filetype", padding = { right = 1 } },
 				},
+				lualine_y = { "progress" },
+				lualine_z = { "location" },
 			},
 		})
 	end,
