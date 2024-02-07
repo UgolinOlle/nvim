@@ -7,37 +7,55 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 	},
 
-	event = "VeryLazy",
-
 	config = true,
 
-	cmd = {
-		"DevdocsFetch",
-		"DevdocsInstall",
-		"DevdocsUninstall",
-		"DevdocsOpen",
-		"DevdocsOpenFloat",
-		"DevdocsOpenCurrent",
-		"DevdocsOpenCurrentFloat",
-		"DevdocsUpdate",
-		"DevdocsUpdateAll",
+	opts = {
+		wrap = true,
+
+		after_open = function(bufnr)
+			vim.api.nvim_buf_set_keymap(bufnr, "n", "<ESC>", "<CMD>close<CR>", { silent = true, noremap = true })
+		end,
+
+		ensure_installed = {
+			"angular",
+			"bash",
+			"c",
+			"css",
+			"docker",
+			"eslint",
+			"html",
+			"http",
+			"lua",
+			"javascript",
+			"jsdoc",
+			"markdown",
+			"node",
+			"prettier",
+			"sass",
+			"tailwindcss",
+			"typescript",
+		},
 	},
 
-	ensure_installed = {
-		"angular",
-		"bash",
-		"css",
-		"docker",
-		"eslint",
-		"html",
-		"http",
-		"javascript",
-		"jsdoc",
-		"markdown",
-		"node",
-		"prettier",
-		"sass",
-		"tailwindcss",
-		"typescript",
+	keys = {
+		{
+			"<LEADER>v ",
+			"<CMD>DevdocsToggle<CR>",
+			{ noremap = true, silent = true, desc = "Toggle devdocs in floating window." },
+		},
+		{
+			"<LEADER>vi",
+			"<CMD>DevdocsInstall<CR>",
+			{ noremap = true, silent = true, desc = "Install option ensure_installed devdocs." },
+		},
+		{
+			"<LEADER>vv",
+			"<CMD>DevdocsOpenCurrentFloat<CR>",
+			{
+				noremap = true,
+				silent = true,
+				desc = "Open devdocs for file type in a floating window.",
+			},
+		},
 	},
 }
