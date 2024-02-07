@@ -1,5 +1,21 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+-- On Vim enter, disable tmux
+autocmd("VimEnter", {
+	desc = "Disable tmux",
+	callback = function()
+		vim.cmd("silent !tmux set status off")
+	end,
+})
+
+-- On Vim exit, enable tmux
+autocmd("VimLeave", {
+	desc = "Enable tmux",
+	callback = function()
+		vim.cmd("silent !tmux set status on")
+	end,
+})
+
 -- Adding 42 norm on C file.
 autocmd("FileType", {
 	pattern = "c",
