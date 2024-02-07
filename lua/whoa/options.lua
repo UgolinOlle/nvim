@@ -1,44 +1,51 @@
 local options = {
 	opt = {
-		backup = false,
-		clipboard = "unnamedplus",
-		completeopt = { "menuone", "noselect" },
-		fileencoding = "utf-8",
-		hlsearch = true,
-		ignorecase = true,
-		mouse = "a",
-		pumheight = 10,
-		showmode = false,
-		showtabline = 2,
-		smartcase = true,
-		smartindent = true,
-		splitbelow = true,
-		splitright = true,
-		swapfile = false,
-		updatetime = 300,
-		writebackup = false,
-		expandtab = true,
-		shiftwidth = 2,
-		tabstop = 2,
+		-- core
+		backup = false, -- no backup file
+		swapfile = false, -- no swap file
+		writebackup = false, -- no write backup file
+		fileencoding = "utf-8", -- file encoding
+		mouse = "a", -- enable mouse support
+		completeopt = { "menuone", "noselect" }, -- completion options
+		smartindent = true, -- smart indent when starting a new line
+		updatetime = 300, -- faster completion
 		cursorline = true,
-		number = true,
-		relativenumber = false,
-		numberwidth = 4,
-		termguicolors = true,
-		signcolumn = "yes",
-		wrap = false,
-		linebreak = true,
-		linespace = 10,
-		cmdheight = 0,
+
+		-- search
+		hlsearch = true, -- highlight search
+		ignorecase = true, -- ignore case when searching
+		smartcase = true, -- smart case when searching
+
+		-- copy/paste
+		clipboard = "unnamedplus", -- use system clipboard
+
+		-- miscelaneous
+		splitbelow = true, -- split below
+		splitright = true, -- split below and right
+		expandtab = true, -- use spaces instead of tabs
+		shiftwidth = 2, -- number of spaces to use for autoindent
+		tabstop = 2, -- number of spaces that a <Tab> in the file counts for
+		wrap = false, -- don't wrap lines
+		linebreak = true, -- wrap lines at convenient points
+
+		-- ui
+		pumheight = 10, -- max height of popup menu
+		showmode = false, -- don't show mode
+		showtabline = 2, -- always show tabline
+		number = true, -- show line numbers
+		relativenumber = true, -- show relative line numbers
+		termguicolors = true, -- true color support
+		signcolumn = "yes", -- always show sign column
+		cmdheight = 0, -- height of command line
 	},
 
 	g = {
-		icons_enabled = true,
+		icons_enabled = true, -- enable icons
 	},
 
 	o = {
-		autored = true,
-		background = "dark",
+		autored = true, -- auto read file when changed
+		background = "dark", -- dark background
 	},
 }
 
@@ -49,7 +56,7 @@ for scope, table in pairs(options) do
 end
 
 -- Specific options
-vim.opt.shortmess:append("c")
-vim.opt.iskeyword:append("-")
-vim.opt.fillchars:append({ eob = " " })
-vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
+vim.opt.shortmess:append("c") -- don't give |ins-completion-menu| messages
+vim.opt.iskeyword:append("-") -- treat dash separated words as a word text object
+vim.opt.fillchars:append({ eob = " " }) -- hide tilde on eob
+vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- don't load $VIMRUNTIME/vimfiles
