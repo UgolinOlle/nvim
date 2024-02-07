@@ -61,6 +61,9 @@ return {
 			-- Set LSP keymaps
 			opts.buffer = bufnr
 
+			opts.desc = "Show LSP informations"
+			keymap.set("n", "<LEADER>li", "<CMD>LspInfo<CR>", opts)
+
 			opts.desc = "Show LSP references"
 			keymap.set("n", "gR", "<CMD>Telescope lsp_reference<CR>", opts)
 
