@@ -22,4 +22,11 @@ return {
 			require("colorizer").setup()
 		end,
 	},
+	{
+		"mrshmllow/document-color.nvim",
+
+		lazy = true,
+
+		opts = true,
+	},
 }
