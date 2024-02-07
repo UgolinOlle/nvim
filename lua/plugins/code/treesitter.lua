@@ -39,6 +39,7 @@ return {
 			},
 
 			ensure_installed = {
+				"html",
 				"json",
 				"javascript",
 				"typescript",
