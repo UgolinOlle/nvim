@@ -1,16 +1,25 @@
 return {
 	{
-		"norcalli/nvim-colorizer.lua",
-
-		lazy = true,
-	},
-	{
 		"kepano/flexoki-neovim",
 
 		priority = 1000,
 
 		config = function()
 			vim.cmd([[colorscheme flexoki-dark]])
+		end,
+	},
+	{
+		"stevearc/dressing.nvim",
+
+		opts = true,
+	},
+	{
+		"norcalli/nvim-colorizer.lua",
+
+		opts = true,
+
+		config = function()
+			require("colorizer").setup()
 		end,
 	},
 }
