@@ -20,7 +20,7 @@ return {
 	keys = {
 		{
 			"<LEADER>nn",
-			"<CMD>requiere('notify').dismiss()",
+			"<CMD>require('notify').dismiss()<CR>",
 			{ noremap = true, silent = true, desc = "Dismiss notifications" },
 		},
 		{
