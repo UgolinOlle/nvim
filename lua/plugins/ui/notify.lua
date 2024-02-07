@@ -16,4 +16,21 @@ return {
 			fps = 60,
 		})
 	end,
+
+	keys = {
+		{
+			"<LEADER>nn",
+			"<CMD>requiere('notify').dismiss()",
+			{ noremap = true, silent = true, desc = "Dismiss notifications" },
+		},
+		{
+			"<LEADER>nl",
+			"<CMD>Notifications<CR>",
+			{
+				noremap = true,
+				silent = true,
+				desc = "List notifications",
+			},
+		},
+	},
 }
