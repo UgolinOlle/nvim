@@ -20,7 +20,7 @@ return {
 	keys = {
 		{
 			"<LEADER>nn",
-			"<CMD>require('notify').dismiss()<CR>",
+			"<CMD>lua require('notify').dismiss()<CR>",
 			{ noremap = true, silent = true, desc = "Dismiss notifications" },
 		},
 		{
