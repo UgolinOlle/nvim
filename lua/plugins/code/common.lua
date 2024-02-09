@@ -18,24 +18,6 @@ return {
 		opts = {
 			disable_filetype = { "TelescopePrompt" },
 		},
-
-		-- TODO: To remove.
-
-		-- config = function()
-		-- 	local status, autopairs = pcall(require, "nvim-autopairs")
-		-- 	if not status then
-		-- 		return
-		-- 	end
-		--
-		-- 	autopairs.setup({
-		-- 		check_ts = true,
-		-- 	})
-		--
-		-- 	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-		-- 	local cmp = require("cmp")
-		--
-		-- 	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-		-- end,
 	},
 	{
 		"numToStr/Comment.nvim",
@@ -63,5 +45,14 @@ return {
 				sticky = true, -- Whether the cursor should stay at the end of the comment after toggling
 			})
 		end,
+	},
+	{
+		"sQVe/sort.nvim",
+
+		cmd = "Sort",
+
+		keys = {
+			{ "n", "<leader>so", "<CMD>Sort<CR>" },
+		},
 	},
 }
