@@ -14,13 +14,27 @@ return {
 		opts = true,
 	},
 	{
-		"norcalli/nvim-colorizer.lua",
+		"NvChad/nvim-colorizer.lua",
 
-		opts = true,
-
-		config = function()
-			require("colorizer").setup()
-		end,
+		opts = {
+			user_default_options = {
+				RGB = true,
+				RRGGBB = true,
+				names = true,
+				RRGGBBAA = true,
+				AARRGGBB = true,
+				rgb_fn = true,
+				hsl_fn = true,
+				css = true,
+				css_fn = true,
+				mode = "background",
+				method = "lsp",
+				tailwind = true,
+				sass = { enable = true, parsers = { "css" } },
+				virtualtext = "■",
+			},
+			buftypes = { "!prompt", "!popup" },
+		},
 	},
 	{
 		"mrshmllow/document-color.nvim",
