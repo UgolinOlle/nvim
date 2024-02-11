@@ -11,19 +11,26 @@ return {
 		},
 
 		config = function()
-			local status, telescope = pcall(require, "telescope")
-			if not status then
+			-- Check if telescope is installed
+			local active, telescope = pcall(require, "telescope")
+			if not active then
 				return
 			end
 
+			-- Variables
+			local utils = require("whoa.utils")
+			local get_icons = utils.get_icons
 			local actions = require("telescope.actions")
 
+			-- Setup telescope
 			telescope.setup({
+				-- Default settings
 				defaults = {
+					-- Mappings
 					mappings = {
 						i = {
-							["<S-k>"] = actions.move_selection_previous,
-							["<S-j>"] = actions.move_selection_next,
+							["<C-j>"] = actions.move_selection_previous,
+							["<C-k>"] = actions.move_selection_next,
 							["<S-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 						},
 					},
@@ -46,32 +53,34 @@ return {
 						},
 					},
 
-					prompt_prefix = "  ",
-					selection_caret = "  ",
-					entry_prefix = "  ",
-					initial_mode = "insert",
-					selection_strategy = "reset",
-					sorting_strategy = "descending",
-					layout_strategy = "horizontal",
-					file_sorter = require("telescope.sorters").get_fuzzy_file,
-					file_ignore_patterns = {},
-					generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-					path_display = { "truncate " },
-					winbled = 0,
-					border = {},
-					borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-					color_devicons = true,
-					use_less = true,
-					set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-					file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-					grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-					qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-					buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+					-- Global settings
+					prompt_prefix = get_icons("Command", 2), -- Prefix for prompt
+					selection_caret = get_icons("ArrowRight", 2), -- Icon for selection
+					entry_prefix = "  ", -- Prefix for each entry
+					initial_mode = "insert", -- Initial mode
+					selection_strategy = "closest", -- Selection strategy
+					sorting_strategy = "descending", -- Sorting strategy
+					layout_strategy = "horizontal", -- Layout strategy
+					file_sorter = require("telescope.sorters").get_fuzzy_file, -- File sorter
+					file_ignore_patterns = { "node_modules", ".git" }, -- Ignore patterns
+					generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter, -- Generic sorter
+					path_display = { truncate = 2 }, -- Path display
+					winbled = 2, -- Window border
+					border = {}, -- Border
+					borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, -- Border characters
+					color_devicons = true, -- Use devicons
+					use_less = true, -- Use less
+					set_env = { ["COLORTERM"] = "truecolor" }, -- Set environment color
+					file_previewer = require("telescope.previewers").vim_buffer_cat.new, -- File previewer
+					grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new, -- Grep previewer
+					qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new, -- Quickfix list previewer
+					buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker, -- Buffer previewer maker
 				},
 			})
 
-			telescope.load_extension("fzf")
-			telescope.load_extension("notify")
+			-- Load extensions
+			telescope.load_extension("fzf") -- FZF
+			telescope.load_extension("notify") -- Notifications
 
 			local keymap = vim.keymap.set
 			local opts = { noremap = true, silent = true }
