@@ -83,6 +83,10 @@ keymap("v", ">", ">gv^", opts)
 
 -- Plugins --
 
+-- Lazy
+opts.desc = "Open Lazy package manager"
+keymap("n", "<LEADER>L", "<CMD>Lazy<CR>", opts)
+
 -- Zen mode
 keymap("n", "<LEADER>z", "<CMD>ZenMode<CR>", opts)
 
