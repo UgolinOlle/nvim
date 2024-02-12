@@ -11,10 +11,6 @@ return {
 			return
 		end
 
-		lint.linters.norminette = {
-			cmd = "norminette",
-		}
-
 		lint.linters_by_ft = {
 			javascript = { "eslint_d" },
 			typescript = { "eslint_d" },
@@ -24,7 +20,6 @@ return {
 			lua = { "luacheck" },
 			codespell = { "codespell" },
 			dotenv = { "dotenv_linter" },
-			c = { "norminette" },
 		}
 
 		local lint_autogroup = vim.api.nvim_create_augroup("lint", { clear = true })
