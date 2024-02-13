@@ -1,11 +1,17 @@
 return {
 	{
-		"kepano/flexoki-neovim",
+		"projekt0n/github-nvim-theme",
 
-		priority = 1000,
+		lazy = false,
+
+		priority = 100,
 
 		config = function()
-			vim.cmd([[colorscheme flexoki-dark]])
+			require("github-theme").setup({
+				dim_inactive = true,
+			})
+
+			vim.cmd("colorscheme github_dark_dimmed")
 		end,
 	},
 	{
