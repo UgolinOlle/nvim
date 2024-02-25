@@ -1,52 +1,49 @@
 return {
-	{
-		"projekt0n/github-nvim-theme",
+  {
+    "sainnhe/sonokai",
 
-		lazy = false,
+    priority = 1000,
 
-		priority = 100,
+    config = function()
+      vim.g.sonokai_style = "andromeda"
+      vim.g.sonokai_enable_italic = 1
+      vim.g.sonokai_transparent_background = 1
+      vim.cmd.colorscheme "sonokai"
+    end,
+  },
+  {
+    "stevearc/dressing.nvim",
 
-		config = function()
-			require("github-theme").setup({
-				dim_inactive = true,
-			})
+    opts = true,
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
 
-			vim.cmd("colorscheme github_dark_dimmed")
-		end,
-	},
-	{
-		"stevearc/dressing.nvim",
+    opts = {
+      user_default_options = {
+        RGB = true,
+        RRGGBB = true,
+        names = true,
+        RRGGBBAA = true,
+        AARRGGBB = true,
+        rgb_fn = true,
+        hsl_fn = true,
+        css = true,
+        css_fn = true,
+        mode = "background",
+        method = "lsp",
+        tailwind = true,
+        sass = { enable = true, parsers = { "css" } },
+        virtualtext = "■",
+      },
+      buftypes = { "!prompt", "!popup" },
+    },
+  },
+  {
+    "mrshmllow/document-color.nvim",
 
-		opts = true,
-	},
-	{
-		"NvChad/nvim-colorizer.lua",
+    lazy = true,
 
-		opts = {
-			user_default_options = {
-				RGB = true,
-				RRGGBB = true,
-				names = true,
-				RRGGBBAA = true,
-				AARRGGBB = true,
-				rgb_fn = true,
-				hsl_fn = true,
-				css = true,
-				css_fn = true,
-				mode = "background",
-				method = "lsp",
-				tailwind = true,
-				sass = { enable = true, parsers = { "css" } },
-				virtualtext = "■",
-			},
-			buftypes = { "!prompt", "!popup" },
-		},
-	},
-	{
-		"mrshmllow/document-color.nvim",
-
-		lazy = true,
-
-		opts = true,
-	},
+    opts = true,
+  },
 }
