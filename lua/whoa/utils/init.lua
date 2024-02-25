@@ -7,10 +7,6 @@
 
 local M = {}
 
--- Variables
-local utils = require "whoa.utils"
-local notify = utils.notify
-
 -- Merge functions opts with custom opts
 ---@param default? table Default function table opts
 ---@param opts? table New table opts
@@ -50,13 +46,6 @@ function M.execute(cmd)
   local success = vim.v.shell_error == 0
   if not success then vim.api.nvim_err_writeln("Error running command: " .. table.concat(cmd, " "), res) end
   return success and res:gsub("[\27\155][][()#;?%d]*[A-PRZcf-ntqry=><~]", "") or nil
-end
-
--- Get the current Whoa version
--- @return string The current Whoa version
-function M.version()
-  local version = whoa.install.version or git.current_version(false) or "unknown"
-  if version then notify(("Version: *%s*"):format(version)) end
 end
 
 return M
