@@ -36,5 +36,9 @@ return {
                 { source = "diagnostics", name = "Diagnostics", icon = get_icons("Diagnostic", 1) .. "Diag" },
             }
         }
+    },
+
+    keys = {
+      { "<LEADER>e", "<CMD>Neotree<CR>", { noremap = true, silent = true, desc = "Toggle file tree." } }
     }
 }
