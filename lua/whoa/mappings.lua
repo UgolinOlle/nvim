@@ -17,6 +17,12 @@ keymap("n", "Q", "<CMD>confirm q<CR>", opts)
 opts.desc = "Make the current file executable"
 keymap("n", "<LEADER>x", "<CMD>!chmod +x %<CR>", opts)
 
+opts.desc = "Increment"
+keymap("n", "+", "<C-a>", opts)
+
+opts.desc = "Decrement"
+keymap("n", "-", "<C-x>", opts)
+
 -- Window navigation
 opts.desc = "Move on left window"
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -108,11 +114,7 @@ keymap("n", "<LEADER>e", "<CMD>Neotree toggle<CR>", opts)
 
 -- Todo comments
 opts.desc = "Jump to next todo"
-keymap("n", "]t", function()
-	require("todo-comments").jump_next()
-end, opts)
+keymap("n", "]t", function() require("todo-comments").jump_next() end, opts)
 
 opts.desc = "Jump to previous todo"
-keymap("n", "[t", function()
-	require("todo-comments").jump_prev()
-end, opts)
+keymap("n", "[t", function() require("todo-comments").jump_prev() end, opts)
