@@ -17,5 +17,5 @@ return function(_, opts)
             end
 
             -- CMP with autopairs
-            cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done()
+            cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())
         end

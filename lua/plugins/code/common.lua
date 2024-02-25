@@ -10,7 +10,7 @@ return {
         opts = {
             check_ts = true,
             ts_config = { java = false },
-        }
+        },
 
         config = require("plugins.configs.npairs")
     },
@@ -25,5 +25,5 @@ return {
 
             return comment_string_active and comment_string and { pre_hook = comment_string.create_pre_hook() } or {}
         end
-    }
+    },
 }

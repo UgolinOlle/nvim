@@ -14,7 +14,7 @@ return {
 
     init = function()
         vim.g.neo_tree_remove_legacy_commands = true
-    end
+    end,
 
     opts = {
         auto_clean_after_session_restore = true,
@@ -24,7 +24,7 @@ return {
             "buffers",
             "git_status",
             "diagnostics",
-        }
+        },
 
         source_selector = {
             winbar = true,
