@@ -12,6 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	-- Import
+	{ import = "plugins.code" },
+	{ import = "plugins.navigation" },
+	{ import = "plugins.ui" },
+
 	-- UI
 	ui = {
 		border = "double",
