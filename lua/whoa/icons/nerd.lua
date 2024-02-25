@@ -12,6 +12,7 @@ return {
   Bookmarks = "",
   BufferClose = "󰅖",
   Command = "󰘳",
+  Copilot = "",
   Cube = "",
   Debugger = "",
   DefaultFile = "󰈙",

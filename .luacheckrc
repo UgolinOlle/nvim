@@ -1,7 +1,8 @@
 -- Global objects
 globals = {
-	"vim",
-	"bit",
+  "whoa",
+  "vim",
+  "bit",
 }
 
 -- Rerun tests only if their modification time changed

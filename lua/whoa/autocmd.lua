@@ -1,4 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
+local cmd = vim.api.nvim_create_user_command
 
 -- On Vim enter, disable tmux
 autocmd("VimEnter", {
@@ -25,4 +26,10 @@ autocmd("TermOpen", {
     vim.opt.foldcolumn = "0"
     vim.opt.signcolumn = "no"
   end,
+})
+
+-- WhoaVersion
+cmd("WhoaVersion", {
+  desc = "Print whoa version",
+  command = function() require("whoa.utils").version() end,
 })
