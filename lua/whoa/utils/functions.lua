@@ -34,4 +34,11 @@ function M.w_create_command(cmd, fn, opts)
   api.nvim_create_user_command(cmd, fn, opts)
 end
 
+-- Trim whitespace from a string.
+-- @param s string
+-- @return string
+local function trim(s)
+	return type(s) == "string" and vim.strim(s) or nil
+end
+
 return M
