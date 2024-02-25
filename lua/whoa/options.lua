@@ -60,7 +60,7 @@ for scope, table in pairs(options) do
 end
 
 -- Specific options
-vim.scriptencoding "utf-8" -- set script encoding
+vim.scriptencoding = "utf-8" -- set script encoding
 vim.opt.shortmess:append "c" -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append "-" -- treat dash separated words as a word text object
 vim.opt.fillchars:append { eob = " " } -- hide tilde on eob
