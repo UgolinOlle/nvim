@@ -8,6 +8,7 @@ return {
 
     dependencies = {
         "MunifTanjim/nui.nvim",
+        "nvim-tree/nvim-web-devicons",
     },
 
     cmd = "NeoTree",
@@ -23,7 +24,6 @@ return {
             "filesystem",
             "buffers",
             "git_status",
-            "diagnostics",
         },
 
         source_selector = {
@@ -33,7 +33,6 @@ return {
                 { source = "filesystem", name = "File System", icon = get_icons("FolderClosed", 1) .. "File" },
                 { source = "buffers", name = "Buffers", icon = get_icons("DefaultFile", 1) .. "Bufs" },
                 { source = "git_status", name = "Git Status", icon = get_icons("Git", 1) .. "Git" },
-                { source = "diagnostics", name = "Diagnostics", icon = get_icons("Diagnostic", 1) .. "Diag" },
             }
         }
     },
