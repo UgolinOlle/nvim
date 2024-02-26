@@ -14,9 +14,7 @@ local api = vim.api
 -- @return nil
 function M.w_update_all()
   local cmds = {
-    "LazyUpdate",
-    "TSUpdate",
-    "MasonToolsUpdate",
+    "Lazy update",
   }
 
   for _, cmd in ipairs(cmds) do

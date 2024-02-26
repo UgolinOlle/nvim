@@ -8,6 +8,7 @@ for _, source in ipairs({
 	"whoa.mappings",
 	"whoa.lazy",
 	"whoa.autocmd",
+  "whoa.commands",
 }) do
 	local active, fault = pcall(require, source)
 	if not active then
