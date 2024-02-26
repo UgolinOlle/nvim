@@ -28,28 +28,28 @@ return {
   config = function()
     -- Check if cmp is installed
     local active, cmp = pcall(require, "cmp")
-    if not active then
-      return
-    end
+    if not active then return end
 
     -- Check if luasnip is installed
     local active, luasnip = pcall(require, "luasnip")
-    if not active then
-      return
-    end
+    if not active then return end
+
+    -- Check if lspkind is installed
+    local active, lspkind = pcall(require, "lspkind")
+    if not active then return end
 
     -- Setup luasnip
     require("luasnip.loaders.from_vscode").lazy_load()
 
-    -- Setup cmp 
-    cmp.setup({
+    -- Setup cmp
+    cmp.setup {
       -- Configure sources
-      sources = cmp.config.sources ({
+      sources = cmp.config.sources {
         { name = "nvim_lsp" }, -- Source for LSP completions
         { name = "buffer" }, -- Source for text in buffer
         { name = "path" }, -- Source for file paths
         { name = "luasnip" }, -- Source for autocomplete
-      }),
+      },
 
       -- Configure completion sources
       completion = {
@@ -58,28 +58,26 @@ return {
 
       -- Configure how nvim-cmp should handle snippets
       snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end,
+        expand = function(args) require("luasnip").lsp_expand(args.body) end,
       },
 
       -- Configure keybindings
-      mappings = cmp.mapping.preset.insert({
+      mappings = cmp.mapping.preset.insert {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
-        ["<CR>"] = cmp.mapping.confirm({
+        ["<CR>"] = cmp.mapping.confirm {
           behavior = cmp.ConfirmBehavior.Insert,
           select = true,
-        }),
-      }),
+        },
+      },
 
       -- Configure formatting
       formatting = {
-        format = lspkind.cmp_format({
+        format = lspkind.cmp_format {
           mode = "symbol_text",
           with_text = true,
           maxwidth = 50,
@@ -93,8 +91,8 @@ return {
             cmdline = "[CMD]",
             emoji = "[EMOJI]",
           },
-        }),
-      }
-    })
-  end
+        },
+      },
+    }
+  end,
 }
