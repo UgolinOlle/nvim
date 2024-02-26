@@ -38,6 +38,6 @@ return {
     },
 
     keys = {
-      { "<LEADER>e", "<CMD>Neotree<CR>", { noremap = true, silent = true, desc = "Toggle file tree." } }
+      { "<LEADER>e", "<CMD>Neotree toggle<CR>", { noremap = true, silent = true, desc = "Toggle file tree." } }
     }
 }
