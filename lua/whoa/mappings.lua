@@ -93,28 +93,9 @@ keymap("v", ">", ">gv^", opts)
 opts.desc = "Open Lazy package manager"
 keymap("n", "<LEADER>L", "<CMD>Lazy<CR>", opts)
 
--- Zen mode
-keymap("n", "<LEADER>z", "<CMD>ZenMode<CR>", opts)
-
--- Trouble
-keymap("n", "<LEADER>x", "<CMD>TroubleToggle<CR>", opts)
-keymap("n", "<LEADER>xd", "<CMD>Trouble document_diagnostics<CR>", opts)
-keymap("n", "<LEADER>xw", "<CMD>Trouble workspace_diagnostics<CR>", opts)
-
 -- Mason
 opts.desc = "Mason home"
 keymap("n", "<LEADER>pp", "<CMD>Mason<CR>", opts)
 
-opts.desc = "Mason clear"
+opts.desc = "Mason update"
 keymap("n", "<LEADER>pM", "<CMD>MasonUpdate<CR>", opts)
-
--- NeoTree
-opts.desc = "Toggle file explorer"
-keymap("n", "<LEADER>e", "<CMD>Neotree toggle<CR>", opts)
-
--- Todo comments
-opts.desc = "Jump to next todo"
-keymap("n", "]t", function() require("todo-comments").jump_next() end, opts)
-
-opts.desc = "Jump to previous todo"
-keymap("n", "[t", function() require("todo-comments").jump_prev() end, opts)
