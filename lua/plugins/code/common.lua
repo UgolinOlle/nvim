@@ -12,7 +12,7 @@ return {
             ts_config = { java = false },
         },
 
-        config = require("plugins.configs.npairs")
+        -- config = require("plugins.configs.npairs")
     },
     {
         "numToStr/Comment.nvim",
