@@ -15,6 +15,7 @@ local api = vim.api
 function M.w_update_all()
   local cmds = {
     "Lazy update",
+    "MasonUpdate",
   }
 
   for _, cmd in ipairs(cmds) do
