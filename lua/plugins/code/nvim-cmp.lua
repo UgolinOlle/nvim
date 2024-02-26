@@ -1,16 +1,24 @@
 return {
-  "hrsh7th/cmp-nvim",
+  "hrsh7th/nvim-cmp",
 
   event = "InsertEnter",
 
   dependencies = {
     "neovim/nvim-lspconfig", -- LSP client
-    "hrsh7th/cmp-buffer", -- Source for text in buffer
-    "hrsh7th/cmp-path", -- Source for file paths
-    "hrsh7th/cmp-nvim-lsp", -- Source for LSP completions
-    "hrsh7th/cmp-cmdline", -- Source for command line completions
-    "hrsh7th/cmp-emoji", -- Source for emoji completions
-    "hrsh7th/cmp-nvim-lua", -- Source for Lua completions
+    "hrsh7th/cmp-nvim-lsp", -- source for LSP completions
+    "hrsh7th/cmp-buffer", -- source for text in buffer
+    "hrsh7th/cmp-path", -- source for file system paths
+    "hrsh7th/cmp-cmdline", -- source for command line completions
+    "hrsh7th/cmp-nvim-lua", -- source for nvim lua completions
+    "hrsh7th/cmp-emoji", -- source for emoji completions
+    "ray-x/cmp-treesitter", -- source for treesitter completions
+    "chrisgrieser/cmp-nerdfont", -- source for nerdfont completions
+    "roobert/tailwindcss-colorizer-cmp.nvim", -- source for tailwindcss completions
+    {
+      "tzachar/cmp-ai",
+      dependencies = "nvim-lua/plenary.nvim",
+    },
+    "onsails/lspkind.nvim", -- vs-code like pictograms
 
     "L3MON4D3/LuaSnip", -- Snippets
     "saadparwaiz1/cmp_luasnip", -- Source for autocomplete
