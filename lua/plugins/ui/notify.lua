@@ -8,7 +8,8 @@ return {
     stages = "fade_in_slide_out",
     top_down = true,
     render = "simple",
-    fps = 120
+    fps = 120,
+    background_colour = "#000000",
   },
 
   keys = {
