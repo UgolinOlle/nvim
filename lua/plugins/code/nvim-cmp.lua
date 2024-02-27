@@ -31,12 +31,12 @@ return {
     if not active then return end
 
     -- Check if luasnip is installed
-    local active, luasnip = pcall(require, "luasnip")
-    if not active then return end
+    local active_luasnip, luasnip = pcall(require, "luasnip")
+    if not active_luasnip then return end
 
     -- Check if lspkind is installed
-    local active, lspkind = pcall(require, "lspkind")
-    if not active then return end
+    local active_lspkind, lspkind = pcall(require, "lspkind")
+    if not active_lspkind then return end
 
     -- Setup luasnip
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -54,9 +54,9 @@ return {
       -- Configure sources
       sources = cmp.config.sources {
         { name = "nvim_lsp" }, -- Source for LSP completions
+        { name = "luasnip" }, -- Source for autocomplete
         { name = "buffer" }, -- Source for text in buffer
         { name = "path" }, -- Source for file paths
-        { name = "luasnip" }, -- Source for autocomplete
       },
 
       -- Configure completion sources
