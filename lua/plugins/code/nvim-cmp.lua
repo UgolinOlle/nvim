@@ -41,6 +41,14 @@ return {
     -- Setup luasnip
     require("luasnip.loaders.from_vscode").lazy_load()
 
+    -- Setup cmp for commandline
+    cmp.setup.cmdline("/", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = "path" },
+      }, { { name = "cmdline" } }),
+    })
+
     -- Setup cmp
     cmp.setup {
       -- Configure sources
@@ -62,7 +70,7 @@ return {
       },
 
       -- Configure keybindings
-      mappings = cmp.mapping.preset.insert {
+      mapping = cmp.mapping.preset.insert {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -70,7 +78,6 @@ return {
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
         ["<CR>"] = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Insert,
           select = true,
         },
       },
@@ -78,9 +85,8 @@ return {
       -- Configure formatting
       formatting = {
         format = lspkind.cmp_format {
-          mode = "symbol_text",
+          mode = "symbol",
           with_text = true,
-          maxwidth = 50,
           ellipsis_char = "...",
           menu = {
             buffer = "[BUF]",
