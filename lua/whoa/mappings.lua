@@ -48,10 +48,10 @@ opts.desc = "New tab"
 keymap("n", "<S-t>", "<CMD>tabnew<CR>", opts)
 
 opts.desc = "Go to next tab"
-keymap("n", "<Tab>", "<CMD>BufferLineCycleNext<CR>", opts)
+keymap("n", "<Tab>", "<CMD>tabnext<CR>", opts)
 
 opts.desc = "Go to previous tab"
-keymap("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>", opts)
+keymap("n", "<S-Tab>", "<CMD>tabprev<CR>", opts)
 
 -- Resize with arrows
 opts.desc = "Decrease height"
