@@ -9,6 +9,7 @@ return {
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
       "windwp/nvim-ts-autotag",
+      "windwp/nvim-autopairs",
       "hiphish/rainbow-delimiters.nvim",
     },
 
@@ -39,15 +40,17 @@ return {
 
       ensure_installed = {
         "html",
-        "css",
         "json",
         "javascript",
         "typescript",
         "tsx",
+        "yaml",
         "bash",
         "lua",
+        "vim",
         "dockerfile",
         "gitignore",
+        "php",
         "cpp",
         "c",
         "java",
