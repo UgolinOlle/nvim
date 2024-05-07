@@ -89,7 +89,7 @@ return {
 
       -- Show LSP hover
       opts.desc = "Show LSP hover"
-      keymap("n", "K", "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
+      keymap("n", "K", "<CMD>lua vim.lsp.hover<CR>", opts)
 
       -- Show LSP signature help
       opts.desc = "Show LSP signature help"
@@ -132,16 +132,14 @@ return {
           local inlay_hints = require "lsp-inlayhints"
 
           inlay_hints.on_attach(client, bufnr)
-          -- keymap("n", "<leader>ih", inlay_hints.toggle, { noremap = true, silent = true, desc = "Toggle inlay hints" })
         end
       end,
     })
 
     -- UI LSP
     local active_noice, _ = pcall(require, "noice")
-    if not active_noice then
+    if active_noice then
       l.handlers["textDocument/hover"] = l.with(l.handlers.hover, { border = "single" })
-
       l.handlers["textDocument/signatureHelp"] = l.with(l.handlers.signature_help, { border = "single" })
     end
 

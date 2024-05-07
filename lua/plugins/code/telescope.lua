@@ -95,6 +95,11 @@ return {
     },
     {
       ";n",
+      "<CMD>Telescope notify<CR>",
+      { noremap = true, silent = true, desc = "Display notifications" },
+    },
+    {
+      ";n",
       "<CMD>Telescope node_modules list<CR>",
       { noremap = true, silent = true, desc = "Node modules" },
     },
