@@ -39,8 +39,6 @@ return {
   },
   keys = {
     { "<LEADER>dd", ":DevdocsOpen<CR>", { noremap = true, silent = true, buffer = true } },
-    { "<LEADER>df", ":DevdocsOpenFloat<CR>", { noremap = true, silent = true, buffer = true } },
-    { "<LEADER>dc", ":DevdocsOpenCurrent<CR>", { noremap = true, silent = true, buffer = true } },
     { "<LEADER>ds", ":DevdocsOpenCurrentFloat<CR>", { noremap = true, silent = true, buffer = true } },
   },
 }

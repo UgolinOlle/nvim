@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./assets/WHOA - Cover white version.png" alt="Whoa IDE Banner">
+    <img src="./.github/assets/WHOA - Cover white version.png" alt="Whoa IDE Banner">
 </p>
 
 # WhoaIDE
@@ -37,7 +37,6 @@ Welcome to Whoa IDE, a robust and customizable integrated development environmen
 - **Customizable Status Bar:** Use plugins like vim-airline or lightline to customize the status bar of Neovim.
 
 - **Multilingual Support:** Ensure Neovim supports diverse character sets and languages, especially for non-Latin character programming.
-
 
 ## 🧑‍🤝‍🧑・Contributing
 

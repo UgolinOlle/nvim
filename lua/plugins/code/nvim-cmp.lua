@@ -31,7 +31,7 @@ return {
     if not active then return end
 
     -- Check if luasnip is installed
-    local active_luasnip, luasnip = pcall(require, "luasnip")
+    local active_luasnip, _ = pcall(require, "luasnip")
     if not active_luasnip then return end
 
     -- Check if lspkind is installed

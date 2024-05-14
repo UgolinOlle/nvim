@@ -27,6 +27,7 @@ return {
 
     -- LSP configuration
     lsp = {
+      enabled = true,
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
@@ -35,8 +36,21 @@ return {
       hover = {
         enabled = true,
       },
+      signature = {
+        enabled = true,
+      },
       progress = {
         enabled = true,
+      },
+      documentation = {
+        view = "hover",
+        opts = {
+          lang = "markdown",
+          replace = true,
+          render = "plain",
+          format = { "{message}" },
+          win_options = { concealcursor = "n", conceallevel = 3 },
+        },
       },
     },
 

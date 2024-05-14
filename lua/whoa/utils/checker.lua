@@ -7,6 +7,8 @@
 
 local M = {}
 
+local git = require "whoa.utils.git"
+
 --- Check if all LSP servers are installed.
 -- @param servers table
 -- @return boolean

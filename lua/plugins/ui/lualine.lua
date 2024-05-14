@@ -3,7 +3,8 @@ local get_icons = require("whoa.utils").get_icons
 return {
   "nvim-lualine/lualine.nvim",
   event = { "BufReadPost", "BufNewFile" },
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
+
   config = function(_, opts)
     local vscode = require "lualine.themes.vscode"
 
@@ -27,19 +28,21 @@ return {
       lualine_a = { mode },
       lualine_b = { "branch" },
       lualine_c = { "filename" },
-      lualine_x = { "encoding", "fileformat", "filetype" },
+      lualine_x = { "copilot", "encoding", "fileformat", "filetype" },
       lualine_y = { "progress" },
       lualine_z = { "location" },
     }
     require("lualine").setup(opts)
   end,
+
   opts = {
     options = {
-      component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
+      icons_enabled = true,
+      always_divide_middle = true,
+      component_separators = "│",
+      section_separators = "",
       disabled_filetypes = {
         statusline = { "neo-tree" },
-        winbar = {},
       },
     },
   },
