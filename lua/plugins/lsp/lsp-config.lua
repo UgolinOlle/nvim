@@ -5,7 +5,8 @@ return {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       { "antosha417/nvim-lsp-file-operations", config = true },
-      { "folke/neodev.nvim" },
+      "folke/neodev.nvim",
+      "soulis-1256/eagle.nvim",
     },
 
     config = function()
@@ -83,13 +84,9 @@ return {
         "tsserver",
         "vimls",
         "yamlls",
-        "lua_ls",
         "clangd",
         "tailwindcss",
-        "graphql",
-        "sqlls",
         "terraformls",
-        "angularls",
         "dartls",
       }
 
@@ -98,8 +95,31 @@ return {
           capabilities = capabilities,
           on_attach = mason_lspconfig.on_attach,
           flags = { debounce_text_changes = 150 },
+          handlers = {
+            ["textDocument/signatureHelp"] = function() end,
+          },
         }
       end
+
+      -- lua_ls
+      lspconfig["lua_ls"].setup {
+        capabilities = capabilities,
+        on_attach = mason_lspconfig.on_attach,
+        flags = { debounce_text_changes = 150 },
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+            workspace = {
+              library = {
+                [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+                [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+              },
+            },
+          },
+        },
+      }
     end,
 
     opts = {
@@ -128,8 +148,12 @@ return {
       ignore_filetype = {
         "prisma",
       },
-      -- target_symbol_kinds = { SymbolKind.Function, SymbolKind.Method, SymbolKind.Interface },
-      -- wrapper_symbol_kinds = { SymbolKind.Class, SymbolKind.Struct },
     },
+  },
+  {
+    "zeioth/garbage-day.nvim",
+    dependencies = "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+    opts = {},
   },
 }

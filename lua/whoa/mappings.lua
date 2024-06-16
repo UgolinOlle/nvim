@@ -17,11 +17,18 @@ keymap("n", "Q", "<CMD>confirm q<CR>", opts)
 opts.desc = "Make the current file executable"
 keymap("n", "<LEADER>x", "<CMD>!chmod +x %<CR>", opts)
 
-opts.desc = "Increment"
-keymap("n", "+", "<C-a>", opts)
+-- Tabs
+opts.desc = "New tab"
+keymap("n", "<LEADER>te", "<CMD>tabnew<CR>", opts)
 
-opts.desc = "Decrement"
-keymap("n", "-", "<C-x>", opts)
+opts.desc = "Next tab"
+keymap("n", "<Tab>", "<CMD>tabnext<CR>", opts)
+
+opts.desc = "Previous tab"
+keymap("n", "<S-Tab>", "<CMD>tabprevious<CR>", opts)
+
+opts.desc = "Pin a tab"
+keymap("n", "<LEADER>tp", "<CMD>BufferLineTogglePin<CR>", opts)
 
 -- Window navigation
 opts.desc = "Move on left window"
@@ -42,16 +49,6 @@ keymap("n", "ss", "<CMD>split<CR>", opts)
 
 opts.desc = "Split vertical screen"
 keymap("n", "sv", "<CMD>vsplit<CR>", opts)
-
--- Tab navigation
-opts.desc = "New tab"
-keymap("n", "<S-t>", "<CMD>tabnew<CR>", opts)
-
-opts.desc = "Go to next tab"
-keymap("n", "<Tab>", "<CMD>tabnext<CR>", opts)
-
-opts.desc = "Go to previous tab"
-keymap("n", "<S-Tab>", "<CMD>tabprev<CR>", opts)
 
 -- Resize with arrows
 opts.desc = "Decrease height"
@@ -99,3 +96,57 @@ keymap("n", "<LEADER>pp", "<CMD>Mason<CR>", opts)
 
 opts.desc = "Mason update"
 keymap("n", "<LEADER>pM", "<CMD>MasonUpdate<CR>", opts)
+
+-- Neo tree
+opts.desc = "Open NeoTree"
+keymap("n", "<LEADER>e", "<CMD>Neotree toggle<CR>", opts)
+
+-- Icon picker
+opts.desc = "Open icon picker"
+keymap("n", "<LEADER>i", "<CMD>IconPickerNormal<CR>", opts)
+
+opts.desc = "Yank icon"
+keymap("n", "<LEADER>y", "<CMD>IconPickerYank<CR>", opts)
+
+opts.desc = "Insert icon"
+keymap("n", "<C-i>", "<CMD>IconPickerInsert<CR>", opts)
+
+-- DBUI
+opts.desc = "Open DBUI"
+keymap("n", "<LEADER>du", "<CMD>DBUIToggle<CR>", opts)
+
+opts.desc = "Add DBUI connection"
+keymap("n", "<LEADER>da", "<CMD>DBUIAddConnection<CR>", opts)
+
+-- Devdocs
+opts.desc = "Open Devdocs"
+keymap("n", "<LEADER>dd", "<CMD>DevdocsOpen<CR>", opts)
+
+opts.desc = "Open Devdocs float"
+keymap("n", "<LEADER>ds", "<CMD>DevdocsOpenCurrentFloat<CR>", opts)
+
+-- Conform
+opts.desc = "Conform info"
+keymap("n", "<LEADER>ci", "<CMD>ConformInfo<CR>", opts)
+
+-- Outline
+opts.desc = "Open outline"
+keymap("n", "<LEADER>o", "<CMD>Outline<CR>", opts)
+
+-- Noice
+opts.desc = "Show last message"
+keymap("n", "gl", "<CMD>lua require('noice').cmd 'last'<CR>", opts)
+
+opts.desc = "Show messages"
+keymap("n", "gm", "<CMD>messages<CR>", opts)
+
+-- Notify
+opts.desc = "Dismiss notifications"
+keymap("n", "<LEADER>nn", "<CMD>lua require('notify').dismiss()<CR>", opts)
+
+opts.desc = "List notifications"
+keymap("n", "<LEADER>nl", "<CMD>Notifications<CR>", opts)
+
+-- Which key
+opts.desc = "Open which key"
+keymap("n", "<LEADER>?", "<CMD>WhichKey<CR>", opts)

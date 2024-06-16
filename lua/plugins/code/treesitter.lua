@@ -41,8 +41,6 @@ return {
       ensure_installed = {
         "html",
         "json",
-        "javascript",
-        "typescript",
         "tsx",
         "yaml",
         "bash",
@@ -67,5 +65,12 @@ return {
         },
       },
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+
+    config = true,
+
+    event = "BufReadPre",
   },
 }

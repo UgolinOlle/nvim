@@ -1,17 +1,20 @@
 return {
   {
-    "sainnhe/sonokai",
-
-    enabled = false,
-    priority = 1000,
-    config = function()
-      vim.g.sonokai_style = "andromeda"
-      vim.g.sonokai_enable_italic = 1
-      vim.g.sonokai_transparent_background = 1
-      vim.cmd.colorscheme "sonokai"
-    end,
+    "Mofiqul/vscode.nvim",
+    config = function() vim.cmd.colorscheme "vscode" end,
   },
   {
-    "Mofiqul/vscode.nvim",
+    "NvChad/nvim-colorizer.lua",
+    config = function() require("colorizer").setup() end,
+  },
+  {
+    "ziontee113/icon-picker.nvim",
+    config = function() require("icon-picker").setup { disable_legacy_commands = true } end,
+  },
+  {
+    "folke/zen-mode.nvim",
+    keys = {
+      { "<LEADER>z", "<CMD>ZenMode<CR>", { noremap = true, silent = true, desc = "Enabled zen mode focus" } },
+    },
   },
 }

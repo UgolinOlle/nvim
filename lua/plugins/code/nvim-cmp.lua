@@ -57,6 +57,13 @@ return {
         { name = "luasnip" }, -- Source for autocomplete
         { name = "buffer" }, -- Source for text in buffer
         { name = "path" }, -- Source for file paths
+        { name = "cmdline" }, -- Source for command line completions
+        { name = "nvim_lua" }, -- Source for nvim lua completions
+        { name = "emoji" }, -- Source for emoji completions
+        { name = "treesitter" }, -- Source for treesitter completions
+        { name = "nerdfont" }, -- Source for nerdfont completions
+        { name = "tailwindcss" }, -- Source for tailwindcss completions
+        { name = "ai" }, -- Source for AI completions
       },
 
       -- Configure completion sources

@@ -28,11 +28,4 @@ return {
       },
     }
   end,
-
-  keys = {
-    {
-      "<LEADER>ci",
-      "<CMD>ConformInfo<CR>",
-    },
-  },
 }

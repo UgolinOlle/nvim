@@ -38,6 +38,14 @@ return {
       },
       signature = {
         enabled = true,
+        auto_open = {
+          enabled = true,
+          trigger = true,
+        },
+        floating_window = {
+          enabled = true,
+          border = "rounded",
+        },
       },
       progress = {
         enabled = true,
@@ -61,19 +69,6 @@ return {
       long_message_to_split = true,
       inc_rename = false,
       lsp_doc_border = "rounded",
-    },
-  },
-
-  keys = {
-    {
-      "gl",
-      function() require("noice").cmd "last" end,
-      { noremap = true, silent = true, desc = "Show last message" },
-    },
-    {
-      "gm",
-      "<CMD>messages<CR>",
-      { noremap = true, silent = true, desc = "Show messages" },
     },
   },
 }

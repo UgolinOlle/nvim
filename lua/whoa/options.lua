@@ -6,13 +6,13 @@ local options = {
     writebackup = false, -- no write backup file
     fileencoding = "utf-8", -- file encoding
     encoding = "utf-8", -- encoding
-    -- mouse = "a", -- enable mouse support
     completeopt = { "menuone", "noselect" }, -- completion options
     smartindent = true, -- smart indent when starting a new line
     updatetime = 300, -- faster completion
     cursorline = true, -- highlight current line
     laststatus = 3, -- always show status line
     scrolloff = 10, -- minimum number of screen lines to keep above and below the cursor
+    mouse = "a", -- enable mouse support
 
     -- search
     hlsearch = true, -- highlight search
@@ -48,8 +48,9 @@ local options = {
   },
 
   o = {
-    autored = true, -- auto read file when changed
+    autoread = true, -- auto read file when changed
     background = "dark", -- dark background
+    mousemoveevent = true, -- enable mouse events
   },
 }
 

@@ -10,6 +10,3 @@ for _, source in ipairs {
   local active, fault = pcall(require, source)
   if not active then vim.api.nvim_err_writeln("An error occured, failed to load " .. source .. "\n\n" .. fault) end
 end
-
--- TEMP
-vim.cmd.colorscheme "vscode"

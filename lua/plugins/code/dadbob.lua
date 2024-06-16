@@ -17,8 +17,4 @@ return {
     vim.g.db_ui_notification_width = 1
     vim.g.db_ui_debug = 1
   end,
-  keys = {
-    { "<LEADER>du", "<CMD>DBUIToggle<CR>" },
-    { "<LEADER>da", "<CMD>DBUIAddConnection<CR>" },
-  },
 }

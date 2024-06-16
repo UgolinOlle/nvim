@@ -37,8 +37,4 @@ return {
     picker_cmd = true,
     picker_cmd_args = { "-s", "auto", "-w", "45" },
   },
-  keys = {
-    { "<LEADER>dd", ":DevdocsOpen<CR>", { noremap = true, silent = true, buffer = true } },
-    { "<LEADER>ds", ":DevdocsOpenCurrentFloat<CR>", { noremap = true, silent = true, buffer = true } },
-  },
 }

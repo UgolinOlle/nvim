@@ -4,6 +4,7 @@ return {
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope-node-modules.nvim",
+    "2kabhishek/nerdy.nvim",
   },
 
   config = function()
@@ -21,6 +22,7 @@ return {
     telescope.setup {
       defaults = {
         wrap_results = true,
+        file_ignore_patterns = { "%.git/", "node_modules/.*", "%.cache/" },
         layout_strategy = "horizontal",
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
@@ -43,13 +45,12 @@ return {
             layout_config = { preview_cutoff = 9999 },
           },
         },
-
-        extensions = {},
       },
     }
 
     telescope.load_extension "fzf"
     telescope.load_extension "node_modules"
+    telescope.load_extension "nerdy"
   end,
 
   keys = {
@@ -94,12 +95,17 @@ return {
       { noremap = true, silent = true, desc = "Lists Function names, variables, from Treesitter" },
     },
     {
+      ";ii",
+      "<CMD>Telescope nerdy<CR>",
+      { noremap = true, silent = true, desc = "List and select all available icons" },
+    },
+    {
       ";n",
       "<CMD>Telescope notify<CR>",
       { noremap = true, silent = true, desc = "Display notifications" },
     },
     {
-      ";n",
+      ";nn",
       "<CMD>Telescope node_modules list<CR>",
       { noremap = true, silent = true, desc = "Node modules" },
     },
