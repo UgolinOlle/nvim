@@ -120,6 +120,23 @@ return {
           },
         },
       }
+
+      lspconfig["gopls"].setup {
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          mason_lspconfig.on_attach(client, bufnr)
+          require("lint").try_lint()
+        end,
+        flags = { debounce_text_changes = 150 },
+        settings = {
+          gopls = {
+            staticcheck = true,
+            analyses = {
+              unusedparams = true,
+            },
+          },
+        },
+      }
     end,
 
     opts = {

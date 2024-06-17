@@ -53,6 +53,7 @@ return {
         "c",
         "java",
         "python",
+        "go",
       },
 
       incremental_selection = {

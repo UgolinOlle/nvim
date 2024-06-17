@@ -42,6 +42,7 @@ return {
         "cssls",
         "tailwindcss",
         "emmet_ls",
+        "gopls",
       },
 
       automatic_installation = true, -- Automatically install the missing servers
@@ -52,6 +53,7 @@ return {
         "prettier",
         "eslint_d",
         "stylua",
+        "golangci-lint-langserver",
       },
     }
   end,

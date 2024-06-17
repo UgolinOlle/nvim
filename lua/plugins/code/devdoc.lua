@@ -29,6 +29,7 @@ return {
       "c",
       "cpp",
       "git",
+      "golang",
     },
     wrap = true,
     previwer_cmd = "glow",
