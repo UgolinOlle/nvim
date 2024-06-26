@@ -23,8 +23,26 @@ return {
     end
 
     conform.setup {
+      filetype = {
+        javascript = {
+          function()
+            if vim.g.use_standard then
+              return {
+                exe = "standard",
+                args = { "--fix", "--stdin" },
+                stdin = true,
+              }
+            else
+              return {
+                exe = "prettier",
+                args = { "--stdin-filepath", util.escape_path(util.get_current_buffer_file_path()), "--single-quote" },
+                stdin = true,
+              }
+            end
+          end,
+        },
+      },
       formatters_by_ft = {
-        javascript = { "prettier" },
         typescript = { "prettier" },
         jjavascriptreact = { "prettier" },
         typescriptreact = { "prettier" },

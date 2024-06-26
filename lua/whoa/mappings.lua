@@ -27,9 +27,6 @@ keymap("n", "<Tab>", "<CMD>tabnext<CR>", opts)
 opts.desc = "Previous tab"
 keymap("n", "<S-Tab>", "<CMD>tabprevious<CR>", opts)
 
-opts.desc = "Pin a tab"
-keymap("n", "<LEADER>tp", "<CMD>BufferLineTogglePin<CR>", opts)
-
 -- Window navigation
 opts.desc = "Move on left window"
 keymap("n", "<C-h>", "<C-w>h", opts)

@@ -6,9 +6,22 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
 
   config = function(_, opts)
-    local vscode = require "lualine.themes.vscode"
-
-    opts.options.theme = vscode
+    -- local vscode = require "lualine.themes.vscode"
+    --
+    -- local function make_bg_transparent(theme)
+    --   for mode, sections in pairs(theme) do
+    --     for section, properties in pairs(sections) do
+    --       if section ~= "a" and section ~= "b" then
+    --         properties.bg = "none"
+    --       else
+    --         properties.bg = vscode[mode][section].bg
+    --       end
+    --     end
+    --   end
+    --   return theme
+    -- end
+    --
+    -- opts.options.theme = make_bg_transparent(vscode)
 
     local mode_actions = {
       ["n"] = get_icons "Normal",
