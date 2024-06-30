@@ -21,7 +21,6 @@ return {
     sources = {
       "filesystem",
       "buffers",
-      "git_status",
     },
 
     source_selector = {
@@ -30,7 +29,6 @@ return {
       sources = {
         { source = "filesystem", name = "File System", icon = get_icons("FolderClosed", 1) .. "File" },
         { source = "buffers", name = "Buffers", icon = get_icons("DefaultFile", 1) .. "Bufs" },
-        { source = "git_status", name = "Git Status", icon = get_icons("Git", 1) .. "Git" },
       },
     },
   },
