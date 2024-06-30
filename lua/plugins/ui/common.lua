@@ -1,13 +1,8 @@
 return {
   {
-    "maxmx03/solarized.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.o.background = "dark"
-
-      vim.cmd.colorscheme "solarized"
-    end,
+    "sainnhe/sonokai",
+    event = "VeryLazy",
+    config = function() vim.cmd "colorscheme sonokai" end,
   },
   {
     "NvChad/nvim-colorizer.lua",

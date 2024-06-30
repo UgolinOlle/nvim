@@ -10,3 +10,7 @@ for _, source in ipairs {
   local active, fault = pcall(require, source)
   if not active then vim.api.nvim_err_writeln("An error occured, failed to load " .. source .. "\n\n" .. fault) end
 end
+
+-- CUSTOM TEMP
+local local_config = vim.fn.expand ".nvimrc"
+if vim.fn.filereadable(local_config) == 1 then vim.cmd("source " .. local_config) end
