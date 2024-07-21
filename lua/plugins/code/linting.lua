@@ -15,6 +15,32 @@ return {
       typescript = { "eslint" },
       typescriptreact = { "eslint" },
       javascriptreact = { "eslint" },
+      c = { "norminette" },
+    }
+
+    lint.linters.norminette = {
+      cmd = "norminette",
+      stdin = false,
+      args = {},
+      stream = "stdout",
+      ignore_exitcode = true,
+      parser = function(output, _)
+        local diagnostics = {}
+        local lines = vim.split(output, "\n")
+        for _, line in ipairs(lines) do
+          local filename, lnum, col, message = string.match(line, "(.-):(%d+):(%d+): (.*)")
+          if filename and lnum and col and message then
+            table.insert(diagnostics, {
+              lnum = tonumber(lnum) - 1,
+              col = tonumber(col) - 1,
+              message = message,
+              severity = vim.diagnostic.severity.ERROR,
+              source = "norminette",
+            })
+          end
+        end
+        return diagnostics
+      end,
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

@@ -7,43 +7,10 @@ return {
     local active, conform = pcall(require, "conform")
     if not active then return end
 
-    local function go_formatter(bufnr)
-      local gofmt = {
-        cmd = "gofmt",
-        args = {},
-        stdin = true,
-      }
-      local goimports = {
-        cmd = "goimports",
-        args = {},
-        stdin = true,
-      }
-      conform.format(bufnr, gofmt)
-      conform.format(bufnr, goimports)
-    end
-
     conform.setup {
-      filetype = {
-        javascript = {
-          function()
-            if vim.g.use_standard then
-              return {
-                exe = "standard",
-                args = { "--fix", "--stdin" },
-                stdin = true,
-              }
-            else
-              return {
-                exe = "prettier",
-                args = { "--stdin-filepath", util.escape_path(util.get_current_buffer_file_path()), "--single-quote" },
-                stdin = true,
-              }
-            end
-          end,
-        },
-      },
       formatters_by_ft = {
         typescript = { "prettier" },
+        javascript = { "prettier" },
         jjavascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         css = { "prettier" },
@@ -53,12 +20,21 @@ return {
         scss = { "prettier" },
         lua = { "stylua" },
         go = { "gofmt" },
+        c = { "c_formatter_42" },
       },
 
       format_on_save = {
         lsp_fallback = true,
         async = false,
         timeout_ms = 500,
+      },
+
+      formatters = {
+        c_formatter_42 = {
+          command = "c_formatter_42",
+          args = { "$FILENAME" },
+          stdin = false,
+        },
       },
     }
   end,
