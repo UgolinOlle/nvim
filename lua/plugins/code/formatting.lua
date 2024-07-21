@@ -21,6 +21,7 @@ return {
         lua = { "stylua" },
         go = { "gofmt" },
         c = { "c_formatter_42" },
+        cpp = { "c_formatter_42" },
       },
 
       format_on_save = {

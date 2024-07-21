@@ -16,6 +16,7 @@ return {
       typescriptreact = { "eslint" },
       javascriptreact = { "eslint" },
       c = { "norminette" },
+      cpp = { "norminette" },
     }
 
     lint.linters.norminette = {
