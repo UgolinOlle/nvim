@@ -39,4 +39,15 @@ return {
     },
     config = true,
   },
+  {
+    "eduardomosko/header42.nvim",
+    lazy = false,
+    opts = {
+      user = "uolle",
+      mail = "marvin@42.fr",
+    },
+    keys = {
+      { "<LEADER>h", "<CMD>Stdheader<CR>" },
+    },
+  },
 }
