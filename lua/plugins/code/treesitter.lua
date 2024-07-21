@@ -14,8 +14,6 @@ return {
     },
 
     opts = {
-      autoinstall = true,
-
       highlight = {
         enable = true,
         use_languagetree = true,
@@ -51,19 +49,8 @@ return {
         "php",
         "cpp",
         "c",
-        "java",
         "python",
         "go",
-      },
-
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
       },
     },
   },
