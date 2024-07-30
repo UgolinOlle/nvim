@@ -41,6 +41,8 @@ local options = {
     termguicolors = true, -- true color support
     signcolumn = "yes", -- always show sign column
     cmdheight = 0, -- height of command line
+    colorcolumn = "120", -- column to highlight
+    textwidth = 120, -- text width
   },
 
   g = {

@@ -37,6 +37,27 @@ return {
           stdin = false,
         },
       },
+
+      filetypes = {
+        ["*"] = {
+          function()
+            return {
+              exe = "prettier",
+              args = { "--print-width", "120" },
+              stdin = true,
+            }
+          end,
+        },
+        lua = {
+          function()
+            return {
+              exe = "stylua",
+              args = { "--column-width", "120", "-" },
+              stdin = true,
+            }
+          end,
+        },
+      },
     }
   end,
 }

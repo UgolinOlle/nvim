@@ -5,8 +5,8 @@ return {
     config = function() vim.cmd "colorscheme sonokai" end,
   },
   {
-    "NvChad/nvim-colorizer.lua",
-    config = function() require("colorizer").setup() end,
+    "norcalli/nvim-colorizer.lua",
+    config = function() require("colorizer").setup {} end,
   },
   {
     "ziontee113/icon-picker.nvim",
