@@ -1,4 +1,31 @@
 local get_icons = require("whoa.utils").get_icons
+local colors = {
+  blue = "#80a0ff",
+  cyan = "#79dac8",
+  black = "#080808",
+  white = "#c6c6c6",
+  red = "#ff5189",
+  violet = "#8338ec",
+  grey = "#303030",
+}
+
+local bubbles_theme = {
+  normal = {
+    a = { fg = colors.white, bg = colors.violet },
+    b = { fg = colors.white, bg = colors.grey },
+    c = { fg = colors.white },
+  },
+
+  insert = { a = { fg = colors.black, bg = colors.blue } },
+  visual = { a = { fg = colors.black, bg = colors.cyan } },
+  replace = { a = { fg = colors.black, bg = colors.red } },
+
+  inactive = {
+    a = { fg = colors.white, bg = colors.black },
+    b = { fg = colors.white, bg = colors.black },
+    c = { fg = colors.white },
+  },
+}
 
 return {
   "nvim-lualine/lualine.nvim",
@@ -6,23 +33,6 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
 
   config = function(_, opts)
-    -- local vscode = require "lualine.themes.vscode"
-    --
-    -- local function make_bg_transparent(theme)
-    --   for mode, sections in pairs(theme) do
-    --     for section, properties in pairs(sections) do
-    --       if section ~= "a" and section ~= "b" then
-    --         properties.bg = "none"
-    --       else
-    --         properties.bg = vscode[mode][section].bg
-    --       end
-    --     end
-    --   end
-    --   return theme
-    -- end
-    --
-    -- opts.options.theme = make_bg_transparent(vscode)
-
     local mode_actions = {
       ["n"] = get_icons "Normal",
       ["i"] = get_icons "Insert",
@@ -38,13 +48,20 @@ return {
     end
 
     opts.options.sections = {
-      lualine_a = { mode },
-      lualine_b = { "branch" },
-      lualine_c = { "filename" },
+      lualine_a = {
+        { mode, separator = { left = "" }, right_padding = 2 },
+      },
+      lualine_b = {
+        "branch",
+      },
+      lualine_c = {
+        "filename",
+      },
       lualine_x = { "copilot", "encoding", "fileformat", "filetype" },
       lualine_y = { "progress" },
       lualine_z = { "location" },
     }
+
     require("lualine").setup(opts)
   end,
 
@@ -52,8 +69,9 @@ return {
     options = {
       icons_enabled = true,
       always_divide_middle = true,
-      component_separators = "│",
-      section_separators = "",
+      theme = bubbles_theme,
+      component_separators = "",
+      section_separators = { left = "", right = "" },
       disabled_filetypes = {
         statusline = { "neo-tree" },
       },
