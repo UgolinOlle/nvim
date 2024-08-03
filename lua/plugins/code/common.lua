@@ -1,5 +1,12 @@
 return {
   {
+    "andweeb/presence.nvim",
+    opts = {
+      client_id = "445957680729817088",
+      log_level = "debug",
+    },
+  },
+  {
     "nvim-lua/plenary.nvim",
     lazy = true,
   },
