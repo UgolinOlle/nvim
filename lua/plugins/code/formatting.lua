@@ -11,7 +11,7 @@ return {
       formatters_by_ft = {
         typescript = { "prettier" },
         javascript = { "prettier" },
-        jjavascriptreact = { "prettier" },
+        javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         css = { "prettier" },
         html = { "prettier" },
@@ -22,6 +22,7 @@ return {
         go = { "gofmt" },
         c = { "c_formatter_42" },
         cpp = { "c_formatter_42" },
+        mdx = { "prettier" },
       },
 
       format_on_save = {
@@ -40,6 +41,24 @@ return {
 
       filetypes = {
         ["*"] = {
+          function()
+            return {
+              exe = "prettier",
+              args = { "--print-width", "120" },
+              stdin = true,
+            }
+          end,
+        },
+        md = {
+          function()
+            return {
+              exe = "prettier",
+              args = { "--print-width", "120" },
+              stdin = true,
+            }
+          end,
+        },
+        mdx = {
           function()
             return {
               exe = "prettier",
