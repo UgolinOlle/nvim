@@ -1,8 +1,14 @@
 return {
   {
-    "sainnhe/sonokai",
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
     event = "VeryLazy",
-    config = function() vim.cmd "colorscheme sonokai" end,
+    config = function()
+      vim.cmd "colorscheme catppuccin"
+      vim.cmd "hi FloatBorder guibg=NONE guifg=#F2E2C3"
+      vim.cmd "hi NormalFloat guibg=NONE"
+    end,
   },
   {
     "norcalli/nvim-colorizer.lua",

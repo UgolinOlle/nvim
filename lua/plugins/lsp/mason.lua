@@ -16,10 +16,10 @@ return {
     local active, mason = pcall(require, "mason")
     if not active then return end
 
-    local active, mason_lspconfig = pcall(require, "mason-lspconfig")
+    local _, mason_lspconfig = pcall(require, "mason-lspconfig")
     if not active then return end
 
-    local active, mason_tool = pcall(require, "mason-tool-installer")
+    local _, mason_tool = pcall(require, "mason-tool-installer")
     if not active then return end
 
     -- Setup Mason
@@ -45,7 +45,7 @@ return {
         "gopls",
       },
 
-      automatic_installation = true, -- Automatically install the missing servers
+      automatic_installation = true,
     }
 
     mason_tool.setup {

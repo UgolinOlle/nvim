@@ -47,6 +47,7 @@ local options = {
 
   g = {
     icons_enabled = true, -- enable icons
+    border_enabled = true, -- enable border
   },
 
   o = {

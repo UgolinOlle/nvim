@@ -63,17 +63,55 @@ return {
         end,
       })
 
+      -- Setup LSP UI
+      vim.diagnostic.config {
+        signs = true,
+        underline = true,
+        virtual_text = false,
+        virtual_lines = false,
+        update_in_insert = true,
+        float = {
+          -- UI.
+          header = false,
+          border = "rounded",
+          focusable = true,
+        },
+      }
+
+      -- Setup LSP capabilities
       local capabilities = cmp_nvim_lsp.default_capabilities()
+
+      -- Setup LSP symbols
       local signs = {
         Error = get_icons "DiagnosticError",
         Warn = get_icons "DiagnosticWarn",
         Hint = get_icons "DiagnosticHint",
         Info = get_icons "DiagnosticInfo",
       }
+
       for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
       end
+
+      -- Setup LSP handlers
+      local handlers = {
+        ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+          border = "rounded",
+        }),
+        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+          border = "rounded",
+        }),
+        ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+          underline = true,
+          update_in_insert = false,
+          virtual_text = { spacing = 4, prefix = "●" },
+          severity_sort = true,
+          float = { border = "rounded" },
+        }),
+      }
+
+      -- Setup server name
       local server_name = {
         "bashls",
         "cssls",
@@ -86,7 +124,6 @@ return {
         "yamlls",
         "clangd",
         "tailwindcss",
-        "terraformls",
         "dartls",
       }
 
@@ -95,9 +132,7 @@ return {
           capabilities = capabilities,
           on_attach = mason_lspconfig.on_attach,
           flags = { debounce_text_changes = 150 },
-          handlers = {
-            ["textDocument/signatureHelp"] = function() end,
-          },
+          handlers = handlers,
         }
       end
 
@@ -138,17 +173,6 @@ return {
         },
       }
     end,
-
-    opts = {
-      window = {
-        completion = {
-          border = "rounded",
-        },
-        documentation = {
-          border = "rounded",
-        },
-      },
-    },
   },
   {
     "VidocqH/lsp-lens.nvim",

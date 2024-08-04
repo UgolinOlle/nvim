@@ -51,6 +51,16 @@ return {
 
     -- Setup cmp
     cmp.setup {
+      -- Configure UI
+      window = {
+        completion = {
+          border = "rounded",
+        },
+        documentation = {
+          border = "rounded",
+        },
+      },
+
       -- Configure sources
       sources = cmp.config.sources {
         { name = "nvim_lsp" }, -- Source for LSP completions
