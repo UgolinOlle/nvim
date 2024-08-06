@@ -1,11 +1,11 @@
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "datsfilipe/min-theme.nvim",
+    name = "min-theme",
     priority = 1000,
     event = "VeryLazy",
     config = function()
-      vim.cmd "colorscheme catppuccin"
+      vim.cmd "colorscheme min-theme"
       vim.cmd "hi FloatBorder guibg=NONE guifg=#F2E2C3"
       vim.cmd "hi NormalFloat guibg=NONE"
     end,
