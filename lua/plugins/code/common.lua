@@ -3,8 +3,11 @@ return {
     "andweeb/presence.nvim",
     opts = {
       client_id = "445957680729817088",
-      log_level = "debug",
     },
+  },
+  {
+    "ziontee113/icon-picker.nvim",
+    config = function() require("icon-picker").setup { disable_legacy_commands = true } end,
   },
   {
     "nvim-lua/plenary.nvim",
@@ -29,32 +32,5 @@ return {
 
       return comment_string_active and comment_string and { pre_hook = comment_string.create_pre_hook() } or {}
     end,
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && yarn install",
-    init = function() vim.g.mkdp_filetypes = { "markdown" } end,
-    ft = { "markdown" },
-  },
-  {
-    "akinsho/flutter-tools.nvim",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim",
-    },
-    config = true,
-  },
-  {
-    "eduardomosko/header42.nvim",
-    lazy = false,
-    opts = {
-      user = "uolle",
-      mail = "marvin@42.fr",
-    },
-    keys = {
-      { "<LEADER>h", "<CMD>Stdheader<CR>" },
-    },
   },
 }
