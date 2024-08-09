@@ -1,6 +1,8 @@
 return {
   "mfussenegger/nvim-lint",
 
+  name = "Lint",
+
   event = {
     "BufReadPre",
     "BufNewFile",

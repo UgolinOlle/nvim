@@ -1,10 +1,14 @@
 return {
   "luckasRanarison/nvim-devdocs",
+
+  name = "Devdocs",
+
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
+
   cmd = {
     "DevdocsFetch",
     "DevdocsInstall",
@@ -17,6 +21,7 @@ return {
     "DevdocsUpdateAll",
     "DevdocsBuild",
   },
+
   opts = {
     format = "markdown",
     ensure_installed = {

@@ -1,6 +1,8 @@
 return {
   "rcarriga/nvim-notify",
 
+  name = "Notify",
+
   event = "BufReadPre",
 
   opts = {

@@ -28,8 +28,13 @@ local bubbles_theme = {
 }
 
 return {
+
   "nvim-lualine/lualine.nvim",
+
+  name = "Lualine",
+
   event = { "BufReadPost", "BufNewFile" },
+
   dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
 
   config = function(_, opts)

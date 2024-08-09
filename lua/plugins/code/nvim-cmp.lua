@@ -1,6 +1,8 @@
 return {
   "hrsh7th/nvim-cmp",
 
+  name = "Completion",
+
   event = "InsertEnter",
 
   dependencies = {

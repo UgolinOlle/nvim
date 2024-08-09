@@ -5,6 +5,8 @@ local get_icons = utils.get_icons
 return {
   "folke/noice.nvim",
 
+  name = "Noice",
+
   dependencies = {
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",

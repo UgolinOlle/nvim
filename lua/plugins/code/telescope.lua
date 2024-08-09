@@ -1,6 +1,8 @@
 return {
   "nvim-telescope/telescope.nvim",
 
+  name = "Telescope",
+
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope-node-modules.nvim",

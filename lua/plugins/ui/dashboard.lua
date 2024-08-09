@@ -1,7 +1,12 @@
 return {
   "nvimdev/dashboard-nvim",
+
+  name = "Dashboard",
+
   dependencies = { "nvim-tree/nvim-web-devicons" },
+
   event = "VimEnter",
+
   config = function()
     local function key(shortcut)
       shortcut.icon_hl = shortcut.icon_hl or "Title"

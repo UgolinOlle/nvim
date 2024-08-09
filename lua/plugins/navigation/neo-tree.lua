@@ -4,6 +4,8 @@ local get_icons = require("whoa.utils").get_icons
 return {
   "nvim-neo-tree/neo-tree.nvim",
 
+  name = "Neo Tree",
+
   branch = "main",
 
   dependencies = {

@@ -1,12 +1,17 @@
 return {
   "romgrk/barbar.nvim",
+
+  name = "Barbar",
+
   dependencies = {
     "lewis6991/gitsigns.nvim",
     "nvim-tree/nvim-web-devicons",
   },
+
   version = "^1.0.0",
-  name = "barbar",
+
   init = function() vim.g.barbar_auto_setup = false end,
+
   opts = {
     animation = true,
     insert_at_start = true,

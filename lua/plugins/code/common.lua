@@ -1,20 +1,22 @@
 return {
   {
-    "andweeb/presence.nvim",
-    opts = {
-      client_id = "445957680729817088",
-    },
-  },
-  {
     "ziontee113/icon-picker.nvim",
+
+    name = "Icon Picker",
+
     config = function() require("icon-picker").setup { disable_legacy_commands = true } end,
   },
   {
     "nvim-lua/plenary.nvim",
+
+    name = "Plenary",
+
     lazy = true,
   },
   {
     "windwp/nvim-autopairs",
+
+    name = "Auto Pairs",
 
     event = "InsertEnter",
 
@@ -25,6 +27,8 @@ return {
   },
   {
     "numToStr/Comment.nvim",
+
+    name = "Comment",
 
     opts = function()
       local comment_string_active, comment_string = pcall(require, "ts_context_commentstring.integrations.comment_nvim")

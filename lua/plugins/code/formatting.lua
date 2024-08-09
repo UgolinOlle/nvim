@@ -1,13 +1,18 @@
 return {
   "stevearc/conform.nvim",
 
+  name = "Conform",
+
   event = { "BufReadPre", "BufNewFile" },
 
   config = function()
+    -- Check if the plugin is active
     local active, conform = pcall(require, "conform")
     if not active then return end
 
+    -- Setup formatting
     conform.setup {
+      -- Setup formatter for each filetype
       formatters_by_ft = {
         typescript = { "prettier" },
         javascript = { "prettier" },
@@ -25,12 +30,14 @@ return {
         mdx = { "prettier" },
       },
 
+      -- Formatting options
       format_on_save = {
         lsp_fallback = true,
         async = false,
         timeout_ms = 500,
       },
 
+      -- Specific formatters
       formatters = {
         c_formatter_42 = {
           command = "c_formatter_42",
@@ -39,6 +46,7 @@ return {
         },
       },
 
+      -- Filetype specific formatters configuration
       filetypes = {
         ["*"] = {
           function()
