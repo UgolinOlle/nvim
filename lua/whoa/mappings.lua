@@ -85,7 +85,7 @@ keymap("v", ">", ">gv^", opts)
 
 -- Lazy
 opts.desc = "Open Lazy package manager"
-keymap("n", "<LEADER>L", "<CMD>Lazy<CR>", opts)
+keymap("n", "<LEADER>l", "<CMD>Lazy<CR>", opts)
 
 -- Mason
 opts.desc = "Mason home"
@@ -93,10 +93,6 @@ keymap("n", "<LEADER>pp", "<CMD>Mason<CR>", opts)
 
 opts.desc = "Mason update"
 keymap("n", "<LEADER>pM", "<CMD>MasonUpdate<CR>", opts)
-
--- Neo tree
-opts.desc = "Open NeoTree"
-keymap("n", "<LEADER>e", "<CMD>Neotree toggle<CR>", opts)
 
 -- Icon picker
 opts.desc = "Open icon picker"
@@ -107,13 +103,6 @@ keymap("n", "<LEADER>y", "<CMD>IconPickerYank<CR>", opts)
 
 opts.desc = "Insert icon"
 keymap("n", "<C-i>", "<CMD>IconPickerInsert<CR>", opts)
-
--- DBUI
-opts.desc = "Open DBUI"
-keymap("n", "<LEADER>du", "<CMD>DBUIToggle<CR>", opts)
-
-opts.desc = "Add DBUI connection"
-keymap("n", "<LEADER>da", "<CMD>DBUIAddConnection<CR>", opts)
 
 -- Devdocs
 opts.desc = "Open Devdocs"
@@ -126,23 +115,9 @@ keymap("n", "<LEADER>ds", "<CMD>DevdocsOpenCurrentFloat<CR>", opts)
 opts.desc = "Conform info"
 keymap("n", "<LEADER>ci", "<CMD>ConformInfo<CR>", opts)
 
--- Outline
-opts.desc = "Open outline"
-keymap("n", "<LEADER>o", "<CMD>Outline<CR>", opts)
-
--- Noice
-opts.desc = "Show last message"
-keymap("n", "gl", "<CMD>lua require('noice').cmd 'last'<CR>", opts)
-
-opts.desc = "Show messages"
-keymap("n", "gm", "<CMD>messages<CR>", opts)
-
 -- Notify
 opts.desc = "Dismiss notifications"
 keymap("n", "<LEADER>nn", "<CMD>lua require('notify').dismiss()<CR>", opts)
-
-opts.desc = "List notifications"
-keymap("n", "<LEADER>nl", "<CMD>Notifications<CR>", opts)
 
 -- Which key
 opts.desc = "Open which key"

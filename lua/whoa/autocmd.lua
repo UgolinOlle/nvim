@@ -26,3 +26,13 @@ autocmd("TermOpen", {
     vim.opt.signcolumn = "no"
   end,
 })
+
+-- Automatically open NeoTree when vim is opened on a directory.
+-- autocmd("BufEnter", {
+--   group = vim.api.nvim_create_augroup("Neotree_open", { clear = true }),
+--   desc = "Start Neo-tree",
+--   once = true,
+--   callback = function()
+--     if package.loaded["neo-tree"] then vim.cmd [[ Neotree ]] end
+--   end,
+-- })

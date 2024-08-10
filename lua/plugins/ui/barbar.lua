@@ -18,10 +18,11 @@ return {
     tabpages = true,
     clickable = true,
     hide = { extensions = true, inactive = false },
-    preset = "slant",
+    preset = "slanted",
     sidebar_filetypes = {
+      Explorer = true,
+      Outline = true,
       ["neo-tree"] = { event = "BufWipeout" },
-      Outline = { event = "BufWinLeave", text = "symbols-outline", align = "right" },
     },
   },
 }

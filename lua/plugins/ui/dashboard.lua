@@ -22,7 +22,7 @@ return {
           key {
             icon = " ",
             desc = "Whoa Agency",
-            key = "w",
+            key = "1",
             action = function()
               require("telescope.builtin").find_files {
                 prompt_title = "Select Folder",
@@ -32,14 +32,14 @@ return {
           },
           key {
             icon = " ",
-            desc = "Config files",
-            key = "f",
+            desc = "Configuration",
+            key = "2",
             action = function() require("telescope.builtin").find_files { cwd = "~/.config" } end,
           },
           key {
             icon = "󰢱 ",
             desc = "Package manager",
-            key = "p",
+            key = "3",
             action = "Lazy",
           },
         },
