@@ -17,6 +17,9 @@ keymap("n", "Q", "<CMD>confirm q<CR>", opts)
 opts.desc = "Make the current file executable"
 keymap("n", "<LEADER>x", "<CMD>!chmod +x %<CR>", opts)
 
+opts.desc = "Select theme"
+keymap("n", "<leader>st", '<cmd>lua require("whoa.core.theme").list_themes()<CR>', opts)
+
 -- Tabs
 opts.desc = "New tab"
 keymap("n", "<LEADER>te", "<CMD>tabnew<CR>", opts)

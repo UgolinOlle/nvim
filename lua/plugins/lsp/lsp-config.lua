@@ -75,7 +75,6 @@ return {
         virtual_lines = false,
         update_in_insert = true,
         float = {
-          -- UI.
           header = false,
           border = "rounded",
           focusable = true,
@@ -103,7 +102,7 @@ return {
         ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
           border = "rounded",
         }),
-        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, {
           border = "rounded",
         }),
         ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -155,23 +154,6 @@ return {
                 [vim.fn.expand "$VIMRUNTIME/lua"] = true,
                 [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
               },
-            },
-          },
-        },
-      }
-
-      lspconfig["gopls"].setup {
-        capabilities = capabilities,
-        on_attach = function(client, bufnr)
-          mason_lspconfig.on_attach(client, bufnr)
-          require("lint").try_lint()
-        end,
-        flags = { debounce_text_changes = 150 },
-        settings = {
-          gopls = {
-            staticcheck = true,
-            analyses = {
-              unusedparams = true,
             },
           },
         },
