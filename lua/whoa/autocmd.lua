@@ -27,12 +27,30 @@ autocmd("TermOpen", {
   end,
 })
 
--- Automatically open NeoTree when vim is opened on a directory.
--- autocmd("BufEnter", {
---   group = vim.api.nvim_create_augroup("Neotree_open", { clear = true }),
---   desc = "Start Neo-tree",
---   once = true,
---   callback = function()
---     if package.loaded["neo-tree"] then vim.cmd [[ Neotree ]] end
---   end,
--- })
+-- Check if file need to be reload
+autocmd("BufWritePost", {
+  pattern = "*",
+  callback = function()
+    if vim.bo.modifiable and vim.bo.buftype == "" then vim.cmd "checktime" end
+  end,
+})
+
+-- Highlight on yank
+autocmd("TextYankPost", {
+  pattern = "*",
+  callback = function() vim.highlight.on_yank { higroup = "Visual", timeout = 200 } end,
+})
+
+-- Automatically save file when focus is lost
+autocmd("FocusLost", {
+  pattern = "*",
+  callback = function() vim.cmd "silent! wa" end,
+})
+
+-- Autosave
+autocmd({ "CursorMoved", "CursorMovedI", "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
+  pattern = "*",
+  callback = function()
+    if vim.bo.modified then vim.cmd "silent! update" end
+  end,
+})
