@@ -47,12 +47,14 @@ function M.list_themes()
     row = (vim.o.lines - ((#themes * 3) + 2)) / 2,
     style = "minimal",
     border = "rounded",
+    title = " Select a Theme: ",
+    title_pos = "left",
   }
 
   local win = vim.api.nvim_open_win(buf, true, opts)
 
   -- Adding the list of themes to the buffer
-  vim.api.nvim_buf_set_lines(buf, 0, -1, false, { "Select a Theme:", "" })
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, { "" })
   vim.api.nvim_buf_add_highlight(buf, -1, "TitleBold", 0, 0, -1)
 
   for i, theme in ipairs(themes) do
