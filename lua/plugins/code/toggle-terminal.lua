@@ -1,16 +1,17 @@
 return {
   "akinsho/toggleterm.nvim",
+
+  name = "Toggle Terminal",
+
   version = "main",
+
   cmd = {
     "ToggleTerm",
   },
+
   config = true,
+
   keys = {
-    {
-      "<LEADER>tv",
-      "<CMD>ToggleTerm direction=vertical<CR>",
-      { noremap = true, silent = true, desc = "Toggle vertical terminal" },
-    },
     {
       "<LEADER>th",
       "<CMD>ToggleTerm direction=horizontal<CR>",
