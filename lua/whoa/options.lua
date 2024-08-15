@@ -32,7 +32,7 @@ local options = {
     linebreak = true, -- wrap lines at convenient points
 
     -- ui
-    titlestring = "nvim",
+    titlestring = "WhoaIDE",
     title = true, -- set the title of the window to the value of the titlestring
     pumheight = 10, -- max height of popup menu
     showmode = false, -- don't show mode
