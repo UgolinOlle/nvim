@@ -37,4 +37,8 @@ return {
       },
     },
   },
+
+  keys = {
+    { "<LEADER>e", "<CMD>Neotree toggle<CR>", { noremap = true, silent = true, desc = "Open Neotree" } },
+  },
 }
