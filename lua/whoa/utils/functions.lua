@@ -45,4 +45,21 @@ function M.ft_create_cmd(cmd, fn, opts)
   api.nvim_create_user_command(cmd, fn, opts)
 end
 
+-- Create a group of autocommands.
+--
+-- @param name string: The name of the group.
+-- @param commands table: The commands to be created.
+-- @return nil
+function M.ft_augroup(name, commands)
+  local group_id = vim.api.nvim_create_augroup(name, { clear = true })
+
+  for _, cmd in ipairs(commands) do
+    vim.api.nvim_create_autocmd(cmd.events, {
+      group = group_id,
+      pattern = cmd.targets,
+      command = cmd.command,
+    })
+  end
+end
+
 return M

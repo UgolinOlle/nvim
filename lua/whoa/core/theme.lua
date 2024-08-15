@@ -19,7 +19,14 @@ vim.api.nvim_set_hl(0, "TitleBold", { bold = true, ctermfg = "Yellow", ctermbg =
 -- Apply a theme
 -- @param theme_name string: The name of the theme to apply
 function M.set_theme(theme_name)
-  local success, _ = pcall(function() vim.cmd("colorscheme " .. theme_name) end)
+  local success, _ = pcall(function()
+    vim.cmd("colorscheme " .. theme_name)
+    vim.cmd [[ 
+      hi FloatBorder guibg=NONE guifg=#F2E2C3
+      hi PmenuSel guibg=NONE guifg=#F2E2C3
+      hi Pmenu guibg=NONE guifg=#FFFFFF
+    ]]
+  end)
 
   if not success then notify("Error: Cannot find color scheme '" .. theme_name .. "'", vim.log.levels.ERROR) end
 

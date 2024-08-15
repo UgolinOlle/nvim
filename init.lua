@@ -4,8 +4,8 @@ for _, source in ipairs {
   "whoa.options",
   "whoa.mappings",
   "whoa.lazy",
-  "whoa.autocmd",
   "whoa.commands",
+  "whoa.core",
 } do
   local active, fault = pcall(require, source)
   if not active then vim.api.nvim_err_writeln("An error occured, failed to load " .. source .. "\n\n" .. fault) end
