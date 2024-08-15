@@ -10,10 +10,8 @@ local M = {}
 -- Variables
 local notify = require("whoa.utils").notify
 local themes = {
-  { name = "Hack the Box", icon = "" },
-  { name = "Catppuccino", icon = "" },
-  { name = "Github Dark", icon = "" },
-  { name = "Gruvbox", icon = "" },
+  { title = "Hack the Box", name = "hackthebox", icon = "" },
+  { title = "Github Dark", name = "github_dark", icon = "" },
 }
 
 vim.api.nvim_set_hl(0, "TitleBold", { bold = true, ctermfg = "Yellow", ctermbg = "Blue" })
@@ -21,13 +19,7 @@ vim.api.nvim_set_hl(0, "TitleBold", { bold = true, ctermfg = "Yellow", ctermbg =
 -- Apply a theme
 -- @param theme_name string: The name of the theme to apply
 function M.set_theme(theme_name)
-  local success, _ = pcall(function()
-    if theme_name == "Catppuccino" then
-      vim.cmd "colorscheme catppuccin-mocha"
-    else
-      vim.cmd("colorscheme " .. theme_name)
-    end
-  end)
+  local success, _ = pcall(function() vim.cmd("colorscheme " .. theme_name) end)
 
   if not success then notify("Error: Cannot find color scheme '" .. theme_name .. "'", vim.log.levels.ERROR) end
 
@@ -41,8 +33,8 @@ function M.list_themes()
   -- Window options
   local opts = {
     relative = "editor",
-    width = 40, -- Increase width of the window
-    height = (#themes * 3) + 4, -- Adjust height to add space below each title
+    width = 40,
+    height = (#themes * 3) + 4,
     col = (vim.o.columns - 40) / 2,
     row = (vim.o.lines - ((#themes * 3) + 2)) / 2,
     style = "minimal",
@@ -58,7 +50,7 @@ function M.list_themes()
   vim.api.nvim_buf_add_highlight(buf, -1, "TitleBold", 0, 0, -1)
 
   for i, theme in ipairs(themes) do
-    local line_content = theme.icon .. "  " .. theme.name
+    local line_content = theme.icon .. "  " .. theme.title
     vim.api.nvim_buf_set_lines(buf, (i - 1) * 3 + 2, (i - 1) * 3 + 3, false, { line_content, "" })
   end
 
@@ -97,6 +89,8 @@ function M.select_theme()
 
   -- Apply the selected theme
   local theme = themes[theme_index]
+  print("Theme: " .. themes[theme_index].name .. " selected")
+  print("Selected theme: " .. theme.name)
   if theme then M.set_theme(theme.name) end
 end
 

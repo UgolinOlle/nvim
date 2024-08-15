@@ -16,18 +16,14 @@ return {
 
     priority = 1000,
 
-    event = "VeryLazy",
+    lazy = true,
+  },
+  {
+    "projekt0n/github-nvim-theme",
 
-    config = function()
-      vim.cmd [[ 
-        colorscheme hackthebox
-        hi FloatBorder guibg=NONE guifg=#F2E2C3
-        hi PmenuSel guibg=NONE guifg=#F2E2C3
-        hi Pmenu guibg=NONE guifg=#FFFFFF
-        hi NormalFloat guibg=NONE
-        hi Pmenu guibg=NONE
-      ]]
-    end,
+    lazy = true,
+
+    priority = 1000,
   },
   {
     "norcalli/nvim-colorizer.lua",

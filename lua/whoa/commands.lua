@@ -6,3 +6,11 @@ ft_create_cmd("WhoaUpdateAll", ft_update_all)
 
 -- Command to check health of Whoa.
 ft_create_cmd("WhoaHealth", check)
+
+vim.cmd [[ 
+  hi FloatBorder guibg=NONE guifg=#F2E2C3
+  hi PmenuSel guibg=NONE guifg=#F2E2C3
+  hi Pmenu guibg=NONE guifg=#FFFFFF
+  hi NormalFloat guibg=NONE
+  hi Pmenu guibg=NONE
+]]
