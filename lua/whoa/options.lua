@@ -44,6 +44,20 @@ local options = {
     cmdheight = 0, -- height of command line
     colorcolumn = "120", -- column to highlight
     textwidth = 120, -- text width
+    fillchars = {
+      diff = "╱",
+      eob = " ",
+      stl = " ",
+      stlnc = " ",
+      wbr = " ",
+      horiz = "─",
+      horizup = "┴",
+      horizdown = "┬",
+      vert = "│",
+      vertleft = "┤",
+      vertright = "├",
+      verthoriz = "┼",
+    },
   },
 
   g = {

@@ -3,7 +3,7 @@
 -- Many utility functions
 --
 -- @module whoa.utils
--- @copyright 2023
+-- @copyright 2024
 
 local M = {}
 
@@ -34,7 +34,11 @@ end
 ---@param type? number Notification type
 ---@param opts? table nvim-notify options to add
 function M.notify(content, type, opts)
-  vim.schedule(function() vim.notify(content, type, M.extend_opts({ title = "Whoa" }, opts)) end)
+  if vim.notify then
+    vim.schedule(function() vim.notify(content, type, M.extend_opts({ title = "WhoaIDE" }, opts)) end)
+  else
+    print(content)
+  end
 end
 
 -- Execute a shell command and return the output

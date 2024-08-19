@@ -2,7 +2,7 @@
 --
 -- Module for selecting and applying themes.
 --
--- @module theme_selector
+-- @module whoa.core.theme
 -- @copyright 2024
 
 local M = {}
@@ -20,12 +20,13 @@ vim.api.nvim_set_hl(0, "TitleBold", { bold = true, ctermfg = "Yellow", ctermbg =
 -- @param theme_name string: The name of the theme to apply
 function M.set_theme(theme_name)
   local success, _ = pcall(function()
-    vim.cmd("colorscheme " .. theme_name)
     vim.cmd [[ 
+      hi NormalFloat guibg=#1e222a guifg=#abb2bf
       hi FloatBorder guibg=NONE guifg=#F2E2C3
       hi PmenuSel guibg=NONE guifg=#F2E2C3
       hi Pmenu guibg=NONE guifg=#FFFFFF
     ]]
+    vim.cmd("colorscheme " .. theme_name)
   end)
 
   if not success then notify("Error: Cannot find color scheme '" .. theme_name .. "'", vim.log.levels.ERROR) end

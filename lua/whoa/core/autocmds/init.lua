@@ -79,21 +79,9 @@ autocmd("FileType", {
   callback = function() vim.opt_local.spell = true end,
 })
 
--- Automatically open configuration file vertically for better visibility
-autocmd("BufEnter", {
-  pattern = { "*.json", "*.vim", "*.lua", "*.yml", "*.yaml" },
-  command = "wincmd H",
-})
-
 -- Remind user if he didn't save the file for a long time
 autocmd({ "CursorHold", "CursorHoldI" }, {
   callback = function()
     if vim.bo.modified then vim.notify("N'oubliez pas de sauvegarder votre fichier !", vim.log.levels.WARN) end
   end,
-})
-
--- Show gitsigns on hover
-autocmd("CursorHold", {
-  pattern = "*",
-  command = "silent! lua require('gitsigns').blame_line({full=true})",
 })

@@ -5,6 +5,8 @@ return {
 
   event = "BufReadPre",
 
+  config = function() vim.notify = require "notify" end,
+
   opts = {
     timeout = 100,
     stages = "fade_in_slide_out",

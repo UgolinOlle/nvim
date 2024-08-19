@@ -20,6 +20,9 @@ keymap("n", "<LEADER>x", "<CMD>!chmod +x %<CR>", opts)
 opts.desc = "Select theme"
 keymap("n", "<leader>st", '<cmd>lua require("whoa.core.theme").list_themes()<CR>', opts)
 
+opts.desc = "Create an issue"
+keymap("n", "<leader>gi", '<cmd>lua require("whoa.core.common.issue").ft_issue_popup()<CR>', opts)
+
 -- Tabs
 opts.desc = "New tab"
 keymap("n", "<LEADER>te", "<CMD>tabnew<CR>", opts)
