@@ -34,7 +34,7 @@ return {
       "c",
       "cpp",
       "git",
-      "golang",
+      "php",
     },
     wrap = true,
     previwer_cmd = "glow",

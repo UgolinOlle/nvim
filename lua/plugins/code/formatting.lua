@@ -24,7 +24,7 @@ return {
         markdown = { "prettier" },
         scss = { "prettier" },
         lua = { "stylua" },
-        go = { "gofmt" },
+        php = { "php-cs-fixer", "pint" },
         c = { "c_formatter_42" },
         cpp = { "c_formatter_42" },
         mdx = { "prettier" },

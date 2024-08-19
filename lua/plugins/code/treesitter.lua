@@ -16,6 +16,10 @@ return {
     },
 
     opts = {
+      sync_install = false,
+
+      auto_install = true,
+
       highlight = {
         enable = true,
         use_languagetree = true,
@@ -52,7 +56,6 @@ return {
         "cpp",
         "c",
         "python",
-        "go",
       },
     },
   },
