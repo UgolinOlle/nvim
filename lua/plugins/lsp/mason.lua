@@ -45,7 +45,7 @@ return {
         "cssls",
         "tailwindcss",
         "emmet_ls",
-        "gopls",
+        "phpactor",
       },
 
       automatic_installation = true,

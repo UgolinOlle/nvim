@@ -42,6 +42,13 @@ return {
     },
   },
   {
+    "nvim-tree/nvim-web-devicons",
+
+    name = "Web Devicons",
+
+    lazy = false,
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
 
     name = "Indent Blankline",

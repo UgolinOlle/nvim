@@ -28,6 +28,22 @@ return {
       "buffers",
     },
 
+    default_component_configs = {
+      git_status = {
+        symbols = {
+          added = get_icons("git.GitAdded", 1),
+          modified = get_icons("git.GitChange", 1),
+          deleted = get_icons("git.GitDelete", 1),
+          renamed = get_icons("git.GitRenamed", 1),
+          untracked = get_icons("git.GitUntracked", 1),
+          ignored = get_icons("git.GitIgnored", 1),
+          unstaged = get_icons("git.GitUnstaged", 1),
+          staged = get_icons("git.GitStaged", 1),
+          conflict = get_icons("git.GitConflict", 1),
+        },
+      },
+    },
+
     source_selector = {
       winbar = true,
       content_layout = "center",

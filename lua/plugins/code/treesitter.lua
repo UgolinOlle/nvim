@@ -23,6 +23,7 @@ return {
       highlight = {
         enable = true,
         use_languagetree = true,
+        additional_vim_regex_highlighting = true,
       },
 
       indent = {
@@ -44,18 +45,21 @@ return {
 
       ensure_installed = {
         "html",
-        "json",
+        "css",
         "tsx",
-        "yaml",
         "bash",
         "lua",
-        "vim",
-        "dockerfile",
-        "gitignore",
         "php",
         "cpp",
         "c",
         "python",
+        "twig",
+        "vim",
+
+        "json",
+        "yaml",
+        "dockerfile",
+        "gitignore",
       },
     },
   },

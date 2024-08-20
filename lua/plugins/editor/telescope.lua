@@ -84,6 +84,9 @@ return {
         },
 
         pickets = {
+          find_files = {
+            theme = "dropdown",
+          },
           diagnostics = {
             theme = "ivy",
             initial_mode = "normal",

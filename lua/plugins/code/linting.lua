@@ -18,6 +18,7 @@ return {
       typescriptreact = { "eslint" },
       javascriptreact = { "eslint" },
       php = { "phpcs" },
+      twig = { "twig-lint" },
       c = { "norminette" },
       cpp = { "norminette" },
     }

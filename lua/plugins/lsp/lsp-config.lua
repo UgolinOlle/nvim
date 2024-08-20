@@ -75,7 +75,6 @@ return {
         virtual_lines = false,
         update_in_insert = true,
         float = {
-          header = false,
           border = "rounded",
           focusable = true,
         },
@@ -110,7 +109,11 @@ return {
           update_in_insert = false,
           virtual_text = { spacing = 4, prefix = "●" },
           severity_sort = true,
-          float = { border = "rounded" },
+          float = {
+            focusable = true,
+            style = "minimal",
+            border = "rounded",
+          },
         }),
       }
 
@@ -118,16 +121,14 @@ return {
       local server_name = {
         "bashls",
         "cssls",
-        "dockerls",
         "html",
         "jsonls",
-        "pyright",
         "tsserver",
         "vimls",
         "yamlls",
         "clangd",
         "tailwindcss",
-        "dartls",
+        "twig",
       }
 
       for _, server in ipairs(server_name) do
@@ -153,6 +154,55 @@ return {
               library = {
                 [vim.fn.expand "$VIMRUNTIME/lua"] = true,
                 [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+              },
+            },
+          },
+        },
+      }
+
+      -- Setup emmet_ls server
+      lspconfig["emmet_ls"].setup {
+        capabilities = capabilities,
+        on_attach = mason_lspconfig.on_attach,
+        flags = { debounce_text_changes = 150 },
+        filetypes = { "twig", "html", "css", "javascript", "typescript", "php" },
+        init_options = {
+          html = {
+            options = {
+              ["bem.enabled"] = true,
+            },
+          },
+        },
+      }
+
+      -- Setup intelephense server
+      lspconfig["intelephense"].setup {
+        capabilities = capabilities,
+        on_attach = mason_lspconfig.on_attach,
+        flags = { debounce_text_changes = 150 },
+        settings = {
+          intelephense = {
+            telemetry = {
+              enable = false,
+            },
+            completion = {
+              fullyQualifyGlobalConstantsAndFunctions = true,
+              maxItems = 100,
+            },
+            format = {
+              enable = true,
+            },
+            diagnostics = {
+              enabled = true,
+              suggestions = true,
+              unused = true,
+              deprecated = true,
+              overlapping = true,
+              maxItems = 100,
+            },
+            stubs = {
+              files = {
+                maxSize = 5000000,
               },
             },
           },

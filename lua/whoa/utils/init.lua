@@ -25,7 +25,18 @@ function M.get_icons(name, padding)
   local icon_pack = vim.g.icons_enabled and "icons"
   if not M[icon_pack] then M.icons = require "whoa.icons.nerd" end
 
-  local icon = M[icon_pack] and M[icon_pack][name]
+  -- Split the name to check for sub-objects like git.GitAdd
+  local category, icon_name = name:match "^(%w+)%.(%w+)$"
+
+  local icon
+  if category and icon_name and M[icon_pack][category] then
+    -- If the name contains a dot, treat it as an object access (e.g., git.GitAdd)
+    icon = M[icon_pack][category][icon_name]
+  else
+    -- Fallback to top-level icons
+    icon = M[icon_pack][name]
+  end
+
   return icon and icon .. string.rep(" ", padding or 0) or ""
 end
 
