@@ -78,10 +78,3 @@ autocmd("FileType", {
   pattern = { "markdown", "text" },
   callback = function() vim.opt_local.spell = true end,
 })
-
--- Remind user if he didn't save the file for a long time
-autocmd({ "CursorHold", "CursorHoldI" }, {
-  callback = function()
-    if vim.bo.modified then vim.notify("N'oubliez pas de sauvegarder votre fichier !", vim.log.levels.WARN) end
-  end,
-})

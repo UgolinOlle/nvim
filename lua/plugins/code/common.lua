@@ -37,18 +37,4 @@ return {
       return comment_string_active and comment_string and { pre_hook = comment_string.create_pre_hook() } or {}
     end,
   },
-  {
-    "lumiliet/vim-twig",
-
-    name = "Twig",
-
-    lazy = true,
-  },
-  {
-    "othree/html5.vim",
-
-    name = "HTML5",
-
-    lazy = true
-  },
 }

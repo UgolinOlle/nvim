@@ -35,6 +35,7 @@ return {
       "cpp",
       "git",
       "php",
+      "twig",
     },
     wrap = true,
     previwer_cmd = "glow",

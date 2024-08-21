@@ -10,9 +10,9 @@ return {
 
     dependencies = {
       "JoosepAlviste/nvim-ts-context-commentstring",
-      "windwp/nvim-ts-autotag",
-      "windwp/nvim-autopairs",
-      "hiphish/rainbow-delimiters.nvim",
+      { "windwp/nvim-ts-autotag", name = "Nvim Treesitter Autotag" },
+      { "windwp/nvim-autopairs", name = "Nvim Autopairs" },
+      { "hiphish/rainbow-delimiters.nvim", name = "Rainbow Delimiters" },
     },
 
     opts = {
@@ -23,7 +23,7 @@ return {
       highlight = {
         enable = true,
         use_languagetree = true,
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = false,
       },
 
       indent = {

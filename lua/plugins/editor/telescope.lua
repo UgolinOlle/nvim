@@ -83,7 +83,7 @@ return {
           },
         },
 
-        pickets = {
+        pickers = {
           find_files = {
             theme = "dropdown",
           },

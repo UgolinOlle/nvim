@@ -128,7 +128,8 @@ return {
         "yamlls",
         "clangd",
         "tailwindcss",
-        "twig",
+        "htmx",
+        "twiggy_language_server",
       }
 
       for _, server in ipairs(server_name) do
@@ -165,7 +166,7 @@ return {
         capabilities = capabilities,
         on_attach = mason_lspconfig.on_attach,
         flags = { debounce_text_changes = 150 },
-        filetypes = { "twig", "html", "css", "javascript", "typescript", "php" },
+        filetypes = { "html", "css", "javascript", "typescript", "php" },
         init_options = {
           html = {
             options = {

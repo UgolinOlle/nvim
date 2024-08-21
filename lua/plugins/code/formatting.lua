@@ -25,7 +25,7 @@ return {
         scss = { "prettier" },
         lua = { "stylua" },
         php = { "phpcbf" },
-        twig = { "prettier" },
+        twig = { "twig_formatter" },
         c = { "c_formatter_42" },
         cpp = { "c_formatter_42" },
         mdx = { "prettier" },
@@ -44,6 +44,17 @@ return {
           command = "c_formatter_42",
           args = { "$FILENAME" },
           stdin = false,
+        },
+
+        twig_formatter = {
+          command = "prettier",
+          args = {
+            "--plugin",
+            "prettier-plugin-twig-melody",
+            "--write",
+            "$FILENAME",
+          },
+          stdin = true,
         },
       },
 

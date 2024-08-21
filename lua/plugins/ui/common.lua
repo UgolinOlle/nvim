@@ -105,4 +105,9 @@ return {
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
     end,
   },
+  {
+    "nelsyeung/twig.vim",
+
+    name = "Twig",
+  },
 }
