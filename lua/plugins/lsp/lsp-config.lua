@@ -68,19 +68,6 @@ return {
         end,
       })
 
-      -- Setup LSP UI
-      vim.diagnostic.config {
-        signs = true,
-        underline = true,
-        virtual_text = false,
-        virtual_lines = false,
-        update_in_insert = true,
-        float = {
-          border = "rounded",
-          focusable = true,
-        },
-      }
-
       -- Setup LSP capabilities
       local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -97,27 +84,6 @@ return {
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
       end
 
-      -- Setup LSP handlers
-      local handlers = {
-        ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-          border = "rounded",
-        }),
-        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.hover, {
-          border = "rounded",
-        }),
-        ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-          underline = true,
-          update_in_insert = false,
-          virtual_text = { spacing = 4, prefix = "●" },
-          severity_sort = true,
-          float = {
-            focusable = true,
-            style = "minimal",
-            border = "rounded",
-          },
-        }),
-      }
-
       -- Setup server name
       local server_name = {
         "bashls",
@@ -129,16 +95,16 @@ return {
         "yamlls",
         "clangd",
         "tailwindcss",
-        -- "htmx",
-        -- "twiggy_language_server",
       }
 
       for _, server in ipairs(server_name) do
         lspconfig[server].setup {
           capabilities = capabilities,
-          on_attach = mason_lspconfig.on_attach,
+          on_attach = function(client, bufnr)
+            require("virtualtypes").on_attach(client, bufnr)
+            mason_lspconfig.on_attach(client, bufnr)
+          end,
           flags = { debounce_text_changes = 150 },
-          handlers = handlers,
         }
       end
 
@@ -185,7 +151,7 @@ return {
       enable = true,
       include_declaration = false,
       sections = {
-        definition = false,
+        definition = true,
         references = true,
         implements = true,
         git_authors = true,
@@ -197,8 +163,20 @@ return {
   },
   {
     "zeioth/garbage-day.nvim",
+
+    name = "Garbage day",
+
     dependencies = "neovim/nvim-lspconfig",
+
     event = "VeryLazy",
-    opts = {},
+  },
+  {
+    "jinzhongjia/LspUI.nvim",
+
+    name = "LSP UI",
+
+    branch = "main",
+
+    config = function() require("LspUI").setup {} end,
   },
 }

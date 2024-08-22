@@ -22,16 +22,17 @@ require("lazy").setup {
 
   -- UI
   ui = {
-    border = "simple",
+    border = vim.g.border.style,
   },
 
   -- Checking for updates
   checker = {
-    notify = true,
+    enabled = false,
   },
 
   -- Checking for change
   change_detection = {
-    notify = false,
+    enabled = true,
+    notify = true,
   },
 }

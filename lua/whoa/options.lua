@@ -1,3 +1,7 @@
+-- Variables
+local enable_border = not vim.g.neovide
+
+-- Configurations
 local options = {
   opt = {
     -- core
@@ -62,7 +66,6 @@ local options = {
 
   g = {
     icons_enabled = true, -- enable icons
-    border_enabled = true, -- enable border
   },
 
   o = {

@@ -4,13 +4,19 @@ return {
 
     name = "Dressing",
 
+    event = "VeryLazy",
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+
+    name = "Indent Blankline",
+
+    event = { "BufReadPre", "BufNewFile" },
+
+    main = "ibl",
+
     opts = {
-      input = {
-        enabled = true,
-      },
-      select = {
-        enabled = true,
-      },
+      indent = { char = "┊" },
     },
   },
   {
