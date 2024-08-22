@@ -56,7 +56,6 @@ return {
         "prettier",
         "eslint_d",
         "stylua",
-        "golangci-lint-langserver",
       },
     }
   end,

@@ -7,10 +7,11 @@ return {
     event = { "BufReadPre", "BufNewFile" },
 
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      { "antosha417/nvim-lsp-file-operations", config = true },
-      "folke/neodev.nvim",
-      "soulis-1256/eagle.nvim",
+      { "hrsh7th/cmp-nvim-lsp", name = "CMP Nvim LSP" },
+      { "antosha417/nvim-lsp-file-operations", name = "Nvim LSP File Operations", config = true },
+      { "folke/neodev.nvim", name = "Neodev" },
+      { "soulis-1256/eagle.nvim", name = "Eagle" },
+      { "jubnzv/virtual-types.nvim", name = "Virtual Types" },
     },
 
     config = function()
@@ -128,8 +129,8 @@ return {
         "yamlls",
         "clangd",
         "tailwindcss",
-        "htmx",
-        "twiggy_language_server",
+        -- "htmx",
+        -- "twiggy_language_server",
       }
 
       for _, server in ipairs(server_name) do
@@ -171,40 +172,6 @@ return {
           html = {
             options = {
               ["bem.enabled"] = true,
-            },
-          },
-        },
-      }
-
-      -- Setup intelephense server
-      lspconfig["intelephense"].setup {
-        capabilities = capabilities,
-        on_attach = mason_lspconfig.on_attach,
-        flags = { debounce_text_changes = 150 },
-        settings = {
-          intelephense = {
-            telemetry = {
-              enable = false,
-            },
-            completion = {
-              fullyQualifyGlobalConstantsAndFunctions = true,
-              maxItems = 100,
-            },
-            format = {
-              enable = true,
-            },
-            diagnostics = {
-              enabled = true,
-              suggestions = true,
-              unused = true,
-              deprecated = true,
-              overlapping = true,
-              maxItems = 100,
-            },
-            stubs = {
-              files = {
-                maxSize = 5000000,
-              },
             },
           },
         },

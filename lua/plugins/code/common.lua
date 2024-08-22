@@ -1,4 +1,5 @@
 return {
+  { "echasnovski/mini.nvim", version = "*", name = "Mini" },
   {
     "ziontee113/icon-picker.nvim",
 

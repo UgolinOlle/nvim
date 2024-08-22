@@ -78,3 +78,18 @@ autocmd("FileType", {
   pattern = { "markdown", "text" },
   callback = function() vim.opt_local.spell = true end,
 })
+
+-- Delete cursor on dashboard
+autocmd("FileType", {
+  pattern = "dashboard",
+  callback = function()
+    vim.opt.cursorline = false
+    vim.opt.guicursor = "a:Cursor/lCursor"
+  end,
+})
+
+-- Restore cursor when leave dashboard
+autocmd("BufLeave", {
+  pattern = "dashboard",
+  callback = function() vim.opt.guicursor = "" end,
+})
