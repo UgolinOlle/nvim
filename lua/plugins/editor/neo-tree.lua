@@ -23,12 +23,25 @@ return {
     enable_git_status = true,
     enable_diagnostics = true,
 
+    popup_border_style = "rounded",
+
     sources = {
       "filesystem",
       "buffers",
     },
 
     default_component_configs = {
+      container = {
+        enable_character_fade = true,
+      },
+      indent = {
+        indent_size = 2,
+        padding = 1,
+        with_markers = true,
+        indent_marker = "│",
+        last_indent_marker = "╰",
+        with_expanders = nil,
+      },
       git_status = {
         symbols = {
           added = get_icons("git.GitAdded", 1),
@@ -56,5 +69,15 @@ return {
 
   keys = {
     { "<LEADER>e", "<CMD>Neotree toggle<CR>", { noremap = true, silent = true, desc = "Open Neotree" } },
+    {
+      "<LEADER>eb",
+      "<CMD>Neotree buffers<CR>",
+      { noremap = true, silent = true, desc = "Switch to Buffers" },
+    },
+    {
+      "<LEADER>ef",
+      "<CMD>Neotree filesystem<CR>",
+      { noremap = true, silent = true, desc = "Switch to File System" },
+    },
   },
 }
