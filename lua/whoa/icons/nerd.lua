@@ -57,7 +57,8 @@ return {
   Visual = "󰉸",
   Window = "",
   WordFile = "󰈭",
-  kind = {
+
+  Kind = {
     Array = " ",
     Boolean = " ",
     Class = " ",
@@ -94,6 +95,7 @@ return {
     Value = " ",
     Variable = " ",
   },
+
   git = {
     Git = "󰊢",
     GitAdd = "",
@@ -107,9 +109,5 @@ return {
     GitStaged = "✓",
     GitUnstaged = "✗",
     GitUntracked = "★",
-
-    added = " ",
-    modified = " ",
-    removed = " ",
   },
 }
