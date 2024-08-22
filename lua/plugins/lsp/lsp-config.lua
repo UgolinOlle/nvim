@@ -68,6 +68,29 @@ return {
         end,
       })
 
+      -- Setup UI
+      local border = {
+        { "╭", "FloatBorder" },
+
+        { "─", "FloatBorder" },
+
+        { "╮", "FloatBorder" },
+
+        { "│", "FloatBorder" },
+
+        { "╯", "FloatBorder" },
+
+        { "─", "FloatBorder" },
+
+        { "╰", "FloatBorder" },
+
+        { "│", "FloatBorder" },
+      }
+      local handlers = {
+        ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+      }
+
       -- Setup LSP capabilities
       local capabilities = cmp_nvim_lsp.default_capabilities()
 
@@ -105,6 +128,7 @@ return {
             mason_lspconfig.on_attach(client, bufnr)
           end,
           flags = { debounce_text_changes = 150 },
+          handlers = handlers,
         }
       end
 
@@ -113,6 +137,7 @@ return {
         capabilities = capabilities,
         on_attach = mason_lspconfig.on_attach,
         flags = { debounce_text_changes = 150 },
+        handlers = handlers,
         settings = {
           Lua = {
             diagnostics = {
@@ -134,6 +159,7 @@ return {
         on_attach = mason_lspconfig.on_attach,
         flags = { debounce_text_changes = 150 },
         filetypes = { "html", "css", "javascript", "typescript", "php" },
+        handlers = handlers,
         init_options = {
           html = {
             options = {
