@@ -8,9 +8,6 @@
 --- Variables
 local autocmd = vim.api.nvim_create_autocmd
 
---- Imports
-require "whoa.core.autocmds.ui"
-
 --- Adding 42 norm on C file.
 autocmd("FileType", {
   pattern = "c",
@@ -119,4 +116,26 @@ autocmd("FileType", {
 --- Automatically check if WhoaIDE is setup correctly.
 autocmd("VimEnter", {
   callback = function() require("whoa.core").WChecker.ft_run_all_checks() end,
+})
+
+--- Highlight statusline based on mode
+autocmd("ModeChanged", {
+  callback = function()
+    local mode = vim.fn.mode()
+    if mode == "n" then
+      vim.cmd [[ hi StatusLine guifg=#FFFFFF guibg=#007ACC ]]
+    elseif mode == "i" then
+      vim.cmd [[ highlight StatusLine guifg=#FFFFFF guibg=#009688 ]]
+    elseif mode == "v" or mode == "V" then
+      vim.cmd [[ hi StatusLine guifg=#FFFFFF guibg=#D32F2F ]]
+    else
+      vim.cmd [[ hi StatusLine guifg=#FFFFFF guibg=#3F51B5 ]]
+    end
+  end,
+})
+
+--- When moving cursor after search remove highlights
+autocmd("CursorMoved", {
+  pattern = "*",
+  callback = function() vim.cmd [[ nohlsearch ]] end,
 })
