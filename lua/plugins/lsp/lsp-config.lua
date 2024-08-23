@@ -20,7 +20,7 @@ return {
       local mason_lspconfig = require "mason-lspconfig"
       local cmp_nvim_lsp = require "cmp_nvim_lsp"
       local keymap = vim.keymap
-      local get_icons = require("whoa.utils").get_icons
+      local get_icons = require("whoa.core.utils").get_icons
 
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("LspConfig", {}),

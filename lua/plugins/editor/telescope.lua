@@ -18,7 +18,7 @@ return {
     local actions = require "telescope.actions"
 
     -- Utils variables
-    local utils = require "whoa.utils"
+    local utils = require "whoa.core.utils"
     local get_icons = utils.get_icons
 
     telescope.setup {

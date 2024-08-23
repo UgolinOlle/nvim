@@ -8,11 +8,11 @@
 local M = {}
 
 --- Variables
-local notify = require("whoa.utils").notify
+local notify = require("whoa.core.utils").notify
 local user_dir = vim.fn.stdpath "config" .. "/user"
 
 --- Imports
-M.w_user_parser = require "whoa.utils"
+M.w_user_parser = require "whoa.core.user.parser"
 
 --- Check if user directory exists, if not create it
 if vim.fn.isdirectory(user_dir) == 0 then

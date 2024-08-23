@@ -1,5 +1,5 @@
 -- Import
-local get_icons = require("whoa.utils").get_icons
+local get_icons = require("whoa.core.utils").get_icons
 
 return {
   "nvim-neo-tree/neo-tree.nvim",

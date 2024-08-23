@@ -1,7 +1,6 @@
 if vim.loader and vim.fn.has "nvim-0.9.1" == 1 then vim.loader.enable() end
 
-local enable_border = not vim.g.neovide
-
+vim.g.start_time = vim.fn.reltime()
 vim.g.border = {
   enabled = true,
   style = "rounded",
@@ -9,10 +8,10 @@ vim.g.border = {
 }
 
 vim.cmd [[ 
-  " hi NormalFloat guibg=NONE
   hi PmenuSel guibg=NONE guifg=#F2E2C3
   hi Pmenu guibg=NONE guifg=#FFFFFF
 ]]
+
 vim.cmd "hi NormalFloat guibg=#00000080"
 vim.cmd "hi FloatBorder guibg=NONE guifg=#F2E2C3"
 
@@ -20,7 +19,7 @@ for _, source in ipairs {
   "whoa.options",
   "whoa.mappings",
   "whoa.lazy",
-  "whoa.commands",
+  -- "whoa.commands",
   "whoa.core",
 } do
   local active, fault = pcall(require, source)

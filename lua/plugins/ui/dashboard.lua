@@ -1,3 +1,14 @@
+--- Variables
+local header = {
+  [[                                                    ]],
+  [[  _       ____  ______  ___       ________  ______  ]],
+  [[ | |     / / / / / __ \/   |     /  _/ __ \/ ____/  ]],
+  [[ | | /| / / /_/ / / / / /| |     / // / / / __/     ]],
+  [[ | |/ |/ / __  / /_/ / ___ |   _/ // /_/ / /___     ]],
+  [[ |__/|__/_/ /_/\____/_/  |_|  /___/_____/_____/     ]],
+  [[                                                    ]],
+}
+
 return {
   "nvimdev/dashboard-nvim",
 
@@ -8,41 +19,36 @@ return {
   event = "VimEnter",
 
   config = function()
-    local function key(shortcut)
-      shortcut.icon_hl = shortcut.icon_hl or "Title"
-      shortcut.desc_hl = shortcut.desc_hl or "String"
-      shortcut.key_hl = shortcut.key_hl or "Keyword"
-      return shortcut
-    end
-
     require("dashboard").setup {
-      theme = "doom",
+      theme = "hyper",
       config = {
-        center = {
-          key {
-            icon = " ",
-            desc = "Whoa Agency",
+        header = header,
+        shortcut = {
+          {
+            desc = "  Whoa Agency",
+            group = "Number",
             key = "1",
             action = function()
               require("telescope.builtin").find_files {
                 prompt_title = "Select Folder",
-                cwd = "~/Developer/whoa-agency",
+                cwd = "~/Developer/whoa",
               }
             end,
           },
-          key {
-            icon = " ",
-            desc = "Configuration",
+          {
+            desc = "󰢱  Configuration",
+            icon_hl = "DiagnosticHint",
             key = "2",
-            action = function() require("telescope.builtin").find_files { cwd = "~/.config" } end,
+            action = function() require("telescope.builtin").find_files { cwd = "~/.config/nvim" } end,
           },
-          key {
-            icon = "󰢱 ",
-            desc = "Package manager",
+          {
+            desc = "  Package manager",
+            group = "@property",
             key = "3",
             action = "Lazy",
           },
         },
+        packages = { enable = true },
         footer = {
           "Made by WHOA ⨕ Ugolin Ollé",
         },

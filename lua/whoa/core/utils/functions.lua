@@ -2,7 +2,7 @@
 --
 -- Checking WHOA's configuration and environment.
 --
--- @module whoa.checker
+-- @module whoa.core.utils.functions
 -- @copyright 2024
 
 local M = {}
@@ -22,16 +22,6 @@ function M.ft_update_all()
   for _, cmd in ipairs(cmds) do
     vim.cmd(cmd)
   end
-end
-
--- Check health of my nvim config and addons.
---
--- @return nil
-function M.check()
-  local health = require "vim.health"
-
-  health.start "WhoaIDE"
-  health.info("Neovim Version: v" .. vim.fn.matchstr(vim.fn.execute "version", "NVIM v\\zs[^\n]*"))
 end
 
 --- Create a command for usesr.

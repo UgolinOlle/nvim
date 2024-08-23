@@ -8,17 +8,21 @@
 local M = {}
 
 --- Imports
-M.w_logger = require "whoa.core.logger"
-M.w_user = require "whoa.core.user"
+M.WUtils = require "whoa.core.utils"
 M.w_autocmds = require "whoa.core.autocmds"
+M.WChecker = require "whoa.core.checker"
+M.w_features = require "whoa.core.features"
+M.WLogger = require "whoa.core.logger"
+M.WUser = require "whoa.core.user"
 M.w_theme = require "whoa.core.theme"
 
 --- Execute logger setup
-M.w_logger.setup_logging()
+M.WLogger.ft_setup_logging()
+
+--- Execute checker
+M.WChecker.ft_run_all_checks()
 
 --- Execute user configuration
-M.w_user.ft_load_user_config()
-
-require("whoa.utils").notify "Whoa loaded successfully!"
+M.WUser.ft_load_user_config()
 
 return M

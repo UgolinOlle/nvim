@@ -2,7 +2,7 @@
 --
 -- Module to manage autocmds.
 --
--- @module w_autocmds.ui
+-- @module whoa.core.autocmds.ui
 -- @copyright 2024
 
 --- Variables

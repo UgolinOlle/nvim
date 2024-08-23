@@ -1,4 +1,4 @@
-local get_icons = require("whoa.utils").get_icons
+local get_icons = require("whoa.core.utils").get_icons
 local colors = {
   blue = "#80a0ff",
   cyan = "#79dac8",

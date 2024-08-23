@@ -9,7 +9,7 @@
 local M = {}
 
 -- Local imports
-local notify = require("whoa.utils").notify
+local notify = require("whoa.core.utils").notify
 local user_dir = vim.fn.stdpath "config" .. "/user"
 local user_config_path = user_dir .. "/main.lua"
 

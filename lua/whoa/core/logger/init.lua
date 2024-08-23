@@ -2,13 +2,13 @@
 --
 -- Module for logging user actions in Neovim.
 --
--- @module w_logger
+-- @module whoa.core.logger
 -- @copyright 2024
 
 local M = {}
 
 --- Variables
-local ft_augroup = require("whoa.utils.functions").ft_augroup
+local ft_augroup = require("whoa.core.utils").ft_augroup
 local log_file = vim.fn.stdpath "config" .. "/user/logs/actions.log"
 local log_dir = vim.fn.stdpath "config" .. "/user/logs"
 
@@ -47,22 +47,21 @@ end
 --
 -- @return nil
 function M.ft_setup_logging()
-  -- Log every command executed
   ft_augroup("UserLogsActions", {
     {
       events = { "CmdlineLeave" },
       targets = { "*" },
-      command = "lua require('whoa.core.logger').log_action('Command executed: ' .. vim.fn.getcmdline())",
+      command = "lua require('whoa.core.logger').ft_log_action('Command executed: ' .. vim.fn.getcmdline())",
     },
     {
       events = { "BufWritePost" },
       targets = { "*" },
-      command = "lua require('whoa.core.logger').log_action('File saved: ' .. vim.fn.expand('<afile>'))",
+      command = "lua require('whoa.core.logger').ft_log_action('File saved: ' .. vim.fn.expand('<afile>'))",
     },
     {
       events = { "BufReadPost" },
       targets = { "*" },
-      command = "lua require('whoa.core.logger').log_action('File opened: ' .. vim.fn.expand('<afile>'))",
+      command = "lua require('whoa.core.logger').ft_log_action('File opened: ' .. vim.fn.expand('<afile>'))",
     },
   })
 end

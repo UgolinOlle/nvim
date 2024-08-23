@@ -2,7 +2,7 @@
 --
 -- Git related functions.
 --
--- @module whoa.utils.git
+-- @module whoa.core.utils.git
 -- @copyright 2024
 
 -- Variables

@@ -2,7 +2,7 @@
 --
 -- Module to manage autocmds.
 --
--- @module w_autocmds
+-- @module whoa.core.autocmds
 -- @copyright 2024
 
 --- Variables
@@ -99,4 +99,24 @@ autocmd("FileType", {
 autocmd("BufLeave", {
   pattern = "dashboard",
   callback = function() vim.opt.guicursor = "" end,
+})
+
+-- Desactive any movement on dashboard
+autocmd("FileType", {
+  pattern = "dashboard",
+  callback = function()
+    vim.opt_local.signcolumn = "no"
+    vim.opt_local.foldcolumn = "0"
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.cursorline = false
+    vim.opt_local.wrap = false
+    vim.opt_local.scrolloff = 999
+    vim.opt_local.sidescrolloff = 999
+  end,
+})
+
+--- Automatically check if WhoaIDE is setup correctly.
+autocmd("VimEnter", {
+  callback = function() require("whoa.core").WChecker.ft_run_all_checks() end,
 })

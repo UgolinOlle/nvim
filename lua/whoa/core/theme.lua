@@ -8,7 +8,7 @@
 local M = {}
 
 --- Variables
-local notify = require("whoa.utils").notify
+local notify = require("whoa.core.utils").notify
 local themes = {
   { title = "Hack the Box", name = "hackthebox", icon = "" },
   { title = "Github Dark", name = "github_dark", icon = "" },

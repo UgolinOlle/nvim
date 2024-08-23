@@ -7,8 +7,8 @@
 
 -- Variables
 local M = {}
-local git = require "whoa.utils.git"
-local logger = require "whoa.utils.logger"
+local git = require("whoa.core").w_utils
+local logger = require("whoa.core").w_logger
 
 --- Check if all LSP servers are installed.
 --
@@ -82,9 +82,9 @@ function M.ft_report_errors()
 
   -- Print everything in logger
   if #errors > 0 then
-    logger.log_action("ERROR", "WHOA environment setup has the following issues:")
+    logger.ft_log_action("ERROR", "WHOA environment setup has the following issues:")
     for _, error in ipairs(errors) do
-      logger.log_action("ERROR", "  - " .. error)
+      logger.ft_log_action("ERROR", "  - " .. error)
     end
   end
 
