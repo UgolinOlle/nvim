@@ -1,18 +1,22 @@
---- ## User parser
+--- ## Whoa User parser
 --
 -- Handles the user-specific configurations by loading from a default file
 -- or creating it if it doesn't exist.
 --
--- @module uparser
+-- @module w_user_parser
 -- @copyright 2024
+
+local M = {}
 
 -- Local imports
 local notify = require("whoa.utils").notify
 local user_dir = vim.fn.stdpath "config" .. "/user"
 local user_config_path = user_dir .. "/main.lua"
 
-local M = {}
-
+--- Check if user directory exists, if not create it
+--
+-- @function ft_check_user_dir
+-- @return nil
 function M.ft_uparser()
   if vim.fn.filereadable(user_config_path) == 1 then
     local status, user_config = pcall(dofile, user_config_path)

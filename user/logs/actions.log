@@ -2775,3 +2775,308 @@ User actions log
 [2024-08-22 23:25:33] File opened: .gitignore
 [2024-08-22 23:25:42] File saved: .gitignore
 [2024-08-22 23:25:43] Command executed: wqa
+[2024-08-22 23:27:12] File opened: lua/plugins/lsp/mason.lua
+[2024-08-22 23:28:06] File opened: lua/whoa/core/theme.lua
+[2024-08-22 23:28:17] File saved: lua/whoa/core/theme.lua
+[2024-08-22 23:28:20] Command executed: wqa
+[2024-08-22 23:28:24] File opened: lua/whoa/core/theme.lua
+[2024-08-22 23:28:44] File saved: lua/whoa/core/theme.lua
+[2024-08-22 23:29:12] File saved: lua/whoa/core/theme.lua
+[2024-08-22 23:29:16] File saved: lua/whoa/core/theme.lua
+[2024-08-22 23:29:34] File saved: lua/whoa/core/theme.lua
+[2024-08-22 23:29:36] Command executed: wqa
+[2024-08-22 23:29:38] File saved: lua/whoa/core/theme.lua
+[2024-08-22 23:29:40] Command executed: wqa
+[2024-08-22 23:29:43] File opened: lua/plugins/lsp/lsp-config.lua
+[2024-08-22 23:29:46] File saved: lua/plugins/lsp/lsp-config.lua
+[2024-08-22 23:29:49] File saved: lua/plugins/lsp/lsp-config.lua
+[2024-08-22 23:29:57] File opened: lua/whoa/core/theme.lua
+[2024-08-22 23:30:02] File saved: lua/whoa/core/theme.lua
+[2024-08-22 23:30:05] File opened: init.lua
+[2024-08-22 23:30:08] File saved: init.lua
+[2024-08-22 23:30:10] Command executed: wqa
+[2024-08-22 23:30:13] File opened: lua/plugins/lsp/lsp-config.lua
+[2024-08-22 23:30:37] File opened: init.lua
+[2024-08-22 23:30:50] File saved: init.lua
+[2024-08-22 23:31:05] File saved: init.lua
+[2024-08-22 23:31:12] File saved: init.lua
+[2024-08-22 23:31:22] Command executed: wqa
+[2024-08-22 23:31:25] File opened: lua/plugins/lsp/lsp-config.lua
+[2024-08-22 23:31:26] File opened: init.lua
+[2024-08-22 23:31:59] File saved: init.lua
+[2024-08-22 23:32:17] File saved: init.lua
+[2024-08-22 23:32:21] File saved: init.lua
+[2024-08-22 23:32:25] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-22 23:32:26] File saved: init.lua
+[2024-08-22 23:32:37] File saved: init.lua
+[2024-08-22 23:32:40] Command executed: wqa
+[2024-08-22 23:32:43] File opened: init.lua
+[2024-08-22 23:32:59] File saved: init.lua
+[2024-08-22 23:33:01] File saved: init.lua
+[2024-08-22 23:33:15] File saved: init.lua
+[2024-08-22 23:33:18] File opened: init.lua
+[2024-08-22 23:33:19] File saved: init.lua
+[2024-08-22 23:33:20] Command executed: wqa
+[2024-08-22 23:33:23] File opened: init.lua
+[2024-08-22 23:33:28] Command executed: wqa
+[2024-08-23 15:32:57] File opened: /Users/ugolin-olle/.zshrc
+[2024-08-23 15:34:04] File opened: test
+[2024-08-23 15:37:02] File opened: test
+[2024-08-23 15:37:07] File opened: test.txt
+[2024-08-23 15:44:58] Command executed: wqa
+[2024-08-23 15:45:26] File opened: lua/whoa/utils/git.lua
+[2024-08-23 15:46:32] Command executed: Copilot restart
+[2024-08-23 15:46:40] File opened: lua/plugins/ui/bufferline.lua
+[2024-08-23 15:46:44] File opened: lua/plugins/ui/noice.lua
+[2024-08-23 15:46:47] File saved: lua/plugins/ui/noice.lua
+[2024-08-23 15:47:00] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 15:47:01] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:47:03] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:47:18] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 15:47:19] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:47:20] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:57:56] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:58:03] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:58:17] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:58:34] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 15:58:35] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:58:48] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:58:52] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:59:01] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:59:03] File saved: lua/whoa/utils/git.lua
+[2024-08-23 15:59:24] File saved: lua/whoa/utils/git.lua
+[2024-08-23 16:00:33] File saved: lua/whoa/utils/git.lua
+[2024-08-23 16:00:37] File saved: lua/whoa/utils/git.lua
+[2024-08-23 16:00:44] File saved: lua/whoa/utils/git.lua
+[2024-08-23 16:00:47] File saved: lua/whoa/utils/git.lua
+[2024-08-23 16:00:52] File saved: lua/whoa/utils/git.lua
+[2024-08-23 16:00:57] File saved: lua/whoa/utils/git.lua
+[2024-08-23 16:01:06] File saved: lua/whoa/utils/git.lua
+[2024-08-23 16:01:08] File saved: lua/whoa/utils/git.lua
+[2024-08-23 16:01:15] File opened: lua/whoa/utils/checker.lua
+[2024-08-23 16:01:20] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:01:23] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:01:26] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:01:30] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:01:32] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:01:40] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:01:58] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:02:02] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:02:03] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:02:06] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:02:09] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:02:11] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:02:30] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:06:56] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:07:04] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:07:07] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:07:10] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:07:13] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:07:14] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:07:50] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:08:04] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:08:11] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:08:19] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:08:25] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:08:44] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:08:45] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:09:05] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:09:08] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:09:17] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:09:18] File saved: lua/whoa/utils/checker.lua
+[2024-08-23 16:09:22] File opened: lua/whoa/core/logger/init.lua
+[2024-08-23 16:10:04] File opened: lua/whoa/core/logger/init.lua
+[2024-08-23 16:10:27] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:10:28] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:10:34] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:10:43] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:10:57] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:10:58] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:11:03] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:11:04] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:11:19] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:11:20] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:11:22] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:11:41] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:11:44] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:11:45] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:11:46] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:11:50] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:12:04] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:12:07] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:12:08] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:12:14] File saved: lua/whoa/core/logger/init.lua
+[2024-08-23 16:12:25] File opened: lua/whoa/mappings.lua
+[2024-08-23 16:12:50] Command executed: copilot#TextQueuedForInsertion()
+[2024-08-23 16:12:53] File saved: lua/whoa/mappings.lua
+[2024-08-23 16:13:15] nil
+[2024-08-23 16:13:22] nil
+[2024-08-23 16:47:42] nil
+[2024-08-23 16:48:06] nil
+[2024-08-23 16:48:20] nil
+[2024-08-23 16:48:42] nil
+[2024-08-23 16:49:05] nil
+[2024-08-23 16:49:14] nil
+[2024-08-23 16:49:29] nil
+[2024-08-23 16:49:55] nil
+[2024-08-23 16:50:16] nil
+[2024-08-23 16:50:17] nil
+[2024-08-23 16:50:35] nil
+[2024-08-23 16:51:00] nil
+[2024-08-23 16:52:48] nil
+[2024-08-23 16:53:01] nil
+[2024-08-23 16:53:05] nil
+[2024-08-23 16:53:21] nil
+[2024-08-23 16:53:26] nil
+[2024-08-23 16:53:31] nil
+[2024-08-23 16:53:35] nil
+[2024-08-23 16:53:39] nil
+[2024-08-23 16:53:42] nil
+[2024-08-23 16:53:45] nil
+[2024-08-23 16:54:00] nil
+[2024-08-23 16:54:03] nil
+[2024-08-23 16:55:47] nil
+[2024-08-23 16:55:58] nil
+[2024-08-23 16:56:00] nil
+[2024-08-23 16:56:03] nil
+[2024-08-23 17:08:41] nil
+[2024-08-23 17:08:50] nil
+[2024-08-23 17:08:55] nil
+[2024-08-23 17:08:56] nil
+[2024-08-23 17:09:12] nil
+[2024-08-23 17:09:23] nil
+[2024-08-23 17:09:31] nil
+[2024-08-23 17:09:36] nil
+[2024-08-23 17:09:37] nil
+[2024-08-23 17:09:42] nil
+[2024-08-23 17:10:02] nil
+[2024-08-23 17:10:06] nil
+[2024-08-23 17:10:15] nil
+[2024-08-23 17:10:16] nil
+[2024-08-23 17:10:19] nil
+[2024-08-23 17:10:20] nil
+[2024-08-23 17:10:26] nil
+[2024-08-23 17:10:32] nil
+[2024-08-23 17:10:41] nil
+[2024-08-23 17:10:53] nil
+[2024-08-23 17:11:00] nil
+[2024-08-23 17:11:03] nil
+[2024-08-23 17:11:08] nil
+[2024-08-23 17:11:09] nil
+[2024-08-23 17:11:43] nil
+[2024-08-23 17:11:48] nil
+[2024-08-23 17:11:54] nil
+[2024-08-23 17:12:00] nil
+[2024-08-23 17:12:06] nil
+[2024-08-23 17:12:11] nil
+[2024-08-23 17:12:35] nil
+[2024-08-23 17:12:45] nil
+[2024-08-23 17:12:46] nil
+[2024-08-23 17:12:55] nil
+[2024-08-23 17:12:58] nil
+[2024-08-23 17:13:03] nil
+[2024-08-23 17:13:04] nil
+[2024-08-23 17:13:08] nil
+[2024-08-23 17:13:08] nil
+[2024-08-23 17:13:13] nil
+[2024-08-23 17:13:37] nil
+[2024-08-23 17:13:37] nil
+[2024-08-23 17:16:59] nil
+[2024-08-23 17:17:02] nil
+[2024-08-23 17:17:05] nil
+[2024-08-23 17:17:06] nil
+[2024-08-23 17:17:08] nil
+[2024-08-23 17:17:10] nil
+[2024-08-23 17:17:12] nil
+[2024-08-23 17:17:14] nil
+[2024-08-23 17:17:16] nil
+[2024-08-23 17:17:18] nil
+[2024-08-23 17:17:22] nil
+[2024-08-23 17:17:24] nil
+[2024-08-23 17:17:33] nil
+[2024-08-23 17:17:36] nil
+[2024-08-23 17:17:38] nil
+[2024-08-23 17:17:41] nil
+[2024-08-23 17:17:47] nil
+[2024-08-23 17:17:48] nil
+[2024-08-23 17:17:51] nil
+[2024-08-23 17:17:53] nil
+[2024-08-23 17:17:56] nil
+[2024-08-23 17:18:01] nil
+[2024-08-23 17:18:01] nil
+[2024-08-23 17:18:12] nil
+[2024-08-23 17:18:14] nil
+[2024-08-23 17:18:19] nil
+[2024-08-23 17:18:29] nil
+[2024-08-23 17:18:38] nil
+[2024-08-23 17:18:39] nil
+[2024-08-23 17:18:40] nil
+[2024-08-23 17:18:49] nil
+[2024-08-23 17:18:55] nil
+[2024-08-23 17:19:05] nil
+[2024-08-23 17:19:10] nil
+[2024-08-23 17:19:14] nil
+[2024-08-23 17:19:19] nil
+[2024-08-23 17:19:24] nil
+[2024-08-23 17:19:34] nil
+[2024-08-23 17:19:35] nil
+[2024-08-23 17:19:41] nil
+[2024-08-23 17:19:52] nil
+[2024-08-23 17:19:58] nil
+[2024-08-23 17:20:06] nil
+[2024-08-23 17:20:10] nil
+[2024-08-23 17:20:16] nil
+[2024-08-23 17:20:22] nil
+[2024-08-23 17:20:24] nil
+[2024-08-23 17:20:25] nil
+[2024-08-23 17:20:39] nil
+[2024-08-23 17:20:52] nil
+[2024-08-23 17:20:54] nil
+[2024-08-23 17:21:09] nil
+[2024-08-23 17:21:10] nil
+[2024-08-23 17:21:13] nil
+[2024-08-23 17:21:23] nil
+[2024-08-23 17:21:24] nil
+[2024-08-23 17:21:31] nil
+[2024-08-23 17:21:34] nil
+[2024-08-23 17:21:41] nil
+[2024-08-23 17:21:53] nil
+[2024-08-23 17:21:55] nil
+[2024-08-23 17:22:00] nil
+[2024-08-23 17:22:04] nil
+[2024-08-23 17:22:04] nil
+[2024-08-23 17:22:10] nil
+[2024-08-23 17:22:26] nil
+[2024-08-23 17:22:29] nil
+[2024-08-23 17:22:34] nil
+[2024-08-23 17:22:37] nil
+[2024-08-23 17:22:38] nil
+[2024-08-23 17:22:42] nil
+[2024-08-23 17:22:50] nil
+[2024-08-23 17:22:54] nil
+[2024-08-23 17:22:57] nil
+[2024-08-23 17:22:59] nil
+[2024-08-23 17:23:00] nil
+[2024-08-23 17:23:02] nil
+[2024-08-23 17:23:05] nil
+[2024-08-23 17:23:08] nil
+[2024-08-23 17:23:16] nil
+[2024-08-23 17:23:22] nil
+[2024-08-23 17:23:35] nil
+[2024-08-23 17:23:38] nil
+[2024-08-23 17:23:43] nil
+[2024-08-23 17:23:45] nil
+[2024-08-23 17:23:52] nil
+[2024-08-23 17:23:53] nil
+[2024-08-23 17:24:01] nil
+[2024-08-23 17:24:04] nil
+[2024-08-23 17:24:06] nil
+[2024-08-23 17:24:08] nil
+[2024-08-23 17:24:27] nil
+[2024-08-23 17:24:35] nil
+[2024-08-23 17:24:40] nil
+[2024-08-23 17:24:40] nil
+[2024-08-23 17:24:48] nil
+[2024-08-23 17:24:49] nil
+[2024-08-23 17:24:51] nil
+[2024-08-23 17:25:01] nil

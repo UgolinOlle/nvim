@@ -1,6 +1,14 @@
--- Variables
+--- ## Whoa Autocmds UI
+--
+-- Module to manage autocmds.
+--
+-- @module w_autocmds.ui
+-- @copyright 2024
+
+--- Variables
 local autocmd = vim.api.nvim_create_autocmd
 
+--- Highlight statusline based on mode
 autocmd("ModeChanged", {
   callback = function()
     local mode = vim.fn.mode()

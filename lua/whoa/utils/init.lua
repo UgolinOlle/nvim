@@ -7,6 +7,11 @@
 
 local M = {}
 
+--- Important
+M.git = require "whoa.utils.git"
+M.checker = require "whoa.utils.checker"
+M.functions = require "whoa.utils.functions"
+
 -- Merge functions opts with custom opts
 ---@param default? table Default function table opts
 ---@param opts? table New table opts

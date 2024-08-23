@@ -87,7 +87,11 @@ keymap("v", "<", "<gv^", opts)
 opts.desc = "Unindent line"
 keymap("v", ">", ">gv^", opts)
 
--- Plugins --
+--- Open logs
+opts.desc = "Open logs"
+keymap("n", "<leader>lo", "<cmd>lua require('whoa.core.logger').view_logs()<CR>", opts)
+
+--- Plugins --
 
 -- Lazy
 opts.desc = "Open Lazy package manager"

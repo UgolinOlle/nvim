@@ -6,43 +6,44 @@
 -- @copyright 2024
 
 -- Variables
-local git = { url = "https://github.com/" }
+local Git = { url = "https://github.com/" }
 
 -- Execute git cmd
--- @param args string Git args
--- @return string
-function git.execute(args, ...)
+-- @param args string|table Git args
+-- @param cwd? string Directory to run git command in (defaults to current working directory)
+-- @return string|nil, boolean - Output of the command and a boolean indicating success
+function Git.execute(args, cwd)
   if type(args) == "string" then args = { args } end
-  return require("whoa.utils").execute(vim.list_extend({ "git", "-C" }, args), ...)
+  cwd = cwd or vim.loop.cwd()
+  local output = require("whoa.utils").execute(vim.list_extend({ "git", "-C", cwd }, args))
+  local success = vim.v.shell_error == 0
+  if not success then vim.api.nvim_err_writeln("Git command failed: " .. table.concat(args, " ")) end
+  return output, success
 end
 
 -- Check if git is reachable.
 -- @return boolean
-function git.available() return vim.fn.executable "git" == 1 end
+function Git.available() return vim.fn.executable "git" == 1 end
 
 -- Get the git client version.
 -- @return table|nil - Table with version information or nil if git is not available.
-function git.version()
-  if not git.available() then return nil end
-  local output = git.execute "--version"
-  local version = string.match(output, "git version ([%d%.]+)")
-  if version then
-    return {
-      major = tonumber(string.match(version, "(%d+)")),
-      minor = tonumber(string.match(version, "(%d+)%.(%d+)")),
-      patch = tonumber(string.match(version, "(%d+)%.(%d+)%.(%d+)")),
-    }
-  end
-  return { major = major, minor = minor, patch = patch }
+function Git.version()
+  if not Git.available() then return nil end
+  local version = Git.execute "--version"
+  if not version then return nil end
+  return { major = tonumber(version:match "git version (%d+)"), raw = version }
 end
 
 -- Check if the current directory is a git repository.
 -- @return boolean
-function git.is_repo() return git.execute("rev-parse", "--is-inside-work-tree") == 0 end
+function Git.is_repo()
+  local result = Git.execute("rev-parse", "--is-inside-work-tree")
+  return result and result:match "true" ~= nil
+end
 
 -- Fetch the current branch name.
 -- @param remote string - Remote name
 -- @return string - Branch name
-function git.fetch(remote, ...) return git.execute({ "fetch", remote }, ...) end
+function Git.fetch(remote, ...) return Git.execute({ "fetch", remote }, ...) end
 
-return git
+return Git

@@ -1,10 +1,17 @@
--- Variables
+--- ## Whoa Autocmds
+--
+-- Module to manage autocmds.
+--
+-- @module w_autocmds
+-- @copyright 2024
+
+--- Variables
 local autocmd = vim.api.nvim_create_autocmd
 
--- Imports
+--- Imports
 require "whoa.core.autocmds.ui"
 
--- Adding 42 norm on C file.
+--- Adding 42 norm on C file.
 autocmd("FileType", {
   pattern = "c",
   callback = function()
@@ -13,7 +20,7 @@ autocmd("FileType", {
   end,
 })
 
--- Adding 42 norm on H file.
+--- Adding 42 norm on H file.
 autocmd("FileType", {
   pattern = "cpp",
   callback = function()
@@ -22,7 +29,7 @@ autocmd("FileType", {
   end,
 })
 
--- Disable some style on terminal.
+--- Disable some style on terminal.
 autocmd("TermOpen", {
   desc = "Disable foldcolumn in terminal and signcolumn for terminal.",
   callback = function()
@@ -31,7 +38,7 @@ autocmd("TermOpen", {
   end,
 })
 
--- Check if file need to be reload
+--- Check if file need to be reload
 autocmd("BufWritePost", {
   pattern = "*",
   callback = function()
@@ -39,19 +46,19 @@ autocmd("BufWritePost", {
   end,
 })
 
--- Highlight on yank
+--- Highlight on yank
 autocmd("TextYankPost", {
   pattern = "*",
   callback = function() vim.highlight.on_yank { higroup = "Visual", timeout = 200 } end,
 })
 
--- Automatically save file when focus is lost
+--- Automatically save file when focus is lost
 autocmd("FocusLost", {
   pattern = "*",
   callback = function() vim.cmd "silent! wa" end,
 })
 
--- Autosave
+--- Autosave
 autocmd({ "CursorMoved", "CursorMovedI", "FocusLost", "BufLeave", "BufWinLeave", "InsertLeave" }, {
   pattern = "*",
   callback = function()
@@ -59,7 +66,7 @@ autocmd({ "CursorMoved", "CursorMovedI", "FocusLost", "BufLeave", "BufWinLeave",
   end,
 })
 
--- Automatically restart LSP after modified Neovim configuration
+--- Automatically restart LSP after modified Neovim configuration
 autocmd("BufWritePost", {
   pattern = vim.fn.stdpath "config" .. "/*",
   callback = function()
@@ -67,19 +74,19 @@ autocmd("BufWritePost", {
   end,
 })
 
--- Show LSP diagnostics on hover
+--- Show LSP diagnostics on hover
 autocmd("CursorHold", {
   pattern = "*",
   callback = function() vim.diagnostic.open_float(nil, { focusable = false }) end,
 })
 
--- Set spell for markdown and text files
+--- Set spell for markdown and text files
 autocmd("FileType", {
   pattern = { "markdown", "text" },
   callback = function() vim.opt_local.spell = true end,
 })
 
--- Delete cursor on dashboard
+--- Delete cursor on dashboard
 autocmd("FileType", {
   pattern = "dashboard",
   callback = function()
@@ -88,7 +95,7 @@ autocmd("FileType", {
   end,
 })
 
--- Restore cursor when leave dashboard
+--- Restore cursor when leave dashboard
 autocmd("BufLeave", {
   pattern = "dashboard",
   callback = function() vim.opt.guicursor = "" end,

@@ -1,18 +1,18 @@
---- ## Logger
+--- ## Whoa Logger
 --
 -- Module for logging user actions in Neovim.
 --
--- @module logger
+-- @module w_logger
 -- @copyright 2024
 
 local M = {}
 
--- Variables
+--- Variables
 local ft_augroup = require("whoa.utils.functions").ft_augroup
 local log_file = vim.fn.stdpath "config" .. "/user/logs/actions.log"
 local log_dir = vim.fn.stdpath "config" .. "/user/logs"
 
--- Checking if the log file exists or creating it
+--- Checking if the log file exists or creating it
 if vim.fn.isdirectory(log_dir) == 0 then
   vim.fn.mkdir(log_dir, "p")
   if vim.fn.filereadable(log_file) == 0 then
@@ -26,21 +26,27 @@ if vim.fn.isdirectory(log_dir) == 0 then
   end
 end
 
--- Function to log an action
+--- Function to log an action
+--
+-- @param type string: The type of action to log
 -- @param action string: The action to log
-function M.log_action(action)
+-- @return nil
+function M.ft_log_action(type, action)
+  type = type or "INFO"
   local file = io.open(log_file, "a")
   if file then
     local timestamp = os.date "%Y-%m-%d %H:%M:%S"
-    file:write(string.format("[%s] %s\n", timestamp, action))
+    file:write(string.format("[%s] %s %s\n", timestamp, type, action))
     file:close()
   else
     print "Error: Unable to open log file."
   end
 end
 
--- Function to setup logging for specific events
-function M.setup_logging()
+--- Function to setup logging for specific events
+--
+-- @return nil
+function M.ft_setup_logging()
   -- Log every command executed
   ft_augroup("UserLogsActions", {
     {
@@ -61,8 +67,10 @@ function M.setup_logging()
   })
 end
 
--- Function to view the logs in a floating window
-function M.view_logs()
+--- Function to view the logs in a floating window
+--
+-- @return nil
+function M.ft_view_logs()
   local buf = vim.api.nvim_create_buf(false, true)
   local log_lines = {}
 

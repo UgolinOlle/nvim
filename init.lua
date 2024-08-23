@@ -8,6 +8,14 @@ vim.g.border = {
   borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 }
 
+vim.cmd [[ 
+  " hi NormalFloat guibg=NONE
+  hi PmenuSel guibg=NONE guifg=#F2E2C3
+  hi Pmenu guibg=NONE guifg=#FFFFFF
+]]
+vim.cmd "hi NormalFloat guibg=#00000080"
+vim.cmd "hi FloatBorder guibg=NONE guifg=#F2E2C3"
+
 for _, source in ipairs {
   "whoa.options",
   "whoa.mappings",
