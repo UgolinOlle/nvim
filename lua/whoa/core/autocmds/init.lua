@@ -134,8 +134,20 @@ autocmd("ModeChanged", {
   end,
 })
 
---- When moving cursor after search remove highlights
-autocmd("CursorMoved", {
-  pattern = "*",
-  callback = function() vim.cmd [[ nohlsearch ]] end,
+--- Automatically resize dashboard window
+autocmd("BufEnter", {
+  pattern = "neo-tree*",
+  callback = function()
+    vim.cmd "wincmd ="
+
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+      local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(win))
+      if bufname:match "dashboard" then
+        vim.api.nvim_set_current_win(win)
+        vim.cmd "wincmd |" -- Maximiser horizontalement
+        vim.cmd "wincmd _" -- Maximiser verticalement
+        break
+      end
+    end
+  end,
 })

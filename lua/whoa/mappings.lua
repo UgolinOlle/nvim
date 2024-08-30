@@ -87,13 +87,17 @@ keymap("v", "<", "<gv^", opts)
 opts.desc = "Unindent line"
 keymap("v", ">", ">gv^", opts)
 
+--- Remove highlights after search
+opts.desc = "Remove highlights"
+keymap("n", "<LEADER><SPACE>", "<cmd>nohlsearch<CR>", opts)
+
 --- Open logs
 opts.desc = "Open logs"
-keymap("n", "<leader>lo", "<cmd>lua require('whoa.core').w_logger.ft_view_logs()<CR>", opts)
+keymap("n", "<LEADER>lo", "<cmd>lua require('whoa.core').w_logger.ft_view_logs()<CR>", opts)
 
 --- Open features config
 opts.desc = "Open features config"
-keymap("n", "<leader>ft", "<cmd>lua require('whoa.core').w_features.open()<CR>", opts)
+keymap("n", "<LEADER>ft", "<cmd>lua require('whoa.core').w_features.open()<CR>", opts)
 
 --- Plugins --
 

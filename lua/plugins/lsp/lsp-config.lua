@@ -123,10 +123,7 @@ return {
       for _, server in ipairs(server_name) do
         lspconfig[server].setup {
           capabilities = capabilities,
-          on_attach = function(client, bufnr)
-            require("virtualtypes").on_attach(client, bufnr)
-            mason_lspconfig.on_attach(client, bufnr)
-          end,
+          on_attach = mason_lspconfig.on_attach,
           flags = { debounce_text_changes = 150 },
           handlers = handlers,
         }

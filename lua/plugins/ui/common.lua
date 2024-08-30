@@ -17,6 +17,20 @@ return {
 
     opts = {
       indent = { char = "┊" },
+      exclude = {
+        filetypes = {
+          "help",
+          "packer",
+          "dashboard",
+          "NvimTree",
+          "vista",
+          "sagahover",
+          "markdown",
+          "txt",
+          "TelescopePrompt",
+          "TelescopeResults",
+        },
+      },
     },
   },
   {

@@ -38,4 +38,9 @@ return {
       return comment_string_active and comment_string and { pre_hook = comment_string.create_pre_hook() } or {}
     end,
   },
+  {
+    "nelsyeung/twig.vim",
+
+    name = "Twig",
+  },
 }
