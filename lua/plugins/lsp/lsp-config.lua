@@ -202,4 +202,33 @@ return {
 
     config = function() require("LspUI").setup {} end,
   },
+  {
+    "j-hui/fidget.nvim",
+
+    name = "Fidget",
+
+    event = "LspAttach",
+
+    config = function()
+      require("fidget").setup {
+        progress = {
+          poll_rate = 200,
+          ignore_done_already = true,
+          display = {
+            done_ttl = 0.5,
+            progress_icon = { pattern = "meter", period = 1 },
+            progress_style = "WarningMsg",
+            group_style = "WarningMsg", -- Highlight group for group name (LSP server name)
+            icon_style = "WarningMsg", -- Highlight group for group icons
+            done_style = "Conditional", -- Highlight group for completed LSP tasks
+          },
+        },
+        notification = {
+          window = {
+            winblend = 0,
+          },
+        },
+      }
+    end,
+  },
 }

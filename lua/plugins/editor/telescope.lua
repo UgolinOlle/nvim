@@ -12,15 +12,15 @@ return {
   },
 
   config = function()
-    -- Check if telescope is installed
+    --- Check if telescope is installed
     local active, telescope = pcall(require, "telescope")
     if not active then return end
 
-    -- Telescope variables
+    --- Telescope variables
     local actions = require "telescope.actions"
     local fb_actions = require("telescope").extensions.file_browser.actions
 
-    -- Utils variables
+    --- Utils variables
     local utils = require "whoa.core.utils"
     local get_icons = utils.get_icons
 
@@ -75,7 +75,7 @@ return {
         borderchars = vim.g.border.borderchars,
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
-        winblend = 0,
+        winblend = 20,
         prompt_prefix = get_icons("Command", 2),
         selection_caret = get_icons("ArrowRight", 2),
         entry_prefix = "  ",
@@ -89,8 +89,8 @@ return {
 
         pickers = {
           find_files = {
-            theme = "dropdown", -- 'ivy', 'dropdown', 'cursor'
-            layout_strategy = "vertical",
+            theme = "dropdown",
+            layout_strategy = "horizontal",
             layout_config = { height = 0.9 },
             previewer = false,
             sorting_strategy = "ascending",

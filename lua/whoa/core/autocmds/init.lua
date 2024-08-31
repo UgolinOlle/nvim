@@ -151,3 +151,17 @@ autocmd("BufEnter", {
     end
   end,
 })
+
+--- Automatically hide diagnostic when editing
+autocmd("InsertEnter", {
+  group = vim.api.nvim_create_augroup("HideDiagnostic", { clear = true }),
+  pattern = "*",
+  callback = function() vim.diagnostic.hide(nil, 0) end,
+})
+
+--- Automatically show diagnostic when quit editing
+autocmd("InsertLeave", {
+  group = vim.api.nvim_create_augroup("ShowDiagnostic", { clear = true }),
+  pattern = "*",
+  callback = function() vim.diagnostic.show(nil, 0) end,
+})

@@ -10,10 +10,18 @@ vim.g.border = {
 vim.cmd [[ 
   hi PmenuSel guibg=NONE guifg=#F2E2C3
   hi Pmenu guibg=NONE guifg=#FFFFFF
-]]
+  hi NormalFloat guibg=#00000080
+  hi FloatBorder guibg=NONE guifg=#F2E2C3
 
-vim.cmd "hi NormalFloat guibg=#00000080"
-vim.cmd "hi FloatBorder guibg=NONE guifg=#F2E2C3"
+  hi TelescopeNormal guibg=NONE guifg=NONE
+  hi TelescopeBorder guifg=#2E3440 guibg=NONE
+  hi TelescopePromptNormal guibg=NONE
+  hi TelescopePromptBorder guifg=#2E3440 guibg=NONE
+  hi TelescopeResultsNormal guibg=NONE
+  hi TelescopeResultsBorder guifg=#2E3440 guibg=NONE
+  hi TelescopePreviewNormal guibg=NONE
+  hi TelescopePreviewBorder guifg=#2E3440 guibg=NONE
+]]
 
 for _, source in ipairs {
   "whoa.options",

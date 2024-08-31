@@ -34,11 +34,22 @@ return {
     },
   },
   {
-    "norcalli/nvim-colorizer.lua",
+    "NvChad/nvim-colorizer.lua",
 
     name = "Colorizer",
 
-    config = function() require("colorizer").setup {} end,
+    event = "BufEnter",
+
+    config = function()
+      require("colorizer").setup {
+        filetypes = { "*" },
+        user_default_options = {
+          names = false,
+          tailwind = "both",
+          mode = "background",
+        },
+      }
+    end,
   },
   {
     "folke/zen-mode.nvim",
