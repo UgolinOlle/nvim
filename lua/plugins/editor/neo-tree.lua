@@ -65,6 +65,10 @@ return {
         { source = "buffers", name = "Buffers", icon = get_icons("DefaultFile", 1) .. "Bufs" },
       },
     },
+
+    window = {
+      position = "right",
+    },
   },
 
   keys = {
