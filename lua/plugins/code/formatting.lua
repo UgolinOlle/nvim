@@ -51,6 +51,8 @@ return {
           args = {
             "--plugin",
             "prettier-plugin-twig-melody",
+            "--print-width",
+            "120",
             "--write",
             "$FILENAME",
           },
