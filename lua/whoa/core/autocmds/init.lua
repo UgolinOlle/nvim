@@ -165,3 +165,11 @@ autocmd("InsertLeave", {
   pattern = "*",
   callback = function() vim.diagnostic.show(nil, 0) end,
 })
+
+--- Automatically close neo-tree when loose focus on the page.
+autocmd("BufLeave", {
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype == "neo-tree" then vim.cmd "Neotree close" end
+  end,
+})
