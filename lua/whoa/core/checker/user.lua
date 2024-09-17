@@ -16,7 +16,6 @@ local M = {}
 function M.ft_run(tconfig)
   local user_dirs = {
     vim.fn.stdpath "config" .. "/user",
-    -- Ajoute ici d'autres dossiers utilisateur à vérifier
   }
 
   for _, dir in ipairs(user_dirs) do

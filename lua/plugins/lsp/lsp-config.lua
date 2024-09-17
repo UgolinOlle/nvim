@@ -113,7 +113,7 @@ return {
         "cssls",
         "html",
         "jsonls",
-        "tsserver",
+        "ts_ls",
         "vimls",
         "yamlls",
         "clangd",
