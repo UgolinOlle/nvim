@@ -2,8 +2,8 @@
 --
 -- Checking WHOA's configuration and environment.
 --
--- @module whoa.core.utils.functions
--- @copyright 2024
+---@module whoa.core.utils.functions
+---@copyright 2024
 
 local M = {}
 
@@ -33,6 +33,24 @@ end
 function M.ft_create_cmd(cmd, fn, opts)
   opts = opts or {}
   api.nvim_create_user_command(cmd, fn, opts)
+end
+
+--- Get the open command for the current OS.
+--
+---@return string
+function M.ft_open_cmd()
+  local os_name = vim.loop.os_uname().sysname
+  local cmd
+
+  if os_name == "Linux" then
+    cmd = "xdg-open"
+  elseif os_name == "Darwin" then
+    cmd = "open"
+  elseif os_name == "Windows" then
+    cmd = "start"
+  end
+
+  return cmd
 end
 
 -- Create a group of autocommands.
@@ -81,17 +99,18 @@ end
 ---@return nil
 function M.ft_issue()
   local url = "https://github.com/UgolinOlle/WhoaIDE/issues/new?assignees=&labels=&projects=&template=bug_report.md"
+  local cmd = M.ft_open_cmd()
 
-  local os_name = vim.loop.os_uname().sysname
-  local cmd
+  vim.fn.jobstart({ cmd, url }, { detach = true })
+end
 
-  if os_name == "Linux" then
-    cmd = "xdg-open"
-  elseif os_name == "Darwin" then
-    cmd = "open"
-  elseif os_name == "Windows" then
-    cmd = "start"
-  end
+--- Open an feature request on WhoaIDE Github
+--
+---@return nil
+function M.ft_feature()
+  local url =
+    "https://github.com/UgolinOlle/WhoaIDE/issues/new?assignees=&labels=&projects=&template=feature_request.md&title="
+  local cmd = M.ft_open_cmd()
 
   vim.fn.jobstart({ cmd, url }, { detach = true })
 end
