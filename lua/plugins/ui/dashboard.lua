@@ -25,8 +25,8 @@ return {
         header = header,
         shortcut = {
           {
-            desc = "  Whoa Agency",
-            group = "Number",
+            desc = "  Whoa Agency ",
+            group = "@comment.todo",
             key = "1",
             action = function()
               require("telescope.builtin").find_files {
@@ -36,13 +36,13 @@ return {
             end,
           },
           {
-            desc = "󰢱  Configuration",
-            icon_hl = "@keyword",
+            desc = "󰢱  Configuration ",
+            group = "@comment.error",
             key = "2",
             action = function() require("telescope.builtin").find_files { cwd = "~/.config/nvim" } end,
           },
           {
-            desc = "  Package manager",
+            desc = "  Package manager ",
             group = "@property",
             key = "3",
             action = "Lazy",
