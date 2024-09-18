@@ -12,6 +12,7 @@ local notify = require("whoa.core.utils").notify
 local themes = {
   { title = "Hack the Box", name = "hackthebox", icon = "" },
   { title = "Github Dark", name = "github_dark", icon = "" },
+  { title = "Solarized Dark", name = "solarized-osaka", icon = "" },
 }
 
 vim.api.nvim_set_hl(0, "TitleBold", { bold = true, ctermfg = "Yellow", ctermbg = "Blue" })

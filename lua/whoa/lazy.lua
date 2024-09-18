@@ -20,21 +20,24 @@ require("lazy").setup {
   { import = "plugins.notes" },
   { import = "plugins.ui" },
 
-  -- UI
-  ui = {
-    border = "double",
-    size = {
-      width = 0.8,
-      height = 0.8,
+  checker = { enabled = true },
+
+  performance = {
+    cache = {
+      enabled = true,
+    },
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "netrwPlugin",
+        "rplugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
     },
   },
 
-  checker = {
-    enabled = true,
-    notify = false,
-  },
-
-  change_detection = {
-    notify = false,
-  },
+  debug = false,
 }

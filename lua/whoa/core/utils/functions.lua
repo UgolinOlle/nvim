@@ -52,4 +52,28 @@ function M.ft_augroup(name, commands)
   end
 end
 
+--- Reinstall all plugins
+--
+-- @return nil
+function M.ft_reinstall()
+  local lazy_path = vim.fn.stdpath "data" .. "/lazy"
+
+  vim.ui.select({ "Oui", "Non" }, {
+    prompt = "Voulez-vous réinstaller tous les plugins ? Cela supprimera les plugins existants.",
+  }, function(choice)
+    if choice == "Oui" then
+      local success = vim.fn.delete(lazy_path, "rf")
+
+      if success == 0 then
+        vim.notify "Répertoire des plugins Lazy supprimé avec succès."
+        require("lazy").sync()
+      else
+        vim.notify "Échec de la suppression du répertoire des plugins Lazy."
+      end
+    else
+      vim.notify "Réinstallation annulée."
+    end
+  end)
+end
+
 return M
