@@ -76,4 +76,24 @@ function M.ft_reinstall()
   end)
 end
 
+--- Open an issue on WhoaIDE Github
+--
+---@return nil
+function M.ft_issue()
+  local url = "https://github.com/UgolinOlle/WhoaIDE/issues/new?assignees=&labels=&projects=&template=bug_report.md"
+
+  local os_name = vim.loop.os_uname().sysname
+  local cmd
+
+  if os_name == "Linux" then
+    cmd = "xdg-open"
+  elseif os_name == "Darwin" then
+    cmd = "open"
+  elseif os_name == "Windows" then
+    cmd = "start"
+  end
+
+  vim.fn.jobstart({ cmd, url }, { detach = true })
+end
+
 return M
