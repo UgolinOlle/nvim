@@ -37,7 +37,7 @@ return {
           },
           {
             desc = "󰢱  Configuration",
-            icon_hl = "DiagnosticHint",
+            icon_hl = "@keyword",
             key = "2",
             action = function() require("telescope.builtin").find_files { cwd = "~/.config/nvim" } end,
           },
@@ -50,6 +50,7 @@ return {
         },
         packages = { enable = true },
         footer = {
+          " ",
           "Made by WHOA ⨕ Ugolin Ollé",
         },
       },

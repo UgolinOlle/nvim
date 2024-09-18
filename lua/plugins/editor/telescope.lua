@@ -5,22 +5,20 @@ return {
 
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make", name = "Telescope fzf native" },
-    { "nvim-telescope/telescope-file-browser.nvim", name = "Telescope file browser" },
     { "nvim-telescope/telescope-symbols.nvim", name = "Telescope symbols" },
     { "nvim-telescope/telescope-node-modules.nvim", name = "Telescope node modules" },
     { "2kabhishek/nerdy.nvim", name = "Telescope nerdy" },
   },
 
   config = function()
-    --- Check if telescope is installed
+    -- Vérifier si Telescope est installé
     local active, telescope = pcall(require, "telescope")
     if not active then return end
 
-    --- Telescope variables
+    -- Variables de Telescope
     local actions = require "telescope.actions"
-    local fb_actions = require("telescope").extensions.file_browser.actions
 
-    --- Utils variables
+    -- Variables Utilitaires
     local utils = require "whoa.core.utils"
     local get_icons = utils.get_icons
 
@@ -75,7 +73,7 @@ return {
         borderchars = vim.g.border.borderchars,
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
-        winblend = 20,
+        winblend = 0,
         prompt_prefix = get_icons("Command", 2),
         selection_caret = get_icons("ArrowRight", 2),
         entry_prefix = "  ",
@@ -86,66 +84,48 @@ return {
             ["<S-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
           },
         },
-
-        pickers = {
-          find_files = {
-            theme = "dropdown",
-            layout_strategy = "horizontal",
-            layout_config = { height = 0.9 },
-            previewer = false,
-            sorting_strategy = "ascending",
+      },
+      pickers = { -- Définir pickers au même niveau que defaults
+        find_files = {
+          layout_strategy = "vertical", -- Utiliser une stratégie de mise en page valide
+          layout_config = {
+            height = 0.4, -- Ajustez la hauteur selon vos préférences
+            width = 0.5, -- Ajustez la largeur selon vos préférences
+            prompt_position = "top",
           },
-          buffers = {
-            previewer = false,
-            theme = "dropdown",
-            mappings = {
-              n = {
-                ["<C-e>"] = "delete_buffer",
-                ["l"] = "select_default",
-              },
-            },
-            initial_mode = "normal",
-          },
-          diagnostics = {
-            theme = "ivy",
-            initial_mode = "normal",
-            layout_config = { preview_cutoff = 9999 },
-          },
+          previewer = false, -- Désactiver l'aperçu
+          sorting_strategy = "ascending",
         },
-        extensions = {
-
-          file_browser = {
-            dir_icon = "",
-            prompt_path = true,
-            grouped = true,
-            theme = "dropdown",
-            initial_mode = "normal",
-            previewer = false,
-            mappings = {
-              n = {
-                ["o"] = "select_default",
-                ["H"] = fb_actions.toggle_hidden,
-                ["h"] = fb_actions.goto_parent_dir,
-                ["l"] = "select_default",
-              },
+        buffers = {
+          previewer = false,
+          layout_strategy = "vertical",
+          layout_config = {
+            height = 0.4,
+            width = 0.5,
+          },
+          mappings = {
+            n = {
+              ["<C-e>"] = "delete_buffer",
+              ["l"] = "select_default",
             },
           },
+          initial_mode = "normal",
+        },
+        diagnostics = {
+          theme = "ivy",
+          initial_mode = "normal",
+          layout_config = { preview_cutoff = 9999 },
         },
       },
     }
 
+    -- Charger les extensions
     telescope.load_extension "fzf"
     telescope.load_extension "node_modules"
     telescope.load_extension "nerdy"
-    telescope.load_extension "file_browser"
   end,
 
   keys = {
-    {
-      ";ff",
-      "<CMD>Telescope file_browser path=%:p:h select_buffer=true<CR>",
-      { noremap = true, silent = true, desc = "Find files" },
-    },
     {
       ";f",
       function()

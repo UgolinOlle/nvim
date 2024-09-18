@@ -45,7 +45,6 @@
   "Solarized Osaka": { "branch": "main", "commit": "126d394c0c979a99206214a2b6b8c86e456c9c0f" },
   "Surround": { "branch": "main", "commit": "40abcba017a943d6d3dd304e523f34a43d80405b" },
   "Telescope": { "branch": "master", "commit": "0df05c9e9f791dbc542c1fb612195f4dc97209b6" },
-  "Telescope file browser": { "branch": "master", "commit": "dd9de68c08b6d678198a99f5ea13e0384a1f04cf" },
   "Telescope fzf native": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
   "Telescope nerdy": { "branch": "main", "commit": "b467d6609b78d6a5f1e12cbc08fcc1ac87af20f5" },
   "Telescope node modules": { "branch": "main", "commit": "b846d33ff5763176dc14fc74c30941a2067c82fd" },
