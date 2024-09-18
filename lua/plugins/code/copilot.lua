@@ -12,13 +12,11 @@ return {
     if not active then return end
 
     copilot.setup {
-      -- Configure the layout of the completion window
       layout = {
         position = "bottom",
         ratio = 0.4,
       },
 
-      -- Configure the keymap for the completion window
       suggestion = {
         enabled = true,
 

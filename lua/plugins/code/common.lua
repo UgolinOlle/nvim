@@ -1,5 +1,4 @@
 return {
-  { "echasnovski/mini.nvim", version = "*", name = "Mini" },
   {
     "ziontee113/icon-picker.nvim",
 
@@ -42,23 +41,5 @@ return {
     "nelsyeung/twig.vim",
 
     name = "Twig",
-  },
-  {
-    "nvimtools/none-ls.nvim",
-
-    name = "None LS",
-
-    config = function(_, opts)
-      local sources = {}
-
-      for _, to_register_wrap in pairs(opts) do
-        local to_register = to_register_wrap()
-        table.insert(sources, to_register)
-      end
-
-      require("null-ls").setup {
-        sources = sources,
-      }
-    end,
   },
 }
