@@ -94,6 +94,43 @@ function M.ft_reinstall()
   end)
 end
 
+--- Switch AI Model
+--
+---@param model string: The model to be switched to.
+---@return nil
+function M.ft_switch_model(model)
+  local avante = require "avante"
+
+  if not model then
+    vim.notify "No model provided."
+    return
+  elseif model == "claude" then
+    avante.setup {
+      provider = "claude",
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-3-5-sonnet-20240620",
+        temperature = 0.7,
+        max_tokens = 4096,
+      },
+    }
+  elseif model == "openai" then
+    avante.setup {
+      provider = "openai",
+      openai = {
+        endpoint = "https://api.openai.com",
+        model = "gpt-4",
+        temperature = 0.7,
+        max_tokens = 4096,
+      },
+    }
+  else
+    vim.notify("Model not found: " .. model, 2)
+    return
+  end
+  print("Switched to model: " .. model)
+end
+
 --- Open an issue on WhoaIDE Github
 --
 ---@return nil

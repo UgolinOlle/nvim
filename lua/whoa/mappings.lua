@@ -23,6 +23,9 @@ keymap("n", "<leader>st", '<cmd>lua require("whoa.core").w_theme.ft_list_themes(
 opts.desc = "Create an issue"
 keymap("n", "<leader>gi", '<cmd>lua require("whoa.core.common.issue").ft_issue_popup()<CR>', opts)
 
+opts.desc = "Escape"
+keymap("n", "<ESC>", "<ESC>", opts)
+
 -- Tabs
 opts.desc = "New tab"
 keymap("n", "<LEADER>te", "<CMD>tabnew<CR>", opts)
