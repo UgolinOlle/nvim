@@ -109,3 +109,9 @@ autocmd("BufLeave", {
     if vim.bo.filetype == "neo-tree" then vim.cmd "Neotree close" end
   end,
 })
+
+--- Automatically save when focus is lost or when insert mode is left.
+autocmd({ "FocusLost", "InsertLeave" }, {
+  pattern = "*",
+  callback = function() vim.cmd "silent! wa" end,
+})
