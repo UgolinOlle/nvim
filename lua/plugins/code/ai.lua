@@ -1,16 +1,38 @@
 return {
   "yetone/avante.nvim",
 
-  name = "Avante",
+  event = "VeryLazy",
 
-  lazy = true,
+  build = "make BUILD_FROM_SOURCE=true",
 
-  build = "make",
+  version = false,
 
   opts = {
-    provider = "openai",
-    behaviour = {
-      auto_set_keymaps = false,
+    provider = "ollama",
+    vendors = {
+      ollama = {
+        ["local"] = true,
+        endpoint = "127.0.0.1:11434/v1",
+        model = "codellama",
+        parse_curl_args = function(opts, code_opts)
+          return {
+            url = opts.endpoint .. "/chat/completions",
+            headers = {
+              ["Accept"] = "application/json",
+              ["Content-Type"] = "application/json",
+            },
+            body = {
+              model = opts.model,
+              messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
+              max_tokens = 2048,
+              stream = true,
+            },
+          }
+        end,
+        parse_response_data = function(data_stream, event_state, opts)
+          require("avante.providers").openai.parse_response(data_stream, event_state, opts)
+        end,
+      },
     },
   },
 
