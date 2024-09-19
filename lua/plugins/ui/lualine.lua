@@ -1,3 +1,4 @@
+-- Variables
 local get_icons = require("whoa.core.utils").get_icons
 local colors = {
   blue = "#80a0ff",
@@ -8,7 +9,6 @@ local colors = {
   violet = "#8338ec",
   grey = "#303030",
 }
-
 local bubbles_theme = {
   normal = {
     a = { fg = colors.white, bg = colors.violet },
@@ -78,7 +78,7 @@ return {
       component_separators = "",
       section_separators = { left = "", right = "" },
       disabled_filetypes = {
-        statusline = { "neo-tree" },
+        statusline = { "neo-tree", "AvanteInput", "Avante", "packer", "NvimTree", "Outline" },
       },
     },
   },
