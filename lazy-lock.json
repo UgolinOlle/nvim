@@ -12,6 +12,7 @@
   "Fidget": { "branch": "main", "commit": "d855eed8a06531a7e8fd0684889b2943f373c469" },
   "Garbage day": { "branch": "main", "commit": "4a1160bfffb2f499fb55a54333f29d160ab3c8a1" },
   "Git Signs": { "branch": "main", "commit": "1ef74b546732f185d0f806860fa5404df7614f28" },
+  "GitGraph": { "branch": "main", "commit": "01e466b32c346a165135dd47d42f1244eca06572" },
   "GitHub": { "branch": "main", "commit": "6b461635230ccb5d0037f378fbe05a27c4ccf7cd" },
   "Github Copilot": { "branch": "release", "commit": "782461159655b259cff10ecff05efa761e3d4764" },
   "GrugFar": { "branch": "main", "commit": "62feb8e2a0fc564d8c712e813210accfcea5d69d" },
