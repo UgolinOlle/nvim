@@ -11,69 +11,23 @@ return {
   },
 
   config = function()
-    -- Vérifier si Telescope est installé
+    --- Check if telescope is active or not
     local active, telescope = pcall(require, "telescope")
     if not active then return end
 
-    -- Variables de Telescope
+    --- Variables
     local actions = require "telescope.actions"
-
-    -- Variables Utilitaires
     local utils = require "whoa.core.utils"
     local get_icons = utils.get_icons
 
     telescope.setup {
       defaults = {
         wrap_results = true,
-        file_ignore_patterns = {
-          "%.7z",
-          "%.MOV",
-          "%.RAF",
-          "%.burp",
-          "%.bz2",
-          "%.cache",
-          "%.class",
-          "%.dll",
-          "%.docx",
-          "%.dylib",
-          "%.epub",
-          "%.exe",
-          "%.flac",
-          "%.ico",
-          "%.ipynb",
-          "%.jar",
-          "%.lock",
-          "%.mkv",
-          "%.mov",
-          "%.mp4",
-          "%.otf",
-          "%.pdb",
-          "%.rar",
-          "%.sqlite3",
-          "%.svg",
-          "%.tar",
-          "%.tar.gz",
-          "%.zip",
-          ".git/",
-          ".gradle/",
-          ".idea/",
-          ".settings/",
-          ".vale/",
-          ".vscode/",
-          "__pycache__/*",
-          "build/",
-          "env/",
-          "gradle/",
-          "node_modules/",
-          "smalljre_*/*",
-          "target/",
-          "vendor/*",
-        },
+        file_ignore_patterns = vim.g.telescope_exclude_file,
         layout_strategy = "horizontal",
         borderchars = vim.g.border.borderchars,
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
-        winblend = 0,
         prompt_prefix = get_icons("Command", 2),
         selection_caret = get_icons("ArrowRight", 2),
         entry_prefix = "  ",
@@ -85,15 +39,14 @@ return {
           },
         },
       },
-      pickers = { -- Définir pickers au même niveau que defaults
+
+      pickers = {
         find_files = {
-          layout_strategy = "vertical", -- Utiliser une stratégie de mise en page valide
+          theme = "dropdown",
           layout_config = {
-            height = 0.4, -- Ajustez la hauteur selon vos préférences
-            width = 0.5, -- Ajustez la largeur selon vos préférences
             prompt_position = "top",
           },
-          previewer = false, -- Désactiver l'aperçu
+          previewer = false,
           sorting_strategy = "ascending",
         },
         buffers = {
@@ -119,7 +72,7 @@ return {
       },
     }
 
-    -- Charger les extensions
+    --- Load extensions
     telescope.load_extension "fzf"
     telescope.load_extension "node_modules"
     telescope.load_extension "nerdy"
