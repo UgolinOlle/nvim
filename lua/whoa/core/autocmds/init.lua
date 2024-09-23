@@ -97,3 +97,16 @@ autocmd({ "FocusLost", "InsertLeave" }, {
   pattern = "*",
   callback = function() vim.cmd "silent! wa" end,
 })
+
+--- Copy to clipboard the diagnostic message.
+autocmd("DiagnosticChanged", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_keymap(
+      "n",
+      "<LEADER>cd",
+      "<CMD>lua require('whoa.core').WUtils.ft_copy_diagnostic()<CR>",
+      { noremap = true, silent = true, desc = "Copy diagnostic message." }
+    )
+  end,
+})

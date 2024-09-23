@@ -152,4 +152,19 @@ function M.ft_feature()
   vim.fn.jobstart({ cmd, url }, { detach = true })
 end
 
+--- Copy the diagnostic message under the cursor to the clipboard.
+function M.ft_copy_diagnostic()
+  local line_diagnostics = vim.diagnostic.get(0, { lnum = vim.api.nvim_win_get_cursor(0)[1] - 1 })
+
+  if #line_diagnostics == 0 then
+    vim.notify("Aucun diagnostic trouvé.", 1)
+    return
+  end
+
+  local diag_message = line_diagnostics[1].message
+  vim.fn.setreg("+", diag_message)
+
+  vim.notify("Diagnostic copié : " .. diag_message, 2)
+end
+
 return M
