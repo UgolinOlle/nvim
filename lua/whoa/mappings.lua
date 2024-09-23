@@ -9,7 +9,7 @@ opts.desc = "Save without quit"
 keymap("n", "<LEADER>w", "<CMD>confirm w<ENTER>", opts)
 
 opts.desc = "Close buffer"
-keymap("n", "<LEADER>q", "<CMD>bd<ENTER>", opts)
+keymap("n", "<LEADER>q", function() require("mini.bufremove").delete(0, false) end, opts)
 
 opts.desc = "Close window"
 keymap("n", "Q", "<CMD>confirm q<CR>", opts)
