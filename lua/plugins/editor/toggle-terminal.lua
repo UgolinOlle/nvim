@@ -9,7 +9,11 @@ return {
     "ToggleTerm",
   },
 
-  config = true,
+  opts = {
+    float_opts = {
+      border = "curved",
+    },
+  },
 
   keys = {
     {
