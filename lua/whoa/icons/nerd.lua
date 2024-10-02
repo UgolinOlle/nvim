@@ -11,6 +11,7 @@ return {
   ArrowRight = "",
   Bookmarks = "",
   BufferClose = "󰅖",
+  Color = "",
   Command = "󰘳",
   Copilot = "",
   Cube = "",

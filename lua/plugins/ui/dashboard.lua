@@ -20,12 +20,13 @@ return {
 
   config = function()
     require("dashboard").setup {
-      theme = "hyper",
+      theme = "doom",
       config = {
         header = header,
-        shortcut = {
+        center = {
           {
-            desc = "  Whoa Agency ",
+            icon = "",
+            desc = "  Whoa Agency ",
             group = "@comment.todo",
             key = "1",
             action = function()
@@ -36,19 +37,20 @@ return {
             end,
           },
           {
-            desc = "󰢱  Configuration ",
+            icon = "󰢱",
+            desc = "  Configuration ",
             group = "@comment.error",
             key = "2",
             action = function() require("telescope.builtin").find_files { cwd = "~/.config/nvim" } end,
           },
           {
-            desc = "  Package manager ",
+            icon = "",
+            desc = "  Package manager ",
             group = "@property",
             key = "3",
             action = "Lazy",
           },
         },
-        packages = { enable = true },
         footer = {
           " ",
           "Made by WHOA ⨕ Ugolin Ollé",
