@@ -9,14 +9,14 @@ return {
     build = ":TSUpdate",
 
     dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
+      { "JoosepAlviste/nvim-ts-context-commentstring", name = "Nvim TS Context Comment String" },
       { "windwp/nvim-ts-autotag", name = "Nvim Treesitter Autotag" },
       { "windwp/nvim-autopairs", name = "Nvim Autopairs" },
       { "hiphish/rainbow-delimiters.nvim", name = "Rainbow Delimiters" },
     },
 
     opts = {
-      sync_install = false,
+      sync_install = true,
 
       auto_install = true,
 
@@ -56,6 +56,8 @@ return {
         "twig",
         "vim",
 
+        "mdx",
+        "md",
         "json",
         "yaml",
         "dockerfile",
