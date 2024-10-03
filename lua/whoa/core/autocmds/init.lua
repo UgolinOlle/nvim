@@ -110,3 +110,9 @@ autocmd("DiagnosticChanged", {
     )
   end,
 })
+
+--- Setup filetype for mdx
+autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.mdx",
+  callback = function() vim.bo.filetype = "markdown" end,
+})

@@ -21,14 +21,13 @@ return {
         css = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
-        markdown = { "prettier" },
         scss = { "prettier" },
         lua = { "stylua" },
         php = { "phpcbf" },
         twig = { "twig_formatter" },
         c = { "c_formatter_42" },
         cpp = { "c_formatter_42" },
-        mdx = { "prettier" },
+        markdown = { "prettier" },
       },
 
       -- Formatting options
@@ -62,24 +61,6 @@ return {
       -- Filetype specific formatters configuration
       filetypes = {
         ["*"] = {
-          function()
-            return {
-              exe = "prettier",
-              args = { "--print-width", "120" },
-              stdin = true,
-            }
-          end,
-        },
-        md = {
-          function()
-            return {
-              exe = "prettier",
-              args = { "--print-width", "120" },
-              stdin = true,
-            }
-          end,
-        },
-        mdx = {
           function()
             return {
               exe = "prettier",

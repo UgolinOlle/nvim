@@ -21,7 +21,7 @@ return {
       twig = { "twigcs", "stylelint", "eslint" },
       c = { "norminette" },
       cpp = { "norminette" },
-      mdx = { "eslint" },
+      markdown = { "eslint" },
     }
 
     lint.linters.norminette = {
