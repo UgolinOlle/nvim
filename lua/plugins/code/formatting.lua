@@ -28,6 +28,7 @@ return {
         c = { "c_formatter_42" },
         cpp = { "c_formatter_42" },
         markdown = { "prettier" },
+        sh = { "shfmt" },
       },
 
       -- Formatting options
@@ -38,6 +39,10 @@ return {
 
       -- Specific formatters
       formatters = {
+        prettier = {
+          extra_args = { "--print-width", "120" },
+        },
+
         c_formatter_42 = {
           command = "c_formatter_42",
           args = { "$FILENAME" },
@@ -58,17 +63,8 @@ return {
         },
       },
 
-      -- Filetype specific formatters configuration
+      --- Filetype specific formatters configuration
       filetypes = {
-        ["*"] = {
-          function()
-            return {
-              exe = "prettier",
-              args = { "--print-width", "120" },
-              stdin = true,
-            }
-          end,
-        },
         lua = {
           function()
             return {
