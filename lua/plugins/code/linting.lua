@@ -22,6 +22,7 @@ return {
       c = { "norminette" },
       cpp = { "norminette" },
       markdown = { "eslint" },
+      python = { "flake8" },
     }
 
     lint.linters.norminette = {

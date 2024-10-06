@@ -29,6 +29,7 @@ return {
         cpp = { "c_formatter_42" },
         markdown = { "prettier" },
         sh = { "shfmt" },
+        python = { "black" },
       },
 
       -- Formatting options

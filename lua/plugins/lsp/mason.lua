@@ -46,6 +46,7 @@ return {
         "tailwindcss",
         "emmet_ls",
         "phpactor",
+        "pyright",
       },
 
       automatic_installation = true,
@@ -53,6 +54,7 @@ return {
 
     mason_tool.setup {
       ensure_installed = {
+        "flake8",
         "prettier",
         "eslint_d",
         "stylua",
