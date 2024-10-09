@@ -18,7 +18,7 @@ opts.desc = "Make the current file executable"
 keymap("n", "<LEADER>x", "<CMD>!chmod +x %<CR>", opts)
 
 opts.desc = "Select theme"
-keymap("n", "<leader>st", '<cmd>lua require("whoa.core").w_theme.ft_list_themes()<CR>', opts)
+keymap("n", "<leader>st", function() require("whoa.core").WTheme.ft_list_themes() end, opts)
 
 opts.desc = "Create an issue"
 keymap("n", "<leader>gi", '<cmd>lua require("whoa.core.common.issue").ft_issue_popup()<CR>', opts)
@@ -93,11 +93,11 @@ keymap("n", "<LEADER><SPACE>", "<cmd>nohlsearch<CR>", opts)
 
 --- Open logs
 opts.desc = "Open logs"
-keymap("n", "<LEADER>lo", "<cmd>lua require('whoa.core').w_logger.ft_view_logs()<CR>", opts)
+keymap("n", "<LEADER>lo", function() require("whoa.core").WLogger.ft_view_logs() end, opts)
 
 --- Open features config
 opts.desc = "Open features config"
-keymap("n", "<LEADER>ft", "<cmd>lua require('whoa.core').w_features.open()<CR>", opts)
+keymap("n", "<LEADER>ft", function() require("whoa.core").WFeatures.open() end, opts)
 
 --- Plugins --
 

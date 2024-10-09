@@ -1,20 +1,21 @@
 --- ## Whoa Core
 --
--- Module for the core functionality of Whoa.
+---@desc Module for the core functionality of Whoa.
 --
--- @module whoa.core
--- @copyright 2024
+---@module whoa.core
+---@copyright 2024
 
 local M = {}
 
 --- Imports
 M.WUtils = require "whoa.core.utils"
-M.w_autocmds = require "whoa.core.autocmds"
+M.WAutocmds = require "whoa.core.autocmds"
 M.WChecker = require "whoa.core.checker"
-M.w_features = require "whoa.core.features"
+M.WFeatures = require "whoa.core.features"
 M.WLogger = require "whoa.core.logger"
 M.WUser = require "whoa.core.user"
-M.w_theme = require "whoa.core.theme"
+M.WTheme = require "whoa.core.theme"
+M.WNotes = require "whoa.core.notes"
 
 --- Execute logger setup
 M.WLogger.ft_setup_logging()

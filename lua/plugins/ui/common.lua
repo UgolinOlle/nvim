@@ -1,8 +1,13 @@
 return {
   {
-    "stevearc/dressing.nvim",
+    "grapp-dev/nui-components.nvim",
 
-    name = "Dressing",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+  },
+  {
+    "stevearc/dressing.nvim",
 
     event = "VeryLazy",
   },
