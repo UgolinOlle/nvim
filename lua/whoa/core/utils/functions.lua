@@ -1,7 +1,6 @@
 --- ## Whoa checker
 --
--- Checking WHOA's configuration and environment.
---
+---@desc Checking WHOA's configuration and environment.
 ---@module whoa.core.utils.functions
 ---@copyright 2024
 
@@ -153,6 +152,8 @@ function M.ft_feature()
 end
 
 --- Copy the diagnostic message under the cursor to the clipboard.
+--
+---@return nil
 function M.ft_copy_diagnostic()
   local line_diagnostics = vim.diagnostic.get(0, { lnum = vim.api.nvim_win_get_cursor(0)[1] - 1 })
 
@@ -165,6 +166,19 @@ function M.ft_copy_diagnostic()
   vim.fn.setreg("+", diag_message)
 
   vim.notify("Diagnostic copié : " .. diag_message, 2)
+end
+
+--- Go to line
+--
+---@param line number: The line to go to.
+---@return nil
+function M.ft_go_to_line()
+  local line = tonumber(vim.fn.input "Go to line: ")
+  if line and line > 0 then
+    vim.cmd(tostring(line))
+  else
+    vim.notify("Numéro de ligne invalide", vim.log.levels.ERROR)
+  end
 end
 
 return M

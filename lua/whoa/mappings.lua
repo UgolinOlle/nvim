@@ -85,11 +85,10 @@ keymap("v", ">", ">gv^", opts)
 opts.desc = "Remove highlights"
 keymap("n", "<LEADER><SPACE>", "<cmd>nohlsearch<CR>", opts)
 
---- Open logs
+--- WHOA Mappings ---
 opts.desc = "Open logs"
 keymap("n", "<LEADER>lo", function() require("whoa.core").WLogger.ft_view_logs() end, opts)
 
---- Open features config
 opts.desc = "Open features config"
 keymap("n", "<LEADER>ft", function() require("whoa.core").WFeatures.open() end, opts)
 
@@ -99,7 +98,10 @@ keymap("n", "<leader>st", function() require("whoa.core").WTheme.ft_list_themes(
 opts.desc = "Create an issue"
 keymap("n", "<leader>gi", function() require("whoa.core.common.issue").ft_issue_popup() end, opts)
 
---- Plugins --
+opts.desc = "Open input to go to line"
+keymap("n", "\\", function() require("whoa.core").WUtils.ft_go_to_line() end, opts)
+
+--- Plugins ---
 
 -- Lazy
 opts.desc = "Open Lazy package manager"
