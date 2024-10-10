@@ -6,8 +6,8 @@ return {
   event = "VeryLazy",
 
   config = function()
-    require("neocord").setup({
-      client_id = "445957680729817088"
-    })
-end
+    require("neocord").setup {
+      client_id = "1287732244835733576",
+    }
+  end,
 }

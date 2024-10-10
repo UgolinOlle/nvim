@@ -104,14 +104,6 @@ return {
       { noremap = true, silent = true, desc = "Buffers" },
     },
     {
-      ";d",
-      function()
-        local builtin = require "telescope.builtin"
-        builtin.diagnostics()
-      end,
-      { noremap = true, silent = true, desc = "Document diagnostics" },
-    },
-    {
       ";s",
       function()
         local builtin = require "telescope.builtin"

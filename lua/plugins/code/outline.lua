@@ -3,7 +3,9 @@ return {
 
   name = "Outline",
 
-  opts = {
-    position = "left",
+  config = function() require("outline").setup {} end,
+
+  keys = {
+    { "<LEADER>o", "<CMD>Outline<CR>", { noremap = true, silent = true, desc = "Toggle Outline" } },
   },
 }

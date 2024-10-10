@@ -5,6 +5,12 @@ return {
     name = "Icon Picker",
 
     config = function() require("icon-picker").setup { disable_legacy_commands = true } end,
+
+    keys = {
+      { "<C-i>", "<CMD>IconPickerInsert<CR>", { noremap = true, silent = true, desc = "Open icon picker" } },
+      { "<LEADER>y", "<CMD>IconPickerYank<CR>", { noremap = true, silent = true, desc = "Yank icon" } },
+      { "<LEADER>i", "<CMD>IconPickerNormal<CR>", { noremap = true, silent = true, desc = "Normal icon picker" } },
+    },
   },
   {
     "nvim-lua/plenary.nvim",

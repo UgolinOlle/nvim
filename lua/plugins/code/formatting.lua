@@ -78,4 +78,8 @@ return {
       },
     }
   end,
+
+  keys = {
+    { "<LEADER>ci", "<CMD>ConformInfo<CR>", { noremap = true, silent = true, desc = "Show Conform information" } },
+  },
 }

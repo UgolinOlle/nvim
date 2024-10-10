@@ -17,12 +17,6 @@ keymap("n", "Q", "<CMD>confirm q<CR>", opts)
 opts.desc = "Make the current file executable"
 keymap("n", "<LEADER>x", "<CMD>!chmod +x %<CR>", opts)
 
-opts.desc = "Select theme"
-keymap("n", "<leader>st", function() require("whoa.core").WTheme.ft_list_themes() end, opts)
-
-opts.desc = "Create an issue"
-keymap("n", "<leader>gi", '<cmd>lua require("whoa.core.common.issue").ft_issue_popup()<CR>', opts)
-
 -- Tabs
 opts.desc = "New tab"
 keymap("n", "<LEADER>te", "<CMD>tabnew<CR>", opts)
@@ -68,10 +62,10 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Move text up and down
 opts.desc = "Move text down"
-keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
+keymap({ "v", "n" }, "<S-j>", ":m '>+1<CR>gv=gv", opts)
 
 opts.desc = "Move text up"
-keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", opts)
+keymap({ "v", "n" }, "<S-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Exit in insert mode
 opts.desc = "Exit insert mode"
@@ -99,44 +93,14 @@ keymap("n", "<LEADER>lo", function() require("whoa.core").WLogger.ft_view_logs()
 opts.desc = "Open features config"
 keymap("n", "<LEADER>ft", function() require("whoa.core").WFeatures.open() end, opts)
 
+opts.desc = "Select theme"
+keymap("n", "<leader>st", function() require("whoa.core").WTheme.ft_list_themes() end, opts)
+
+opts.desc = "Create an issue"
+keymap("n", "<leader>gi", function() require("whoa.core.common.issue").ft_issue_popup() end, opts)
+
 --- Plugins --
 
 -- Lazy
 opts.desc = "Open Lazy package manager"
 keymap("n", "<LEADER>l", "<CMD>Lazy<CR>", opts)
-
--- Mason
-opts.desc = "Mason home"
-keymap("n", "<LEADER>pp", "<CMD>Mason<CR>", opts)
-
-opts.desc = "Mason update"
-keymap("n", "<LEADER>pM", "<CMD>MasonUpdate<CR>", opts)
-
--- Icon picker
-opts.desc = "Open icon picker"
-keymap("n", "<LEADER>i", "<CMD>IconPickerNormal<CR>", opts)
-
-opts.desc = "Yank icon"
-keymap("n", "<LEADER>y", "<CMD>IconPickerYank<CR>", opts)
-
-opts.desc = "Insert icon"
-keymap("n", "<C-i>", "<CMD>IconPickerInsert<CR>", opts)
-
--- Devdocs
-opts.desc = "Open Devdocs"
-keymap("n", "<LEADER>dd", "<CMD>DevdocsOpen<CR>", opts)
-
-opts.desc = "Open Devdocs float"
-keymap("n", "<LEADER>ds", "<CMD>DevdocsOpenCurrentFloat<CR>", opts)
-
--- Conform
-opts.desc = "Conform info"
-keymap("n", "<LEADER>ci", "<CMD>ConformInfo<CR>", opts)
-
--- Notify
-opts.desc = "Dismiss notifications"
-keymap("n", "<LEADER>nn", "<CMD>lua require('notify').dismiss()<CR>", opts)
-
--- Which key
-opts.desc = "Open which key"
-keymap("n", "<LEADER>?", "<CMD>WhichKey<CR>", opts)

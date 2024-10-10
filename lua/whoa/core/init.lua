@@ -16,6 +16,7 @@ M.WLogger = require "whoa.core.logger"
 M.WUser = require "whoa.core.user"
 M.WTheme = require "whoa.core.theme"
 M.WNotes = require "whoa.core.notes"
+M.WPlugins = require "whoa.core.plugins"
 
 --- Execute logger setup
 M.WLogger.ft_setup_logging()

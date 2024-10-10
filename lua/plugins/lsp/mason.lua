@@ -61,4 +61,9 @@ return {
       },
     }
   end,
+
+  keys = {
+    { "<LEADER>pM", "<CMD>MasonUpdate<CR>", { noremap = true, desc = "Mason update" } },
+    { "<LEADER>pp", "<CMD>Mason<CR>", { noremap = true, desc = "Mason home" } },
+  },
 }

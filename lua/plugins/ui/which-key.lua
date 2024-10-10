@@ -47,4 +47,8 @@ return {
     show_help = true,
     triggers = { "<leader>" },
   },
+
+  keys = {
+    { "<LEADER>?", "<CMD>WhichKey<CR>", { noremap = true, silent = true, desc = "Open Which key" } },
+  },
 }
