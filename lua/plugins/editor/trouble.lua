@@ -48,12 +48,12 @@ return {
   keys = {
     {
       "<LEADER>ll",
-      "<CMD>Trouble lsp_references<CR>",
+      "<CMD>Trouble lsp_references toggle<CR>",
       { noremap = true, silent = true, desc = "Open Trouble with LSP References" },
     },
     {
       "<LEADER>ld",
-      "<CMD>Trouble lsp_definitions<CR>",
+      "<CMD>Trouble lsp_definitions toggle<CR>",
       { noremap = true, silent = true, desc = "Open Trouble with LSP Definitions" },
     },
     {
