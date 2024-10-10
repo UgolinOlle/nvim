@@ -20,25 +20,6 @@ return {
     end,
   },
   {
-    "VidocqH/lsp-lens.nvim",
-
-    name = "LSP Lens",
-
-    opts = {
-      enable = true,
-      include_declaration = false,
-      sections = {
-        definition = true,
-        references = true,
-        implements = true,
-        git_authors = true,
-      },
-      ignore_filetype = {
-        "prisma",
-      },
-    },
-  },
-  {
     "zeioth/garbage-day.nvim",
 
     name = "Garbage day",
