@@ -44,12 +44,6 @@ return {
       lines = { "", "", "", "", "" },
       expand = "",
       collapse = "",
-      colors = {
-        --float window normal background color
-        normal_bg = "#0B0E14",
-        --title background color
-        title_bg = "#0D1017",
-      },
     },
     code_action = {
       num_shortcut = true,

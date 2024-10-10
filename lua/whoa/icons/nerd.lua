@@ -17,12 +17,6 @@ return {
   Cube = "",
   Debugger = "",
   DefaultFile = "󰈙",
-  Diagnostic = "󰒡",
-  DiagnosticError = "",
-  DiagnosticHint = "󰌵",
-  DiagnosticInfo = "󰋼",
-  DiagnosticWarn = "",
-  DiagnosticPerf = "",
   Edit = "󰤌",
   Ellipsis = "…",
   File = "",
@@ -95,6 +89,15 @@ return {
     Unit = " ",
     Value = " ",
     Variable = " ",
+  },
+
+  Diagnostic = {
+    Basic = "󰒡",
+    Error = "",
+    Hint = "󰌵",
+    Info = "󰋼",
+    Warn = "",
+    Perf = "",
   },
 
   Git = {
