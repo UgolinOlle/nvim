@@ -10,7 +10,6 @@ return {
     { "antosha417/nvim-lsp-file-operations", name = "Nvim LSP File Operations", config = true },
     { "folke/neodev.nvim", name = "Neodev" },
     { "soulis-1256/eagle.nvim", name = "Eagle" },
-    { "jubnzv/virtual-types.nvim", name = "Virtual Types" },
   },
 
   config = function()
