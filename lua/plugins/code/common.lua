@@ -44,8 +44,8 @@ return {
     end,
   },
   {
-    "nelsyeung/twig.vim",
+    "MeanderingProgrammer/render-markdown.nvim",
 
-    name = "Twig",
+    name = "Render Markdown",
   },
 }
