@@ -145,7 +145,7 @@ end
 ---@return nil
 function M.ft_feature()
   local url =
-    "https://github.com/UgolinOlle/WhoaIDE/issues/new?assignees=&labels=&projects=&template=feature_request.md&title="
+  "https://github.com/UgolinOlle/WhoaIDE/issues/new?assignees=&labels=&projects=&template=feature_request.md&title="
   local cmd = M.ft_open_cmd()
 
   vim.fn.jobstart({ cmd, url }, { detach = true })
@@ -170,7 +170,6 @@ end
 
 --- Go to line
 --
----@param line number: The line to go to.
 ---@return nil
 function M.ft_go_to_line()
   local line = tonumber(vim.fn.input "Go to line: ")

@@ -20,6 +20,14 @@ return {
     end,
   },
   {
+    'LukasPietzschmann/boo.nvim',
+
+    name = "Boo",
+
+    opts = {
+    }
+  },
+  {
     "zeioth/garbage-day.nvim",
 
     name = "Garbage day",
