@@ -96,7 +96,7 @@ opts.desc = "Select theme"
 keymap("n", "<leader>st", function() require("whoa.core").WTheme.ft_list_themes() end, opts)
 
 opts.desc = "Create an issue"
-keymap("n", "<leader>gi", function() require("whoa.core.common.issue").ft_issue_popup() end, opts)
+keymap("n", "<leader>gi", function() require("whoa.core").WUtils.ft_issue() end, opts)
 
 opts.desc = "Open input to go to line"
 keymap("n", "\\", function() require("whoa.core").WUtils.ft_go_to_line() end, opts)
