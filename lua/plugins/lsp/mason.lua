@@ -1,6 +1,5 @@
 -- Import
 local utils = require "whoa.core.utils"
-local get_icons = utils.get_icons
 
 return {
   "williamboman/mason.nvim",
@@ -18,21 +17,20 @@ return {
     if not active then return end
 
     -- Check if Mason LSPConfig is active
-    local _, mason_lspconfig = pcall(require, "mason-lspconfig")
+    local active, mason_lspconfig = pcall(require, "mason-lspconfig")
     if not active then return end
 
     -- Check if Mason Tool Installer is active
-    local _, mason_tool = pcall(require, "mason-tool-installer")
-    if not active then return end
+    local active_tool_installer, mason_tool_installer = pcall(require, "mason-tool-installer")
+    if not active_tool_installer then vim.notify("Mason Tool Installer n'est pas installé", vim.log.levels.WARN) end
 
     -- Setup Mason
     mason.setup {
-      -- Icons
       ui = {
         icons = {
-          package_installed = get_icons("GitStaged", 1),
-          package_pending = get_icons("GitModified", 1),
-          package_uninstalled = get_icons("GitUntracked", 1),
+          package_installed = utils.get_icons("Git.Staged", 1),
+          package_pending = utils.get_icons("Git.Modified", 1),
+          package_uninstalled = utils.get_icons("Git.Untracked", 1),
         },
       },
     }
