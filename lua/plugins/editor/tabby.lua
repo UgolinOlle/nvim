@@ -1,11 +1,16 @@
 return {
-  'nanozuki/tabby.nvim',
+  "nanozuki/tabby.nvim",
 
-  dependencies = { 'nvim-lualine/lualine.nvim' },
+  after = "bufferline",
+
+  dependencies = { "nvim-lualine/lualine.nvim" },
 
   config = function()
-    require('tabby').setup({
-      tabline = require('whoa.core.plugins.tabs.tabby-cfg'),
-    })
-  end
+    local tabby_presets = require "tabby.presets"
+    local tabby_config = require "whoa.core.plugins.tabs.tabby-cfg"
+
+    require("tabby").setup {
+      tabline = vim.tbl_extend("force", tabby_presets.active_wins_at_tail, tabby_config),
+    }
+  end,
 }

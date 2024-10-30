@@ -15,6 +15,11 @@ local header = {
   [[                                                                      ]],
   [[                                                                      ]],
 }
+vim.cmd [[
+  highlight DashboardDesc1 guifg=#FF5733
+  highlight DashboardDesc2 guifg=#33FF57
+  highlight DashboardDesc3 guifg=#3357FF
+]]
 
 return {
   "nvimdev/dashboard-nvim",
@@ -35,26 +40,20 @@ return {
           {
             icon = "",
             desc = "  Whoa Agency ",
-            group = "@comment.todo",
+            desc_hl = "DashboardDesc1",
             key = "1",
-            action = function()
-              require("telescope.builtin").find_files {
-                prompt_title = "Select Folder",
-                cwd = "~/Developer/whoa",
-              }
-            end,
           },
           {
             icon = "󰢱",
             desc = "  Configuration ",
-            group = "@comment.error",
+            desc_hl = "DashboardDesc2",
             key = "2",
             action = function() require("telescope.builtin").find_files { cwd = "~/.config/nvim" } end,
           },
           {
             icon = "",
             desc = "  Package manager ",
-            group = "@property",
+            desc_hl = "DashboardDesc3",
             key = "3",
             action = "Lazy",
           },

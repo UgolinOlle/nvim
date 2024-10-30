@@ -28,6 +28,7 @@ return {
     sources = {
       "filesystem",
       "buffers",
+      "git_status",
     },
 
     default_component_configs = {
@@ -63,6 +64,7 @@ return {
       sources = {
         { source = "filesystem", name = "File System", icon = get_icons("FolderClosed", 1) .. "File" },
         { source = "buffers", name = "Buffers", icon = get_icons("DefaultFile", 1) .. "Bufs" },
+        { source = "git_status", name = "Git", icon = get_icons("Git.Main", 1) .. "Git" },
       },
     },
 

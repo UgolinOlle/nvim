@@ -6,6 +6,7 @@ vim.g.border = {
   style = "rounded",
   borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 }
+
 vim.g.telescope_exclude_file = {
   "%.7z",
   "%.MOV",

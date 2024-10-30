@@ -8,14 +8,14 @@ vim.g.maplocalleader = ","
 opts.desc = "Save without quit"
 keymap("n", "<LEADER>w", "<CMD>confirm w<ENTER>", opts)
 
-opts.desc = "Close buffer"
-keymap("n", "<LEADER>q", function() require("mini.bufremove").delete(0, false) end, opts)
-
 opts.desc = "Close window"
 keymap("n", "Q", "<CMD>confirm q<CR>", opts)
 
 opts.desc = "Make the current file executable"
 keymap("n", "<LEADER>x", "<CMD>!chmod +x %<CR>", opts)
+
+opts.desc = "Escape mode"
+keymap("n", "<ESC>", "<CMD>noh<CR>", opts)
 
 -- Tabs
 opts.desc = "New tab"
