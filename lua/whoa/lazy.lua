@@ -19,12 +19,29 @@ require("lazy").setup {
   { import = "plugins.mini" },
   { import = "plugins.ui" },
 
-  checker = { enabled = true },
+  ui = {
+    border = "rounded",
+    size = {
+      width = 0.8,
+      height = 0.8,
+    },
+    backdrop = 100,
+  },
+
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+
+  change_detection = {
+    notify = false,
+  },
 
   performance = {
     cache = {
       enabled = true,
     },
+
     rtp = {
       disabled_plugins = {
         "gzip",
