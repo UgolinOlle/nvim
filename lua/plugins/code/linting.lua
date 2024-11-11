@@ -23,6 +23,7 @@ return {
       cpp = { "norminette" },
       markdown = { "eslint" },
       python = { "flake8" },
+      swift = { "swiftlint" },
     }
 
     lint.linters.norminette = {

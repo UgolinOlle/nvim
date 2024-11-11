@@ -4,8 +4,6 @@ local utils = require "whoa.core.utils"
 return {
   "williamboman/mason.nvim",
 
-  name = "Mason",
-
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -45,6 +43,7 @@ return {
         "emmet_ls",
         "phpactor",
         "pyright",
+        "sourcekit",
       },
 
       automatic_installation = true,

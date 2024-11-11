@@ -6,10 +6,10 @@ return {
   event = { "BufReadPre", "BufNewFile" },
 
   dependencies = {
-    { "hrsh7th/cmp-nvim-lsp",                name = "CMP Nvim LSP" },
+    { "hrsh7th/cmp-nvim-lsp", name = "CMP Nvim LSP" },
     { "antosha417/nvim-lsp-file-operations", name = "Nvim LSP File Operations", config = true },
-    { "folke/neodev.nvim",                   name = "Neodev" },
-    { "soulis-1256/eagle.nvim",              name = "Eagle" },
+    { "folke/neodev.nvim", name = "Neodev" },
+    { "soulis-1256/eagle.nvim", name = "Eagle" },
   },
 
   config = function()
@@ -119,6 +119,7 @@ return {
       "yamlls",
       "clangd",
       "tailwindcss",
+      "sourcekit",
     }
 
     for _, server in ipairs(server_name) do

@@ -30,6 +30,7 @@ return {
         markdown = { "prettier" },
         sh = { "shfmt" },
         python = { "black" },
+        swift = { "swiftformat" },
       },
 
       -- Formatting options
