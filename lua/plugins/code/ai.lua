@@ -8,7 +8,7 @@ return {
   version = false,
 
   opts = {
-    provider = "ollama",
+    provider = "copilot",
     vendors = {
       ["ollama"] = {
         ["local"] = true,
