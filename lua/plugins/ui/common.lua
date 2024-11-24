@@ -98,4 +98,11 @@ return {
       },
     },
   },
+  {
+    "sphamba/smear-cursor.nvim",
+
+    name = "Smear Cursor",
+
+    opts = {},
+  },
 }
