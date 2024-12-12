@@ -100,4 +100,12 @@ return {
 
     config = function(_, opts) require("lsp_signature").setup(opts) end,
   },
+{
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "LspAttach",
+    priority = 1000,
+    config = function()
+        require('tiny-inline-diagnostic').setup()
+    end
+}
 }
