@@ -108,16 +108,3 @@ autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*.mdx",
   callback = function() vim.bo.filetype = "markdown" end,
 })
-
---- Add a title on top of NeoTree
-autocmd("FileType", {
-  pattern = "neo-tree",
-  callback = function()
-    local buf = vim.api.nvim_get_current_buf()
-    vim.defer_fn(function()
-      if vim.api.nvim_buf_is_valid(buf) and vim.bo[buf].filetype == "neo-tree" then
-        vim.api.nvim_buf_set_lines(buf, 0, 0, false, { "   Explorer" })
-      end
-    end, 50)
-  end,
-})
