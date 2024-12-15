@@ -6,24 +6,24 @@ return {
   event = "InsertEnter",
 
   dependencies = {
-    "neovim/nvim-lspconfig", -- LSP client
-    "hrsh7th/cmp-nvim-lsp", -- source for LSP completions
-    "hrsh7th/cmp-buffer", -- source for text in buffer
-    "hrsh7th/cmp-path", -- source for file system paths
-    "hrsh7th/cmp-cmdline", -- source for command line completions
-    "hrsh7th/cmp-nvim-lua", -- source for nvim lua completions
-    "hrsh7th/cmp-emoji", -- source for emoji completions
-    "ray-x/cmp-treesitter", -- source for treesitter completions
-    "chrisgrieser/cmp-nerdfont", -- source for nerdfont completions
+    "neovim/nvim-lspconfig",                  -- LSP client
+    "hrsh7th/cmp-nvim-lsp",                   -- source for LSP completions
+    "hrsh7th/cmp-buffer",                     -- source for text in buffer
+    "hrsh7th/cmp-path",                       -- source for file system paths
+    "hrsh7th/cmp-cmdline",                    -- source for command line completions
+    "hrsh7th/cmp-nvim-lua",                   -- source for nvim lua completions
+    "hrsh7th/cmp-emoji",                      -- source for emoji completions
+    "ray-x/cmp-treesitter",                   -- source for treesitter completions
+    "chrisgrieser/cmp-nerdfont",              -- source for nerdfont completions
     "roobert/tailwindcss-colorizer-cmp.nvim", -- source for tailwindcss completions
     {
       "tzachar/cmp-ai",
       dependencies = "nvim-lua/plenary.nvim",
     },
-    "onsails/lspkind.nvim", -- vs-code like pictograms
+    "onsails/lspkind.nvim",         -- vs-code like pictograms
 
-    "L3MON4D3/LuaSnip", -- Snippets
-    "saadparwaiz1/cmp_luasnip", -- Source for autocomplete
+    "L3MON4D3/LuaSnip",             -- Snippets
+    "saadparwaiz1/cmp_luasnip",     -- Source for autocomplete
     "rafamadriz/friendly-snippets", -- Snippets
   },
 
@@ -39,6 +39,9 @@ return {
     -- Check if lspkind is installed
     local active_lspkind, lspkind = pcall(require, "lspkind")
     if not active_lspkind then return end
+
+    local active_ai, cmp_ai = pcall(require, "cmp_ai")
+    if not active_ai then return end
 
     -- Setup luasnip
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -65,17 +68,17 @@ return {
 
       -- Configure sources
       sources = cmp.config.sources {
-        { name = "nvim_lsp" }, -- Source for LSP completions
-        { name = "luasnip" }, -- Source for autocomplete
-        { name = "buffer" }, -- Source for text in buffer
-        { name = "path" }, -- Source for file paths
-        { name = "cmdline" }, -- Source for command line completions
-        { name = "nvim_lua" }, -- Source for nvim lua completions
-        { name = "emoji" }, -- Source for emoji completions
-        { name = "treesitter" }, -- Source for treesitter completions
-        { name = "nerdfont" }, -- Source for nerdfont completions
+        { name = "nvim_lsp" },    -- Source for LSP completions
+        { name = "cmp_ai" },      -- Source for AI completions
+        { name = "luasnip" },     -- Source for autocomplete
+        { name = "buffer" },      -- Source for text in buffer
+        { name = "path" },        -- Source for file paths
+        { name = "cmdline" },     -- Source for command line completions
+        { name = "nvim_lua" },    -- Source for nvim lua completions
+        { name = "emoji" },       -- Source for emoji completions
+        { name = "treesitter" },  -- Source for treesitter completions
+        { name = "nerdfont" },    -- Source for nerdfont completions
         { name = "tailwindcss" }, -- Source for tailwindcss completions
-        { name = "ai" }, -- Source for AI completions
       },
 
       -- Configure completion sources
@@ -87,6 +90,19 @@ return {
       snippet = {
         expand = function(args) require("luasnip").lsp_expand(args.body) end,
       },
+
+      cmp_ai:setup({
+        max_lines = 1000,
+        provider = 'OpenAI',
+        provider_options = {
+          model = 'gpt-4',
+        },
+        notify = true,
+        notify_callback = function(msg)
+          vim.notify(msg)
+        end,
+        run_on_every_keystroke = true
+      }),
 
       -- Configure keybindings
       mapping = cmp.mapping.preset.insert {
