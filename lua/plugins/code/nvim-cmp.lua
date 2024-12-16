@@ -91,18 +91,18 @@ return {
         expand = function(args) require("luasnip").lsp_expand(args.body) end,
       },
 
-      cmp_ai:setup({
-        max_lines = 1000,
-        provider = 'OpenAI',
-        provider_options = {
-          model = 'gpt-4',
-        },
-        notify = true,
-        notify_callback = function(msg)
-          vim.notify(msg)
-        end,
-        run_on_every_keystroke = true
-      }),
+      -- cmp_ai:setup({
+      --   max_lines = 1000,
+      --   provider = 'OpenAI',
+      --   provider_options = {
+      --     model = 'gpt-4',
+      --   },
+      --   notify = true,
+      --   notify_callback = function(msg)
+      --     vim.notify(msg)
+      --   end,
+      --   run_on_every_keystroke = true
+      -- }),
 
       -- Configure keybindings
       mapping = cmp.mapping.preset.insert {
@@ -126,6 +126,8 @@ return {
           menu = {
             buffer = "[BUF]",
             nvim_lsp = "[LSP]",
+            cmp_ai = "[AI]",
+            treesitter = "[TS]",
             luasnip = "[SNIP]",
             nvim_lua = "[LUA]",
             path = "[PATH]",

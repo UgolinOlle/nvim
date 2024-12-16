@@ -20,10 +20,10 @@ return {
       enabled = true,
       view = "cmdline_popup",
       format = {
-        cmdline = { pattern = "^:", icon = get_icons("Command", 1), lang = "vim" },
-        search_down = { kind = "search", pattern = "^/", icon = get_icons("Search", 1), lang = "regex" },
-        search_up = { kind = "search", pattern = "^%?", icon = get_icons("Search", 1), lang = "regex" },
-        filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
+        cmdline = { title = "  Command  ", pattern = "^:", icon = get_icons("Command", 1), lang = "vim" },
+        search_down = { title = "  Search  ", kind = "search", pattern = "^/", icon = get_icons("Search", 1), lang = "regex" },
+        search_up = { title = "  Search  ", kind = "search", pattern = "^%?", icon = get_icons("Search", 1), lang = "regex" },
+        filter = { title = "  Filter  ", pattern = "^:%s*!", icon = "$", lang = "bash" },
       },
     },
 
