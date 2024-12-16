@@ -59,7 +59,6 @@
   "WhichKey": { "branch": "main", "commit": "8ab96b38a2530eacba5be717f52e04601eb59326" },
   "Zen Mode": { "branch": "main", "commit": "863f150ca321b3dd8aa1a2b69b5f411a220e144f" },
   "avante.nvim": { "branch": "main", "commit": "9e0b5bf8f13fa7f260932d350685bc379dc4098c" },
-  "cmp-ai": { "branch": "main", "commit": "8e4ac92c83d773519bb5570fe2a5f47d8dc9c994" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-cmdline": { "branch": "main", "commit": "d250c63aa13ead745e3a40f61fdd3470efde3923" },
   "cmp-emoji": { "branch": "main", "commit": "e8398e2adf512a03bb4e1728ca017ffeac670a9f" },

@@ -16,15 +16,11 @@ return {
     "ray-x/cmp-treesitter",                   -- source for treesitter completions
     "chrisgrieser/cmp-nerdfont",              -- source for nerdfont completions
     "roobert/tailwindcss-colorizer-cmp.nvim", -- source for tailwindcss completions
-    {
-      "tzachar/cmp-ai",
-      dependencies = "nvim-lua/plenary.nvim",
-    },
-    "onsails/lspkind.nvim",         -- vs-code like pictograms
+    "onsails/lspkind.nvim",                   -- vs-code like pictograms
 
-    "L3MON4D3/LuaSnip",             -- Snippets
-    "saadparwaiz1/cmp_luasnip",     -- Source for autocomplete
-    "rafamadriz/friendly-snippets", -- Snippets
+    "L3MON4D3/LuaSnip",                       -- Snippets
+    "saadparwaiz1/cmp_luasnip",               -- Source for autocomplete
+    "rafamadriz/friendly-snippets",           -- Snippets
   },
 
   config = function()
@@ -39,9 +35,6 @@ return {
     -- Check if lspkind is installed
     local active_lspkind, lspkind = pcall(require, "lspkind")
     if not active_lspkind then return end
-
-    local active_ai, cmp_ai = pcall(require, "cmp_ai")
-    if not active_ai then return end
 
     -- Setup luasnip
     require("luasnip.loaders.from_vscode").lazy_load()
@@ -69,7 +62,6 @@ return {
       -- Configure sources
       sources = cmp.config.sources {
         { name = "nvim_lsp" },    -- Source for LSP completions
-        { name = "cmp_ai" },      -- Source for AI completions
         { name = "luasnip" },     -- Source for autocomplete
         { name = "buffer" },      -- Source for text in buffer
         { name = "path" },        -- Source for file paths
@@ -90,19 +82,6 @@ return {
       snippet = {
         expand = function(args) require("luasnip").lsp_expand(args.body) end,
       },
-
-      -- cmp_ai:setup({
-      --   max_lines = 1000,
-      --   provider = 'OpenAI',
-      --   provider_options = {
-      --     model = 'gpt-4',
-      --   },
-      --   notify = true,
-      --   notify_callback = function(msg)
-      --     vim.notify(msg)
-      --   end,
-      --   run_on_every_keystroke = true
-      -- }),
 
       -- Configure keybindings
       mapping = cmp.mapping.preset.insert {
@@ -126,7 +105,6 @@ return {
           menu = {
             buffer = "[BUF]",
             nvim_lsp = "[LSP]",
-            cmp_ai = "[AI]",
             treesitter = "[TS]",
             luasnip = "[SNIP]",
             nvim_lua = "[LUA]",
