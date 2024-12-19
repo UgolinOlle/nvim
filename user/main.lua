@@ -1,3 +1,3 @@
 return {
-  colorscheme = "solarized-osaka",
+  colorscheme = "cyberdream",
 }

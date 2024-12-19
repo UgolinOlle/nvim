@@ -6,14 +6,14 @@ return {
 
     priority = 1000,
 
-    lazy = true,
+    lazy = false,
   },
   {
     "projekt0n/github-nvim-theme",
 
     name = "GitHub",
 
-    lazy = true,
+    lazy = false,
 
     priority = 1000,
   },
@@ -22,7 +22,7 @@ return {
 
     name = "Solarized Osaka",
 
-    lazy = true,
+    lazy = false,
 
     priority = 1000,
 
@@ -32,4 +32,23 @@ return {
       }
     end,
   },
+  {
+    "scottmckendry/cyberdream.nvim",
+
+    name = "Cyber Dream",
+
+    lazy = false,
+
+    priority = 1000,
+
+    opts = {
+      transparent = true,
+      italic_comments = true,
+      hide_fillchars = true,
+      terminal_colors = false,
+      cache = true,
+      borderless_telescope = { border = true, style = "flat" },
+      theme = { variant = "auto" },
+    }
+  }
 }
