@@ -4,10 +4,10 @@ return {
   name = "Telescope",
 
   dependencies = {
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make", name = "Telescope fzf native" },
-    { "nvim-telescope/telescope-symbols.nvim", name = "Telescope symbols" },
+    { "nvim-telescope/telescope-fzf-native.nvim",   build = "make",                 name = "Telescope fzf native" },
+    { "nvim-telescope/telescope-symbols.nvim",      name = "Telescope symbols" },
     { "nvim-telescope/telescope-node-modules.nvim", name = "Telescope node modules" },
-    { "2kabhishek/nerdy.nvim", name = "Telescope nerdy" },
+    { "2kabhishek/nerdy.nvim",                      name = "Telescope nerdy" },
   },
 
   config = function()
@@ -102,6 +102,14 @@ return {
         builtin.buffers()
       end,
       { noremap = true, silent = true, desc = "Buffers" },
+    },
+    {
+      ";d",
+      function()
+        local builtin = require "telescope.builtin"
+        builtin.diagnostics()
+      end,
+      { noremap = true, silent = true, desc = "Document diagnostics" },
     },
     {
       ";s",
