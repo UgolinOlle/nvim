@@ -37,17 +37,17 @@ local options = {
 
     -- ui
     titlestring = "WhoaIDE",
-    title = true,          -- set the title of the window to the value of the titlestring
-    pumheight = 10,        -- max height of popup menu
-    showmode = false,      -- don't show mode
-    showtabline = 2,       -- always show tabline
-    number = true,         -- show line numbers
-    relativenumber = true, -- show relative line numbers
-    termguicolors = true,  -- true color support
-    signcolumn = "yes",    -- always show sign column
-    cmdheight = 0,         -- height of command line
-    colorcolumn = "120",   -- column to highlight
-    textwidth = 120,       -- text width
+    title = true,           -- set the title of the window to the value of the titlestring
+    pumheight = 10,         -- max height of popup menu
+    showmode = false,       -- don't show mode
+    showtabline = 2,        -- always show tabline
+    number = true,          -- show line numbers
+    relativenumber = false, -- show relative line numbers
+    termguicolors = true,   -- true color support
+    signcolumn = "yes",     -- always show sign column
+    cmdheight = 0,          -- height of command line
+    colorcolumn = "120",    -- column to highlight
+    textwidth = 120,        -- text width
     fillchars = {
       diff = "╱",
       eob = " ",
@@ -67,7 +67,7 @@ local options = {
   g = {
     icons_enabled = true,    -- enable icons
     parinfer_mode = "smart", -- parinfer mode
-    shell = "/bin/zsh",     -- shell
+    shell = "/bin/zsh",      -- shell
   },
 
   o = {
