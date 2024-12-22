@@ -20,6 +20,7 @@ return {
         typescriptreact = { "prettier" },
         css = { "prettier" },
         html = { "prettier" },
+        hbs = { "prettier" },
         json = { "prettier" },
         scss = { "prettier" },
         lua = { "stylua" },

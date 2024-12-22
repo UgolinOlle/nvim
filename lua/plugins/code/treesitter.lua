@@ -10,9 +10,9 @@ return {
 
     dependencies = {
       { "JoosepAlviste/nvim-ts-context-commentstring", name = "Nvim TS Context Comment String" },
-      { "windwp/nvim-ts-autotag", name = "Nvim Treesitter Autotag" },
-      { "windwp/nvim-autopairs", name = "Nvim Autopairs" },
-      { "hiphish/rainbow-delimiters.nvim", name = "Rainbow Delimiters" },
+      { "windwp/nvim-ts-autotag",                      name = "Nvim Treesitter Autotag" },
+      { "windwp/nvim-autopairs",                       name = "Nvim Autopairs" },
+      { "hiphish/rainbow-delimiters.nvim",             name = "Rainbow Delimiters" },
     },
 
     opts = {
@@ -55,7 +55,6 @@ return {
         "python",
         "twig",
         "vim",
-
         "mdx",
         "md",
         "json",
