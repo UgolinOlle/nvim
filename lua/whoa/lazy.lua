@@ -34,7 +34,7 @@ require("lazy").setup {
   },
 
   change_detection = {
-    notify = false,
+    enabled = false,
   },
 
   performance = {
