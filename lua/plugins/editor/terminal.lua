@@ -17,13 +17,18 @@ return {
 
   keys = {
     {
-      "<leader>th",
-      "<cmd>ToggleTerm direction=horizontal<CR>",
+      "<LEADER>tt",
+      "<CMD>ToggleTerm<CR>",
+      { noremap = true, silent = true, desc = "Toggle terminal" },
+    },
+    {
+      "<LEADER>th",
+      "<CMD>ToggleTerm direction=horizontal<CR>",
       { noremap = true, silent = true, desc = "Toggle horizontal terminal" },
     },
     {
-      "<leader>tt",
-      "<cmd>ToggleTerm direction=float<CR>",
+      "<LEADER>tf",
+      "<CMD>ToggleTerm direction=float<CR>",
       { noremap = true, silent = true, desc = "Toggle floating terminal" },
     },
   },

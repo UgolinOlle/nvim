@@ -8,27 +8,31 @@ local colors = {
   red = "#ff5189",
   violet = "#8338ec",
   grey = "#303030",
+  yellow = "#f5dd76",
+  green = "#98c379",
 }
+
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.white, bg = colors.violet },
-    b = { fg = colors.white, bg = colors.grey },
+    a = { fg = colors.black, bg = colors.violet },
+    b = { fg = colors.white },
     c = { fg = colors.white },
+    y = { fg = colors.white },
+    x = { fg = colors.white },
+    z = { fg = colors.white },
   },
-
   insert = { a = { fg = colors.black, bg = colors.blue } },
   visual = { a = { fg = colors.black, bg = colors.cyan } },
   replace = { a = { fg = colors.black, bg = colors.red } },
-
+  command = { a = { fg = colors.black, bg = colors.yellow } },
   inactive = {
-    a = { fg = colors.white, bg = colors.black },
-    b = { fg = colors.white, bg = colors.black },
-    c = { fg = colors.white },
+    a = { fg = colors.white },
+    b = { fg = colors.white },
+    c = { fg = colors.grey },
   },
 }
 
 return {
-
   "nvim-lualine/lualine.nvim",
 
   name = "Lualine",
@@ -38,33 +42,57 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
 
   config = function(_, opts)
-    local mode_actions = {
-      ["n"] = get_icons "Normal",
-      ["i"] = get_icons "Insert",
-      ["v"] = get_icons "Visual",
-      ["c"] = get_icons "Command",
-      ["s"] = get_icons "Select",
-      ["t"] = get_icons "Terminal",
+    local mode_icons = {
+      ["n"] = get_icons "Normal" .. " ",
+      ["i"] = get_icons "Insert" .. " ",
+      ["v"] = get_icons "Visual" .. " ",
+      ["V"] = get_icons "VisualLine" .. " ",
+      ["c"] = get_icons "Command" .. " ",
+      ["r"] = get_icons "Replace" .. " ",
+      ["t"] = get_icons "Terminal" .. " ",
     }
 
     local mode = function()
       local mode = vim.fn.mode()
-      return mode_actions[mode] or mode
+      return mode_icons[mode] or "Unknown"
     end
 
-    opts.options.sections = {
-      lualine_a = {
-        { mode, separator = { left = "" }, right_padding = 2 },
-      },
-      lualine_b = {
-        "branch",
-      },
-      lualine_c = {
-        "filename",
-      },
-      lualine_x = { "copilot", "encoding", "fileformat", "filetype" },
+    local diagnostics = {
+      "diagnostics",
+      sources = { "nvim_lsp" },
+      sections = { "error", "warn", "info", "hint" },
+      symbols = { error = " ", warn = " ", info = " ", hint = " " },
+      colored = true,
+      always_visible = false,
+    }
+
+    local filename = {
+      "filename",
+      file_status = true,
+      path = 1, -- Show relative path
+      symbols = { modified = " ●", readonly = " ", unnamed = " [No Name]" },
+    }
+
+    local getWords = function()
+      local words = vim.fn.wordcount().words
+      return string.format(get_icons "WordFile" .. "  %d", words)
+    end
+
+    opts.sections = {
+      lualine_a = { { mode, right_padding = 2 } },
+      lualine_b = { "branch", "diff" },
+      lualine_c = { filename, diagnostics },
+      lualine_x = { { getWords, right_padding = 1 }, "encoding", "filetype" },
       lualine_y = { "progress" },
-      lualine_z = { "location" },
+      lualine_z = { {
+        "copilot",
+        symbols = {
+          spinners = require("copilot-lualine.spinners").dots,
+          spinner_color = "#6272A4",
+        },
+        show_colors = true,
+        show_loading = true
+      } },
     }
 
     require("lualine").setup(opts)
@@ -75,8 +103,8 @@ return {
       icons_enabled = true,
       always_divide_middle = true,
       theme = bubbles_theme,
-      component_separators = "",
-      section_separators = { left = "", right = "" },
+      component_separators = " ",
+      section_separators = " ",
       disabled_filetypes = {
         statusline = { "neo-tree", "AvanteInput", "Avante", "packer", "NvimTree", "Outline" },
       },
