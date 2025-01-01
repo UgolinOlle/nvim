@@ -1,11 +1,11 @@
 return {
-  "zbirenbaum/copilot.lua",
+  "zbirenbaum/copilot.vim",
+
+  enable = false,
 
   cmd = "Copilot",
 
   event = "InsertEnter",
-
-  name = "Github Copilot",
 
   config = function()
     local active, copilot = pcall(require, "copilot")

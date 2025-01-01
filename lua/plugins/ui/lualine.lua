@@ -14,7 +14,7 @@ local colors = {
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.violet },
+    a = { fg = colors.white, bg = colors.violet },
     b = { fg = colors.white },
     c = { fg = colors.white },
     y = { fg = colors.white },
@@ -79,7 +79,7 @@ return {
     end
 
     opts.sections = {
-      lualine_a = { { mode, right_padding = 2 } },
+      lualine_a = { { mode, right_padding = 1 } },
       lualine_b = { "branch", "diff" },
       lualine_c = { filename, diagnostics },
       lualine_x = { { getWords, right_padding = 1 }, "encoding", "filetype" },
@@ -105,9 +105,6 @@ return {
       theme = bubbles_theme,
       component_separators = " ",
       section_separators = " ",
-      disabled_filetypes = {
-        statusline = { "neo-tree", "AvanteInput", "Avante", "packer", "NvimTree", "Outline" },
-      },
     },
   },
 }

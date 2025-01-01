@@ -14,7 +14,7 @@ local options = {
     smartindent = true,                      -- smart indent when starting a new line
     updatetime = 300,                        -- faster completion
     cursorline = true,                       -- highlight current line
-    laststatus = 2,                          -- always show status line
+    laststatus = 3,                          -- always show status line
     scrolloff = 10,                          -- minimum number of screen lines to keep above and below the cursor
     mouse = "a",                             -- enable mouse support
 
