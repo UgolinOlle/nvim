@@ -1,5 +1,5 @@
 return {
-  "zbirenbaum/copilot.vim",
+  "zbirenbaum/copilot.lua",
 
   enable = false,
 
