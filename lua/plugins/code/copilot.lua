@@ -1,7 +1,7 @@
 return {
-  "zbirenbaum/copilot.lua",
+  "github/copilot.vim",
 
-  enable = false,
+  name = "Copilot",
 
   cmd = "Copilot",
 
@@ -19,6 +19,7 @@ return {
 
       suggestion = {
         enabled = true,
+        auto_trigger = true,
 
         keymap = {
           accept = "<TAB>",

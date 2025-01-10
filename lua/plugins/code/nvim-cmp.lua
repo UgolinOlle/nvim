@@ -16,11 +16,12 @@ return {
     "ray-x/cmp-treesitter",                   -- source for treesitter completions
     "chrisgrieser/cmp-nerdfont",              -- source for nerdfont completions
     "roobert/tailwindcss-colorizer-cmp.nvim", -- source for tailwindcss completions
+
     "onsails/lspkind.nvim",                   -- vs-code like pictograms
 
-    "L3MON4D3/LuaSnip",                       -- Snippets
-    "saadparwaiz1/cmp_luasnip",               -- Source for autocomplete
-    "rafamadriz/friendly-snippets",           -- Snippets
+    "L3MON4D3/LuaSnip",                       -- source snippets
+    "saadparwaiz1/cmp_luasnip",               -- Source for snippets completions
+    "rafamadriz/friendly-snippets",           -- source snippets
   },
 
   config = function()
