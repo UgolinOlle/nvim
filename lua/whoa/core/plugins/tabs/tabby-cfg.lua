@@ -17,8 +17,9 @@ local presets = {
   layout = "tab_only",
 
   head = {
-    { "  ", hl = { fg = hl_tabline.fg, bg = hl_tabline.bg } },
-    { " ", hl = { fg = hl_tabline.bg, bg = hl_tabline_fill.bg } },
+    { "", hl = { fg = hl_tabline_sel.bg } },
+    { "   ", hl = { fg = hl_tabline.fr, bg = hl_tabline_sel.bg } },
+    { " ", hl = { fg = hl_tabline_sel.bg } },
   },
 
   active_tab = {
@@ -36,7 +37,7 @@ local presets = {
     label = function(tabid)
       return {
         tab_label(tabid, false),
-        hl = { fg = hl_tabline.fg, bg = hl_tabline_fill.bg },
+        hl = { fg = hl_tabline.fg },
       }
     end,
     left_sep = { " ", hl = { fg = hl_tabline.bg, bg = hl_tabline_fill.bg } },
