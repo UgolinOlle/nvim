@@ -2,12 +2,24 @@ return {
   {
     "grapp-dev/nui-components.nvim",
 
+    name = "Nui Components",
+
+    event = "VeryLazy",
+
     dependencies = {
-      "MunifTanjim/nui.nvim",
+      {
+        "MunifTanjim/nui.nvim",
+
+        name = "Nui",
+
+        lazy = true,
+      },
     },
   },
   {
     "stevearc/dressing.nvim",
+
+    name = "Dressing",
 
     event = "VeryLazy",
   },
@@ -43,11 +55,18 @@ return {
 
     name = "Colorizer",
 
-    event = "BufEnter",
+    event = { "BufReadPost", "BufNewFile" },
 
     config = function()
       require("colorizer").setup {
-        filetypes = { "*" },
+        filetypes = {
+          "*",
+          "!vim",
+          "!packer",
+          "!lazy",
+          "!dashboard",
+          "!help",
+        },
         user_default_options = {
           names = false,
           tailwind = "both",
@@ -61,8 +80,10 @@ return {
 
     name = "Zen Mode",
 
+    event = "BufReadPre",
+
     keys = {
-      { "<LEADER>z", "<CMD>ZenMode<CR>", { noremap = true, silent = true, desc = "Enabled zen mode focus" } },
+      { "<LEADER>z", "<CMD>ZenMode<CR>", { noremap = true, silent = true, desc = "Enable zen mode focus" } },
     },
   },
   {
@@ -77,15 +98,17 @@ return {
 
     name = "Notify",
 
-    event = "BufReadPre",
+    event = "VeryLazy",
 
-    config = function() vim.notify = require "notify" end,
+    config = function()
+      vim.notify = require "notify"
+    end,
 
     opts = {
       timeout = 100,
-      stages = "fade_in_slide_out",
+      stages = "slide",
       top_down = true,
-      render = "simple",
+      render = "wrapped-compact",
       fps = 120,
       background_colour = "#000000",
     },
@@ -103,6 +126,6 @@ return {
 
     name = "Smear Cursor",
 
-    opts = {},
+    event = "VeryLazy",
   },
 }

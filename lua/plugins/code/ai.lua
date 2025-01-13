@@ -3,8 +3,6 @@ return {
 
   event = "VeryLazy",
 
-  lazy = false,
-
   version = false,
 
   opts = {
@@ -39,19 +37,10 @@ return {
   build = "make",
 
   dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "stevearc/dressing.nvim",
-    "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim",
-    "nvim-tree/nvim-web-devicons",
-    {
-      "MeanderingProgrammer/render-markdown.nvim",
-
-      opts = {
-        file_types = { "markdown", "Avante" },
-      },
-
-      ft = { "markdown", "Avante" },
-    },
+    { "nvim-treesitter/nvim-treesitter", event = "BufReadPre", lazy = true },
+    { "stevearc/dressing.nvim",          event = "VeryLazy",   lazy = true },
+    { "nvim-lua/plenary.nvim",           lazy = true },
+    { "MunifTanjim/nui.nvim",            lazy = true },
+    { "nvim-tree/nvim-web-devicons",     lazy = true },
   },
 }

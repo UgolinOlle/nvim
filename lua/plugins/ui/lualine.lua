@@ -39,7 +39,7 @@ return {
 
   event = { "BufReadPost", "BufNewFile" },
 
-  dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
 
   config = function(_, opts)
     local mode_icons = {
@@ -84,15 +84,7 @@ return {
       lualine_c = { filename, diagnostics },
       lualine_x = { { getWords, right_padding = 1 }, "encoding", "filetype" },
       lualine_y = { "progress" },
-      lualine_z = { {
-        "copilot",
-        symbols = {
-          spinners = require("copilot-lualine.spinners").dots,
-          spinner_color = "#6272A4",
-        },
-        show_colors = true,
-        show_loading = true
-      } },
+      lualine_z = {},
     }
 
     require("lualine").setup(opts)

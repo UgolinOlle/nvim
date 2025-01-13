@@ -6,6 +6,8 @@ return {
 
   name = "Neo Tree",
 
+  lazy = false,
+
   branch = "main",
 
   dependencies = {

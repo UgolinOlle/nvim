@@ -3,6 +3,8 @@ return {
 
   name = "Outline",
 
+  event = "VeryLazy",
+
   config = function() require("outline").setup {} end,
 
   keys = {

@@ -3,6 +3,8 @@ return {
 
   name = "Toggle Terminal",
 
+  event = "VeryLazy",
+
   version = "main",
 
   cmd = {

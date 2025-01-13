@@ -1,3 +1,3 @@
 return {
-  colorscheme = "cyberdream",
+  colorscheme = "vscode",
 }

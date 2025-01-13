@@ -4,6 +4,8 @@ return {
 
     name = "Git Signs",
 
+    event = { "BufReadPre", "BufNewFile" },
+
     opts = {
       signs = {
         add = { text = "┃" },
@@ -20,7 +22,12 @@ return {
 
     name = "GitGraph",
 
-    dependencies = { "sindrets/diffview.nvim" },
+    lazy = true,
+
+    cmd = { "GitGraph" },
+
+    dependencies = { "sindrets/diffview.nvim", name = "Diffview", lazy = true },
+
     opts = {
       symbols = {
         merge_commit = "M",
@@ -31,21 +38,23 @@ return {
         fields = { "hash", "timestamp", "author", "branch_name", "tag" },
       },
     },
-    init = function()
-      vim.keymap.set(
-        "n",
+
+    keys = {
+      {
         "<leader>gl",
         function() require("gitgraph").draw({}, { all = true, max_count = 5000 }) end,
-        { desc = "new git graph" }
-      )
-    end,
+        desc = "Draw Git graph",
+      },
+    },
   },
   {
     "f-person/git-blame.nvim",
 
     name = "Git Blame",
 
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
+
+    cmd = { "GitBlameToggle" },
 
     opts = {
       enabled = true,
@@ -59,9 +68,13 @@ return {
 
     name = "Git Diff View",
 
+    lazy = true,
+
+    cmd = { "DiffviewOpen", "DiffviewClose" },
+
     keys = {
-      { "<LEADER>gd", "<CMD>DiffviewOpen<CR>",  { noremap = true, silent = true, desc = "Open diff view." } },
-      { "<LEADER>gD", "<CMD>DiffviewClose<CR>", { noremap = true, silent = true, desc = "Close diff view." } },
-    }
-  }
+      { "<LEADER>gd", "<CMD>DiffviewOpen<CR>",  desc = "Open Diffview",  noremap = true, silent = true },
+      { "<LEADER>gD", "<CMD>DiffviewClose<CR>", desc = "Close Diffview", noremap = true, silent = true },
+    },
+  },
 }

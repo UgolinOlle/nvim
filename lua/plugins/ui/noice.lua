@@ -15,7 +15,6 @@ return {
   event = "VeryLazy",
 
   opts = {
-    -- Command line configuration
     cmdline = {
       enabled = true,
       view = "cmdline_popup",
@@ -27,7 +26,6 @@ return {
       },
     },
 
-    -- Preset configuration
     preset = {
       bottom_search = true,
       command_palette = true,

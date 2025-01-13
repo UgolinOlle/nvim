@@ -11,11 +11,19 @@ return {
   {
     "projekt0n/github-nvim-theme",
 
-    name = "GitHub",
+    name = "GitHub Theme",
 
     lazy = false,
 
     priority = 1000,
+
+    config = function()
+      require('github-theme').setup({
+        options = {
+          transparent = true,
+        }
+      })
+    end
   },
   {
     "craftzdog/solarized-osaka.nvim",
@@ -33,22 +41,18 @@ return {
     end,
   },
   {
-    "scottmckendry/cyberdream.nvim",
+    "Mofiqul/vscode.nvim",
 
-    name = "Cyber Dream",
+    name = "VSCode",
 
     lazy = false,
 
     priority = 1000,
 
-    opts = {
-      transparent = true,
-      italic_comments = true,
-      hide_fillchars = true,
-      terminal_colors = false,
-      cache = true,
-      borderless_telescope = { border = true, style = "flat" },
-      theme = { variant = "auto" },
-    }
+    opts = function()
+      return {
+        transparent = true,
+      }
+    end,
   }
 }

@@ -3,10 +3,12 @@ return {
 
   name = "Devdocs",
 
+  event = "BufReadPost",
+
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim",
-    "nvim-treesitter/nvim-treesitter",
+    { "nvim-lua/plenary.nvim",           name = "Plenary",           lazy = true },
+    { "nvim-telescope/telescope.nvim",   name = "Telescope",         lazy = true },
+    { "nvim-treesitter/nvim-treesitter", name = "NeoVim Treesitter", lazy = true },
   },
 
   cmd = {
@@ -46,7 +48,7 @@ return {
   },
 
   keys = {
-    { "<LEADER>dd", "<CMD>DevdocsOpen<CR>", { noremap = true, silent = true } },
+    { "<LEADER>dd", "<CMD>DevdocsOpen<CR>",             { noremap = true, silent = true } },
     { "<LEADER>ds", "<CMD>DevdocsOpenCurrentFloat<CR>", { noremap = true, silent = true } },
   },
 }

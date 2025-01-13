@@ -66,9 +66,9 @@ autocmd("FileType", {
 })
 
 --- Automatically check if WhoaIDE is setup correctly.
-autocmd("VimEnter", {
-  callback = function() require("whoa.core").WChecker.ft_run_all_checks() end,
-})
+-- autocmd("VimEnter", {
+--   callback = function() require("whoa.core").WChecker.ft_run_all_checks() end,
+-- })
 
 --- Automatically hide diagnostic when editing
 autocmd("InsertEnter", {
@@ -107,4 +107,10 @@ autocmd("DiagnosticChanged", {
 autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*.mdx",
   callback = function() vim.bo.filetype = "markdown" end,
+})
+
+--- Setup filetype for hbs
+autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.hbs",
+  callback = function() vim.bo.filetype = "html" end,
 })

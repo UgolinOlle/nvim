@@ -1,12 +1,17 @@
 return {
   "folke/snacks.nvim",
+
+  name = "Snacks",
+
+  lazy = false,
+
   opts = {
     dashboard = {
       width = 60,
-      row = nil,                                                                     -- dashboard position. nil for center
-      col = nil,                                                                     -- dashboard position. nil for center
-      pane_gap = 4,                                                                  -- empty columns between vertical panes
-      autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",   -- autokey sequence
+      row = nil,                                                                   -- dashboard position. nil for center
+      col = nil,                                                                   -- dashboard position. nil for center
+      pane_gap = 4,                                                                -- empty columns between vertical panes
+      autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", -- autokey sequence
       preset = {
         pick = nil,
         keys = {

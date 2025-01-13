@@ -3,8 +3,10 @@ return {
 
   name = "Telescope",
 
+  event = { "BufWinEnter" },
+
   dependencies = {
-    { "nvim-telescope/telescope-fzf-native.nvim",   build = "make",                 name = "Telescope fzf native" },
+    { "nvim-telescope/telescope-fzf-native.nvim",   build = "make" },
     { "nvim-telescope/telescope-symbols.nvim",      name = "Telescope symbols" },
     { "nvim-telescope/telescope-node-modules.nvim", name = "Telescope node modules" },
     { "2kabhishek/nerdy.nvim",                      name = "Telescope nerdy" },

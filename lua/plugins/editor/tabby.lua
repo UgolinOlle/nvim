@@ -3,6 +3,8 @@ return {
 
   after = "bufferline",
 
+  lazy = false,
+
   dependencies = { "nvim-lualine/lualine.nvim" },
 
   config = function()

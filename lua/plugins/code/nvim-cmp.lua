@@ -1,27 +1,54 @@
 return {
   "hrsh7th/nvim-cmp",
 
-  name = "Completion",
+  name = "NeoVim Completion",
 
-  event = "InsertEnter",
+  event = { "InsertEnter" },
+
+  lazy = true,
 
   dependencies = {
-    "neovim/nvim-lspconfig",                  -- LSP client
-    "hrsh7th/cmp-nvim-lsp",                   -- source for LSP completions
-    "hrsh7th/cmp-buffer",                     -- source for text in buffer
-    "hrsh7th/cmp-path",                       -- source for file system paths
-    "hrsh7th/cmp-cmdline",                    -- source for command line completions
-    "hrsh7th/cmp-nvim-lua",                   -- source for nvim lua completions
-    "hrsh7th/cmp-emoji",                      -- source for emoji completions
-    "ray-x/cmp-treesitter",                   -- source for treesitter completions
-    "chrisgrieser/cmp-nerdfont",              -- source for nerdfont completions
-    "roobert/tailwindcss-colorizer-cmp.nvim", -- source for tailwindcss completions
+    { "neovim/nvim-lspconfig",     name = "NeoVim LSP Config", event = "BufReadPre",   lazy = true },
+    { "hrsh7th/cmp-nvim-lsp",      name = "CMP NeoVim LSP",    event = "InsertEnter",  lazy = true },
+    { "hrsh7th/cmp-buffer",        name = "CMP Buffer",        event = "InsertEnter",  lazy = true },
+    { "hrsh7th/cmp-path",          name = "CMP Path",          event = "InsertEnter",  lazy = true },
+    { "hrsh7th/cmp-cmdline",       name = "CMP Command Line",  event = "CmdlineEnter", lazy = true },
+    { "hrsh7th/cmp-nvim-lua",      name = "CMP NeoVim Lua",    event = "InsertEnter",  lazy = true },
+    { "hrsh7th/cmp-emoji",         name = "CMP Emoji",         event = "InsertEnter",  lazy = true },
+    { "ray-x/cmp-treesitter",      name = "CMP Tresitter",     event = "InsertEnter",  lazy = true },
+    { "chrisgrieser/cmp-nerdfont", name = "CMP Nerdfont",      event = "InsertEnter",  lazy = true },
+    {
+      "roobert/tailwindcss-colorizer-cmp.nvim",
 
-    "onsails/lspkind.nvim",                   -- vs-code like pictograms
+      name = "CMP TailwindCSS Colorizer",
 
-    "L3MON4D3/LuaSnip",                       -- source snippets
-    "saadparwaiz1/cmp_luasnip",               -- Source for snippets completions
-    "rafamadriz/friendly-snippets",           -- source snippets
+      event = "InsertEnter",
+
+      lazy = true,
+
+      config = function()
+        require("tailwindcss-colorizer-cmp").setup()
+      end,
+    },
+    {
+      "L3MON4D3/LuaSnip",
+
+      name = "LuaSnip",
+
+      event = "InsertEnter",
+
+      lazy = true,
+
+      dependencies = {
+        { "rafamadriz/friendly-snippets", name = "Friendly Snippets", lazy = true },
+      },
+
+      config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+      end,
+    },
+    { "saadparwaiz1/cmp_luasnip", name = "CMP LuaSnip", event = "InsertEnter", lazy = true },
+    { "onsails/lspkind.nvim",     name = "LSPKind",     event = "InsertEnter", lazy = true },
   },
 
   config = function()

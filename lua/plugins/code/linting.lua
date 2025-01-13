@@ -1,9 +1,10 @@
 return {
   "mfussenegger/nvim-lint",
 
-  name = "Lint",
+  name = "NeoVim Lint",
 
   event = {
+    "BufEnter",
     "BufReadPre",
     "BufNewFile",
   },

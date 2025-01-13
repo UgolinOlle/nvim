@@ -4,7 +4,7 @@ return {
 
     name = "Nvim Treesitter",
 
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "VeryLazy", "BufReadPre", "BufNewFile" },
 
     build = ":TSUpdate",
 

@@ -3,6 +3,8 @@ return {
 
   name = "Surround",
 
+  event = "VeryLazy",
+
   dependencies = {
     "kylechui/nvim-surround",
     "folke/which-key.nvim",

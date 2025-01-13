@@ -4,13 +4,12 @@ return {
 
     name = "Nvim Lightbulb",
 
-    opts = function()
-      --- Variables
-      local get_icons = require("whoa.core").WUtils.get_icons
+    event = { "CursorHold", "CursorHoldI" },
 
+    opts = function()
+      local get_icons = require("whoa.core").WUtils.get_icons
       return {
         autocmd = { enabled = true },
-
         sign = {
           enabled = true,
           text = get_icons "Diagnostic.Warn",
@@ -20,30 +19,39 @@ return {
     end,
   },
   {
-    'LukasPietzschmann/boo.nvim',
+    "LukasPietzschmann/boo.nvim",
 
     name = "Boo",
 
-    opts = {
-    }
+    lazy = true,
   },
   {
     "zeioth/garbage-day.nvim",
 
     name = "Garbage day",
 
-    dependencies = "neovim/nvim-lspconfig",
+    lazy = true,
 
-    event = "VeryLazy",
+    dependencies = { {
+      "neovim/nvim-lspconfig",
+
+      name = "LSP Config",
+
+      lazy = true,
+
+      event = { "BufReadPre", "BufNewFile" },
+    } },
   },
   {
     "jinzhongjia/LspUI.nvim",
 
     name = "LSP UI",
 
-    branch = "main",
+    event = { "BufReadPre", "BufNewFile" },
 
-    config = function() require("LspUI").setup {} end,
+    config = function()
+      require("LspUI").setup {}
+    end,
   },
   {
     "j-hui/fidget.nvim",
@@ -82,30 +90,31 @@ return {
     event = "InsertEnter",
 
     opts = function()
-      --- Variables
       local get_icons = require("whoa.core").WUtils.get_icons
-
       return {
         bind = true,
-
         handler_opts = {
           border = "rounded",
         },
-
         cfg = {
           hint_prefix = get_icons "Diagnostic.Info",
         },
       }
     end,
 
-    config = function(_, opts) require("lsp_signature").setup(opts) end,
+    config = function(_, opts)
+      require("lsp_signature").setup(opts)
+    end,
   },
-{
+  {
     "rachartier/tiny-inline-diagnostic.nvim",
+
+    name = "Tiny Inline Diagnostic",
+
     event = "LspAttach",
-    priority = 1000,
+
     config = function()
-        require('tiny-inline-diagnostic').setup()
-    end
-}
+      require("tiny-inline-diagnostic").setup()
+    end,
+  },
 }

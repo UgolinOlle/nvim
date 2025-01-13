@@ -3,13 +3,28 @@ return {
 
   name = "LSP Config",
 
+  lazy = true,
+
   event = { "BufReadPre", "BufNewFile" },
 
   dependencies = {
-    { "hrsh7th/cmp-nvim-lsp", name = "CMP Nvim LSP" },
-    { "antosha417/nvim-lsp-file-operations", name = "Nvim LSP File Operations", config = true },
-    { "folke/neodev.nvim", name = "Neodev" },
-    { "soulis-1256/eagle.nvim", name = "Eagle" },
+    { "hrsh7th/cmp-nvim-lsp", name = "CMP Nvim LSP", event = "InsertEnter", lazy = true },
+    {
+      "antosha417/nvim-lsp-file-operations",
+
+      name = "Nvim LSP File Operations",
+
+      config = true,
+
+      event = { "BufReadPre", "BufNewFile" },
+    },
+    {
+      "soulis-1256/eagle.nvim",
+
+      name = "Eagle",
+
+      lazy = true,
+    },
   },
 
   config = function()

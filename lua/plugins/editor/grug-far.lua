@@ -3,6 +3,8 @@ return {
 
   name = "GrugFar",
 
+  event = { "BufRead", "BufNewFile" },
+
   opts = {
     resultsSeparatorLineChar = "-",
     spinnerStates = { "", "", "", "" },

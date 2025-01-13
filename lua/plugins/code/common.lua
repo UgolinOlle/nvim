@@ -4,11 +4,13 @@ return {
 
     name = "Icon Picker",
 
+    lazy = true,
+
     config = function() require("icon-picker").setup { disable_legacy_commands = true } end,
 
     keys = {
-      { "<C-i>", "<CMD>IconPickerInsert<CR>", { noremap = true, silent = true, desc = "Open icon picker" } },
-      { "<LEADER>y", "<CMD>IconPickerYank<CR>", { noremap = true, silent = true, desc = "Yank icon" } },
+      { "<C-i>",     "<CMD>IconPickerInsert<CR>", { noremap = true, silent = true, desc = "Open icon picker" } },
+      { "<LEADER>y", "<CMD>IconPickerYank<CR>",   { noremap = true, silent = true, desc = "Yank icon" } },
       { "<LEADER>i", "<CMD>IconPickerNormal<CR>", { noremap = true, silent = true, desc = "Normal icon picker" } },
     },
   },
@@ -17,7 +19,7 @@ return {
 
     name = "Plenary",
 
-    lazy = true,
+    lazy = false,
   },
   {
     "windwp/nvim-autopairs",
@@ -36,6 +38,8 @@ return {
 
     name = "Comment",
 
+    event = "BufReadPre",
+
     opts = function()
       local comment_string_active, comment_string = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
       if not comment_string_active then return end
@@ -46,6 +50,21 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
 
-    name = "Render Markdown",
+    name = "Render Markwdown",
+
+    ft = { "markdown", "Avante" },
+
+    opts = {
+      file_types = { "markdown", "Avante" },
+    },
+
+    lazy = true,
   },
+  {
+    'RRethy/nvim-align',
+
+    name = "Align",
+
+    event = "BufReadPre",
+  }
 }

@@ -57,7 +57,7 @@ return {
 
   name = "Symbol Usage",
 
-  event = "BufReadPre",
+  event = { "VeryLazy", "BufReadPre" },
 
   config = function()
     require("symbol-usage").setup {
