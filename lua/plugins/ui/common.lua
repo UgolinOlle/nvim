@@ -110,7 +110,6 @@ return {
       top_down = true,
       render = "wrapped-compact",
       fps = 120,
-      background_colour = "#000000",
     },
 
     keys = {
