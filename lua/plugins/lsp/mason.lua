@@ -4,19 +4,23 @@ local utils = require "whoa.core.utils"
 return {
   "williamboman/mason.nvim",
 
+  name = "Mason",
+
+  event = "VeryLazy",
+
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    { "williamboman/mason-lspconfig.nvim",         name = "Mason LSP Config" },
+    { "WhoIsSethDaniel/mason-tool-installer.nvim", name = "Mason Tool Installer" },
   },
 
   config = function()
     -- Check if Mason is active
-    local active, mason = pcall(require, "mason")
-    if not active then return end
+    local active_mason, mason = pcall(require, "mason")
+    if not active_mason then return end
 
     -- Check if Mason LSPConfig is active
-    local active, mason_lspconfig = pcall(require, "mason-lspconfig")
-    if not active then return end
+    local active_mason_lspconfig, mason_lspconfig = pcall(require, "mason-lspconfig")
+    if not active_mason_lspconfig then return end
 
     -- Check if Mason Tool Installer is active
     local active_tool_installer, mason_tool_installer = pcall(require, "mason-tool-installer")
@@ -41,17 +45,13 @@ return {
         "cssls",
         "tailwindcss",
         "emmet_ls",
-        "phpactor",
-        "pyright",
-        "sourcekit",
       },
 
       automatic_installation = true,
     }
 
-    mason_tool.setup {
+    mason_tool_installer.setup {
       ensure_installed = {
-        "flake8",
         "prettier",
         "eslint_d",
         "stylua",
@@ -61,6 +61,6 @@ return {
 
   keys = {
     { "<LEADER>pM", "<CMD>MasonUpdate<CR>", { noremap = true, desc = "Mason update" } },
-    { "<LEADER>pp", "<CMD>Mason<CR>", { noremap = true, desc = "Mason home" } },
+    { "<LEADER>pp", "<CMD>Mason<CR>",       { noremap = true, desc = "Mason home" } },
   },
 }
