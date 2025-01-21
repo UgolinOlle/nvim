@@ -77,4 +77,31 @@ return {
       { "<LEADER>gD", "<CMD>DiffviewClose<CR>", desc = "Close Diffview", noremap = true, silent = true },
     },
   },
+  {
+    'SuperBo/fugit2.nvim',
+
+    name = "Fugit2",
+
+    event = { "BufReadPre", "BufNewFile" },
+
+    dependencies = {
+      {
+        'chrisgrieser/nvim-tinygit',
+
+        name = "TinyGit",
+
+        event = { "BufReadPre", "BufNewFile" },
+      },
+    },
+
+    cmd = { 'Fugit2', 'Fugit2Diff', 'Fugit2Graph' },
+
+    opts = {
+      width = 100,
+    },
+
+    keys = {
+      { '<leader>F', mode = 'n', '<cmd>Fugit2<cr>' }
+    }
+  },
 }
