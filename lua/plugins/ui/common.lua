@@ -41,7 +41,6 @@ return {
           "dashboard",
           "NvimTree",
           "vista",
-          "sagahover",
           "markdown",
           "txt",
           "TelescopePrompt",
@@ -91,7 +90,9 @@ return {
 
     name = "Web Devicons",
 
-    lazy = false,
+    event = "VeryLazy",
+
+    lazy = true,
   },
   {
     "rcarriga/nvim-notify",

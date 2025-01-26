@@ -6,11 +6,11 @@ return {
 
   name = "Mason",
 
-  event = "VeryLazy",
+  event = "BufReadPre",
 
   dependencies = {
-    { "williamboman/mason-lspconfig.nvim",         name = "Mason LSP Config" },
-    { "WhoIsSethDaniel/mason-tool-installer.nvim", name = "Mason Tool Installer" },
+    { "williamboman/mason-lspconfig.nvim", name = "Mason LSP Config", lazy = true },
+    { "WhoIsSethDaniel/mason-tool-installer.nvim", name = "Mason Tool Installer", lazy = true },
   },
 
   config = function()
@@ -61,6 +61,6 @@ return {
 
   keys = {
     { "<LEADER>pM", "<CMD>MasonUpdate<CR>", { noremap = true, desc = "Mason update" } },
-    { "<LEADER>pp", "<CMD>Mason<CR>",       { noremap = true, desc = "Mason home" } },
+    { "<LEADER>pp", "<CMD>Mason<CR>", { noremap = true, desc = "Mason home" } },
   },
 }

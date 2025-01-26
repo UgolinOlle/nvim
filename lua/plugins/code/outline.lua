@@ -3,7 +3,7 @@ return {
 
   name = "Outline",
 
-  event = "VeryLazy",
+  event = "BufReadPre",
 
   config = function() require("outline").setup {} end,
 

@@ -3,9 +3,7 @@ return {
 
   name = "LSP Config",
 
-  lazy = true,
-
-  event = { "BufReadPre", "BufNewFile" },
+  event = "LspAttach",
 
   dependencies = {
     { "hrsh7th/cmp-nvim-lsp", name = "CMP Nvim LSP", event = "InsertEnter", lazy = true },
@@ -17,13 +15,6 @@ return {
       config = true,
 
       event = { "BufReadPre", "BufNewFile" },
-    },
-    {
-      "soulis-1256/eagle.nvim",
-
-      name = "Eagle",
-
-      lazy = true,
     },
   },
 

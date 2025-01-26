@@ -1,11 +1,11 @@
 return {
   "nanozuki/tabby.nvim",
 
-  after = "bufferline",
+  name = "Tabby",
 
   lazy = false,
 
-  dependencies = { "nvim-lualine/lualine.nvim" },
+  dependencies = { "nvim-lualine/lualine.nvim", name = "Lualine", lazy = true },
 
   config = function()
     local tabby_presets = require "tabby.presets"

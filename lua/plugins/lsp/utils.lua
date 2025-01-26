@@ -19,13 +19,6 @@ return {
     end,
   },
   {
-    "LukasPietzschmann/boo.nvim",
-
-    name = "Boo",
-
-    lazy = true,
-  },
-  {
     "zeioth/garbage-day.nvim",
 
     name = "Garbage day",
@@ -104,17 +97,6 @@ return {
 
     config = function(_, opts)
       require("lsp_signature").setup(opts)
-    end,
-  },
-  {
-    "rachartier/tiny-inline-diagnostic.nvim",
-
-    name = "Tiny Inline Diagnostic",
-
-    event = "LspAttach",
-
-    config = function()
-      require("tiny-inline-diagnostic").setup()
     end,
   },
 }

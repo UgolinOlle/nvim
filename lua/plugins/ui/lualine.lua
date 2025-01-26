@@ -39,7 +39,7 @@ return {
 
   event = { "BufReadPost", "BufNewFile" },
 
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons", name = "Web Devicons", lazy = true },
 
   config = function(_, opts)
     local mode_icons = {

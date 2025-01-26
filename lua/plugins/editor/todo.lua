@@ -3,10 +3,10 @@ return {
 
   name = "Todo Comments",
 
-  event = { "VeryLazy", "BufReadPre", "BufNewFile" },
+  event = { "BufReadPre", "BufNewFile" },
 
   dependencies = {
-    { "nvim-lua/plenary.nvim", name = "Plenary" },
+    { "nvim-lua/plenary.nvim", name = "Plenary", lazy = true },
   },
 
   keys = {

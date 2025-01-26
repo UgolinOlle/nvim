@@ -3,26 +3,22 @@ return {
 
   name = "NeoVim Completion",
 
-  event = { "InsertEnter" },
-
-  lazy = true,
+  event = "InsertEnter",
 
   dependencies = {
-    { "neovim/nvim-lspconfig",     name = "NeoVim LSP Config", event = "BufReadPre",   lazy = true },
-    { "hrsh7th/cmp-nvim-lsp",      name = "CMP NeoVim LSP",    event = "InsertEnter",  lazy = true },
-    { "hrsh7th/cmp-buffer",        name = "CMP Buffer",        event = "InsertEnter",  lazy = true },
-    { "hrsh7th/cmp-path",          name = "CMP Path",          event = "InsertEnter",  lazy = true },
+    { "neovim/nvim-lspconfig",     name = "NeoVim LSP Config", lazy = true },
+    { "hrsh7th/cmp-nvim-lsp",      name = "CMP NeoVim LSP",    lazy = true },
+    { "hrsh7th/cmp-buffer",        name = "CMP Buffer",        lazy = true },
+    { "hrsh7th/cmp-path",          name = "CMP Path",          lazy = true },
     { "hrsh7th/cmp-cmdline",       name = "CMP Command Line",  event = "CmdlineEnter", lazy = true },
-    { "hrsh7th/cmp-nvim-lua",      name = "CMP NeoVim Lua",    event = "InsertEnter",  lazy = true },
-    { "hrsh7th/cmp-emoji",         name = "CMP Emoji",         event = "InsertEnter",  lazy = true },
-    { "ray-x/cmp-treesitter",      name = "CMP Tresitter",     event = "InsertEnter",  lazy = true },
-    { "chrisgrieser/cmp-nerdfont", name = "CMP Nerdfont",      event = "InsertEnter",  lazy = true },
+    { "hrsh7th/cmp-nvim-lua",      name = "CMP NeoVim Lua",    lazy = true },
+    { "hrsh7th/cmp-emoji",         name = "CMP Emoji",         lazy = true },
+    { "ray-x/cmp-treesitter",      name = "CMP Tresitter",     lazy = true },
+    { "chrisgrieser/cmp-nerdfont", name = "CMP Nerdfont",      lazy = true },
     {
       "roobert/tailwindcss-colorizer-cmp.nvim",
 
       name = "CMP TailwindCSS Colorizer",
-
-      event = "InsertEnter",
 
       lazy = true,
 
@@ -35,8 +31,6 @@ return {
 
       name = "LuaSnip",
 
-      event = "InsertEnter",
-
       lazy = true,
 
       dependencies = {
@@ -47,8 +41,8 @@ return {
         require("luasnip.loaders.from_vscode").lazy_load()
       end,
     },
-    { "saadparwaiz1/cmp_luasnip", name = "CMP LuaSnip", event = "InsertEnter", lazy = true },
-    { "onsails/lspkind.nvim",     name = "LSPKind",     event = "InsertEnter", lazy = true },
+    { "saadparwaiz1/cmp_luasnip", name = "CMP LuaSnip", lazy = true },
+    { "onsails/lspkind.nvim",     name = "LSPKind",     lazy = true },
   },
 
   config = function()

@@ -3,7 +3,7 @@ return {
 
   name = "Toggle Terminal",
 
-  event = "VeryLazy",
+  event = "BufReadPre",
 
   version = "main",
 

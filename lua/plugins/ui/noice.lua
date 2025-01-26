@@ -8,8 +8,8 @@ return {
   name = "Noice",
 
   dependencies = {
-    "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
+    { "MunifTanjim/nui.nvim", name = "Nui", lazy = true },
+    { "rcarriga/nvim-notify", name = "Nvim Notify", lazy = true },
   },
 
   event = "VeryLazy",

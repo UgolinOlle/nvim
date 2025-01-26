@@ -1,7 +1,7 @@
 return {
   "yetone/avante.nvim",
 
-  event = "VeryLazy",
+  event = { "BufReadPre", "BufNewFile" },
 
   version = false,
 

@@ -6,13 +6,13 @@ return {
 
   name = "Neo Tree",
 
-  lazy = false,
+  event = "BufReadPre",
 
   branch = "main",
 
   dependencies = {
-    "MunifTanjim/nui.nvim",
-    "nvim-tree/nvim-web-devicons",
+    { "MunifTanjim/nui.nvim",     name = "Nui", lazy = true },
+    { "nvim-tree/nvim-web-devicons", name = "Web Devicons", lazy = true },
   },
 
   cmd = "NeoTree",

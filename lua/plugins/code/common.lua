@@ -9,8 +9,8 @@ return {
     config = function() require("icon-picker").setup { disable_legacy_commands = true } end,
 
     keys = {
-      { "<C-i>",     "<CMD>IconPickerInsert<CR>", { noremap = true, silent = true, desc = "Open icon picker" } },
-      { "<LEADER>y", "<CMD>IconPickerYank<CR>",   { noremap = true, silent = true, desc = "Yank icon" } },
+      { "<C-i>", "<CMD>IconPickerInsert<CR>", { noremap = true, silent = true, desc = "Open icon picker" } },
+      { "<LEADER>y", "<CMD>IconPickerYank<CR>", { noremap = true, silent = true, desc = "Yank icon" } },
       { "<LEADER>i", "<CMD>IconPickerNormal<CR>", { noremap = true, silent = true, desc = "Normal icon picker" } },
     },
   },
@@ -52,19 +52,20 @@ return {
 
     name = "Render Markwdown",
 
-    ft = { "markdown", "Avante" },
-
-    opts = {
-      file_types = { "markdown", "Avante" },
+    dependencies = {
+      { "nvim-treesitter/nvim-treesitter", name = "Nvim Treesitter", lazy = true },
+      { "nvim-tree/nvim-web-devicons", name = "Web DevIcons", lazy = true },
     },
+
+    ft = { "markdown", "Avante" },
 
     lazy = true,
   },
   {
-    'RRethy/nvim-align',
+    "RRethy/nvim-align",
 
     name = "Align",
 
     event = "BufReadPre",
-  }
+  },
 }

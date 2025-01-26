@@ -4,15 +4,15 @@ return {
 
     name = "Nvim Treesitter",
 
-    event = { "VeryLazy", "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
 
     build = ":TSUpdate",
 
     dependencies = {
-      { "JoosepAlviste/nvim-ts-context-commentstring", name = "Nvim TS Context Comment String" },
-      { "windwp/nvim-ts-autotag",                      name = "Nvim Treesitter Autotag" },
-      { "windwp/nvim-autopairs",                       name = "Nvim Autopairs" },
-      { "hiphish/rainbow-delimiters.nvim",             name = "Rainbow Delimiters" },
+      { "JoosepAlviste/nvim-ts-context-commentstring", name = "Nvim TS Context Comment String", lazy = true },
+      { "windwp/nvim-ts-autotag",                      name = "Nvim Treesitter Autotag", lazy = true },
+      { "windwp/nvim-autopairs",                       name = "Nvim Autopairs", lazy = true },
+      { "hiphish/rainbow-delimiters.nvim",             name = "Rainbow Delimiters", lazy = true },
     },
 
     opts = {
@@ -73,7 +73,7 @@ return {
 
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = { "nvim-treesitter/nvim-treesitter", name = "Nvim Treesitter", lazy = true },
 
     opts = {
       enable = true,
