@@ -70,15 +70,16 @@ return {
 
     lazy = true,
 
-    cmd = { "DiffviewOpen", "DiffviewClose" },
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
 
     keys = {
-      { "<LEADER>gd", "<CMD>DiffviewOpen<CR>",  desc = "Open Diffview",  noremap = true, silent = true },
+      { "<LEADER>gd", "<CMD>DiffviewOpen<CR>", desc = "Open Diffview", noremap = true, silent = true },
       { "<LEADER>gD", "<CMD>DiffviewClose<CR>", desc = "Close Diffview", noremap = true, silent = true },
+      { "<LEADER>gh", "<CMD>DiffviewFileHistory<CR>", desc = "File History", noremap = true, silent = true },
     },
   },
   {
-    'SuperBo/fugit2.nvim',
+    "SuperBo/fugit2.nvim",
 
     name = "Fugit2",
 
@@ -86,7 +87,7 @@ return {
 
     dependencies = {
       {
-        'chrisgrieser/nvim-tinygit',
+        "chrisgrieser/nvim-tinygit",
 
         name = "TinyGit",
 
@@ -94,14 +95,14 @@ return {
       },
     },
 
-    cmd = { 'Fugit2', 'Fugit2Diff', 'Fugit2Graph' },
+    cmd = { "Fugit2", "Fugit2Diff", "Fugit2Graph" },
 
     opts = {
       width = 100,
     },
 
     keys = {
-      { '<leader>F', mode = 'n', '<cmd>Fugit2<cr>' }
-    }
+      { "<leader>F", mode = "n", "<cmd>Fugit2<cr>" },
+    },
   },
 }
