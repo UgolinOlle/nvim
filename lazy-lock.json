@@ -71,6 +71,7 @@
   "Telescope find files": { "branch": "master", "commit": "626998e5c1b71c130d8bc6cf7abb6709b98287bb" },
   "Telescope nerdy": { "branch": "main", "commit": "719ed52244b34ea9de08f074e0d22fd67d615640" },
   "Telescope node modules": { "branch": "main", "commit": "b846d33ff5763176dc14fc74c30941a2067c82fd" },
+  "Telescope software licenses": { "branch": "master", "commit": "fb5fc33b6afc994756e2f372423c365bf66f2256" },
   "Telescope symbols": { "branch": "master", "commit": "a6d0127a53d39b9fc2af75bd169d288166118aec" },
   "TinyGit": { "branch": "main", "commit": "d0cbd1fd1736d3cf1638eda1d008e7d6d0d842e6" },
   "Todo Comments": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
