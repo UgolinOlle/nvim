@@ -68,6 +68,7 @@
   "Tabby": { "branch": "main", "commit": "c119c91f3ada1a7c62ca2d10685ac8a3e2928fb8" },
   "Telescope": { "branch": "master", "commit": "415af52339215926d705cccc08145f3782c4d132" },
   "Telescope FZF Native": { "branch": "main", "commit": "dae2eac9d91464448b584c7949a31df8faefec56" },
+  "Telescope find files": { "branch": "master", "commit": "626998e5c1b71c130d8bc6cf7abb6709b98287bb" },
   "Telescope nerdy": { "branch": "main", "commit": "719ed52244b34ea9de08f074e0d22fd67d615640" },
   "Telescope node modules": { "branch": "main", "commit": "b846d33ff5763176dc14fc74c30941a2067c82fd" },
   "Telescope symbols": { "branch": "master", "commit": "a6d0127a53d39b9fc2af75bd169d288166118aec" },

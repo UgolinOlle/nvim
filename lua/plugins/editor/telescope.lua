@@ -9,6 +9,8 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "nvim-telescope/telescope-symbols.nvim", name = "Telescope symbols" },
     { "nvim-telescope/telescope-node-modules.nvim", name = "Telescope node modules" },
+    { "nvim-telescope/telescope-file-browser.nvim", name = "Telescope find files" },
+    { "chip/telescope-software-licenses.nvim", name = "Telescope software licenses" },
     { "2kabhishek/nerdy.nvim", name = "Telescope nerdy" },
   },
 
@@ -51,6 +53,7 @@ return {
           previewer = false,
           sorting_strategy = "ascending",
         },
+
         buffers = {
           previewer = false,
           layout_strategy = "vertical",
@@ -69,7 +72,13 @@ return {
         diagnostics = {
           theme = "ivy",
           initial_mode = "normal",
-          layout_config = { preview_cutoff = 9999 },
+        },
+      },
+
+      extensions = {
+        file_browser = {
+          theme = "ivy",
+          hijack_netrw = true,
         },
       },
     }
@@ -78,16 +87,23 @@ return {
     telescope.load_extension "fzf"
     telescope.load_extension "node_modules"
     telescope.load_extension "nerdy"
+    telescope.load_extension "file_browser"
+    telescope.load_extension "software-licenses"
   end,
 
   keys = {
     {
-      ";f",
+      "<LEADER>f",
       function()
         local builtin = require "telescope.builtin"
         builtin.find_files()
       end,
       { noremap = true, silent = true, desc = "Find files" },
+    },
+    {
+      ";f",
+      "<CMD>Telescope file_browser<CR>",
+      { noremap = true, silent = true, desc = "File browser" },
     },
     {
       ";r",
@@ -125,6 +141,16 @@ return {
       ";ii",
       "<CMD>Telescope nerdy<CR>",
       { noremap = true, silent = true, desc = "List and select all available icons" },
+    },
+    {
+      ";s",
+      "<CMD>Telescope symbols<CR>",
+      { noremap = true, silent = true, desc = "List and select all available symbols" },
+    },
+    {
+      ";l",
+      "<CMD>Telescope licenses<CR>",
+      { noremap = true, silent = true, desc = "List and select all available licenses" },
     },
     {
       ";n",
