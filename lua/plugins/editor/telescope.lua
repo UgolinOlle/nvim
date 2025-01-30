@@ -3,13 +3,13 @@ return {
 
   name = "Telescope",
 
-  event = { "BufWinEnter" },
+  event = "BufReadPre",
 
   dependencies = {
-    { "nvim-telescope/telescope-fzf-native.nvim",   build = "make" },
-    { "nvim-telescope/telescope-symbols.nvim",      name = "Telescope symbols" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { "nvim-telescope/telescope-symbols.nvim", name = "Telescope symbols" },
     { "nvim-telescope/telescope-node-modules.nvim", name = "Telescope node modules" },
-    { "2kabhishek/nerdy.nvim",                      name = "Telescope nerdy" },
+    { "2kabhishek/nerdy.nvim", name = "Telescope nerdy" },
   },
 
   config = function()

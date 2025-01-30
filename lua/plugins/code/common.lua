@@ -62,9 +62,11 @@ return {
     lazy = true,
   },
   {
-    "RRethy/nvim-align",
+    "echasnovski/mini.align",
 
-    name = "Align",
+    name = "Mini Align",
+
+    version = "*",
 
     event = "BufReadPre",
   },
