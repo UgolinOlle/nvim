@@ -1,39 +1,22 @@
 return {
   {
-    "kosayoda/nvim-lightbulb",
-
-    name = "Nvim Lightbulb",
-
-    event = { "CursorHold", "CursorHoldI" },
-
-    opts = function()
-      local get_icons = require("whoa.core").WUtils.get_icons
-      return {
-        autocmd = { enabled = true },
-        sign = {
-          enabled = true,
-          text = get_icons "Diagnostic.Warn",
-          hl = "LightBulbSign",
-        },
-      }
-    end,
-  },
-  {
     "zeioth/garbage-day.nvim",
 
     name = "Garbage day",
 
     lazy = true,
 
-    dependencies = { {
-      "neovim/nvim-lspconfig",
+    dependencies = {
+      {
+        "neovim/nvim-lspconfig",
 
-      name = "LSP Config",
+        name = "LSP Config",
 
-      lazy = true,
+        lazy = true,
 
-      event = { "BufReadPre", "BufNewFile" },
-    } },
+        event = { "BufReadPre", "BufNewFile" },
+      },
+    },
   },
   {
     "jinzhongjia/LspUI.nvim",
@@ -42,9 +25,7 @@ return {
 
     event = { "BufReadPre", "BufNewFile" },
 
-    config = function()
-      require("LspUI").setup {}
-    end,
+    config = function() require("LspUI").setup {} end,
   },
   {
     "j-hui/fidget.nvim",
@@ -95,8 +76,6 @@ return {
       }
     end,
 
-    config = function(_, opts)
-      require("lsp_signature").setup(opts)
-    end,
+    config = function(_, opts) require("lsp_signature").setup(opts) end,
   },
 }

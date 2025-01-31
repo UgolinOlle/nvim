@@ -7,6 +7,7 @@
 
 --- Variables
 local autocmd = vim.api.nvim_create_autocmd
+local theme = require "whoa.core.theme"
 
 --- Disable some style on terminal.
 autocmd("TermOpen", {
@@ -113,4 +114,14 @@ autocmd({ "BufNewFile", "BufRead" }, {
 autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*.hbs",
   callback = function() vim.bo.filetype = "html" end,
+})
+
+--- Adding line border on split windows.
+autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    local color_scheme = theme.ft_get_current_theme()
+
+    vim.api.nvim_set_hl(0, "WinSeparator", { fg = theme.ft_get_hl(color_scheme, "Normal") })
+  end,
 })

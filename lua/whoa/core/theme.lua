@@ -102,4 +102,22 @@ function M.ft_select_theme()
   if theme then M.ft_set_theme(theme.name) end
 end
 
+--- Get current theme
+--
+---@function ft_get_current_theme
+---@return string: The name of the current theme
+function M.ft_get_current_theme() return vim.g.colors_name end
+
+--- Get highlight color
+---
+---@function ft_get_hl
+---@param group string: The highlight group
+---@param type string: The type of highlight
+---@return string|nil: The hex color of the highlight group
+function M.ft_get_hl(group, type)
+  local hl = vim.api.nvim_get_hl(0, { name = group })
+  if hl and hl[type] then return string.format("#%06x", hl.fg) end
+  return nil
+end
+
 return M

@@ -4,15 +4,14 @@ return {
 
     name = "Nvim Treesitter",
 
-    event = { "BufReadPre", "BufNewFile" },
+    lazy = true,
 
     build = ":TSUpdate",
 
     dependencies = {
       { "JoosepAlviste/nvim-ts-context-commentstring", name = "Nvim TS Context Comment String", lazy = true },
-      { "windwp/nvim-ts-autotag",                      name = "Nvim Treesitter Autotag", lazy = true },
-      { "windwp/nvim-autopairs",                       name = "Nvim Autopairs", lazy = true },
-      { "hiphish/rainbow-delimiters.nvim",             name = "Rainbow Delimiters", lazy = true },
+      { "windwp/nvim-autopairs", name = "Nvim Autopairs", lazy = true },
+      { "hiphish/rainbow-delimiters.nvim", name = "Rainbow Delimiters", lazy = true },
     },
 
     opts = {
@@ -86,6 +85,19 @@ return {
       separator = nil,
       zindex = 20,
       on_attach = nil,
+    },
+  },
+  {
+    "windwp/nvim-ts-autotag",
+
+    name = "Nvim Treesitter Autotag",
+
+    event = { "BufReadPre", "BufNewFile" },
+
+    opts = {
+      enable_close = true, -- Auto close tags
+      enable_rename = true, -- Auto rename pairs of tags
+      enable_close_on_slash = false, -- Auto close on trailing </
     },
   },
 }

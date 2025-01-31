@@ -52,14 +52,14 @@ return {
 
     name = "Render Markwdown",
 
+    lazy = true,
+
     dependencies = {
       { "nvim-treesitter/nvim-treesitter", name = "Nvim Treesitter", lazy = true },
       { "nvim-tree/nvim-web-devicons", name = "Web DevIcons", lazy = true },
     },
 
-    ft = { "markdown", "Avante" },
-
-    lazy = true,
+    -- ft = { "markdown", "Avante" },
   },
   {
     "echasnovski/mini.align",
