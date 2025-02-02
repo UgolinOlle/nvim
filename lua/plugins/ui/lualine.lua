@@ -1,37 +1,3 @@
--- Variables
-local get_icons = require("whoa.core.utils").get_icons
-local colors = {
-  blue = "#80a0ff",
-  cyan = "#79dac8",
-  black = "#080808",
-  white = "#c6c6c6",
-  red = "#ff5189",
-  violet = "#8338ec",
-  grey = "#303030",
-  yellow = "#f5dd76",
-  green = "#98c379",
-}
-
-local bubbles_theme = {
-  normal = {
-    a = { fg = colors.white, bg = colors.violet },
-    b = { fg = colors.white },
-    c = { fg = colors.white },
-    y = { fg = colors.white },
-    x = { fg = colors.white },
-    z = { fg = colors.white },
-  },
-  insert = { a = { fg = colors.black, bg = colors.blue } },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
-  command = { a = { fg = colors.black, bg = colors.yellow } },
-  inactive = {
-    a = { fg = colors.white },
-    b = { fg = colors.white },
-    c = { fg = colors.grey },
-  },
-}
-
 return {
   "nvim-lualine/lualine.nvim",
 
@@ -42,6 +8,8 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons", name = "Web Devicons", lazy = true },
 
   config = function(_, opts)
+    -- Variables
+    local get_icons = require("whoa.core.utils").get_icons
     local mode_icons = {
       ["n"] = get_icons "Normal" .. " ",
       ["i"] = get_icons "Insert" .. " ",
@@ -52,11 +20,13 @@ return {
       ["t"] = get_icons "Terminal" .. " ",
     }
 
+    --- Get the current mode
     local mode = function()
       local mode = vim.fn.mode()
       return mode_icons[mode] or "Unknown"
     end
 
+    --- Setup LSP Diagnostics for lualine
     local diagnostics = {
       "diagnostics",
       sources = { "nvim_lsp" },
@@ -66,6 +36,7 @@ return {
       always_visible = false,
     }
 
+    --- Setup filename for lualine
     local filename = {
       "filename",
       file_status = true,
@@ -73,13 +44,14 @@ return {
       symbols = { modified = " ●", readonly = " ", unnamed = " [No Name]" },
     }
 
+    --- Get the number of words in the current buffer
     local getWords = function()
       local words = vim.fn.wordcount().words
       return string.format(get_icons "WordFile" .. "  %d", words)
     end
 
     opts.sections = {
-      lualine_a = { { mode, right_padding = 1 } },
+      lualine_a = { { mode, separator = { left = "", right = "", padding_right = 1 } } },
       lualine_b = { "branch", "diff" },
       lualine_c = { filename, diagnostics },
       lualine_x = { { getWords, right_padding = 1 }, "encoding", "filetype" },
@@ -94,7 +66,7 @@ return {
     options = {
       icons_enabled = true,
       always_divide_middle = true,
-      theme = bubbles_theme,
+      theme = "vscode",
       component_separators = " ",
       section_separators = " ",
     },

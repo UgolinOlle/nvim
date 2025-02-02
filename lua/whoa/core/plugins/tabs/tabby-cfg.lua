@@ -26,7 +26,7 @@ local presets = {
     label = function(tabid)
       return {
         tab_label(tabid, true),
-        hl = { fg = hl_tabline.fg, bg = hl_tabline_sel.bg },
+        hl = { fg = hl_tabline.fr, bg = hl_tabline_sel.bg },
       }
     end,
     left_sep = { "", hl = { fg = hl_tabline_sel.bg, bg = hl_tabline_fill.bg } },
@@ -37,11 +37,11 @@ local presets = {
     label = function(tabid)
       return {
         tab_label(tabid, false),
-        hl = { fg = hl_tabline.fg },
+        hl = { fg = hl_tabline.fr },
       }
     end,
-    left_sep = { " ", hl = { fg = hl_tabline.bg, bg = hl_tabline_fill.bg } },
-    right_sep = { " ", hl = { fg = hl_tabline.bg, bg = hl_tabline_fill.bg } },
+    left_sep = { " ", hl = { fg = hl_tabline.fr, bg = hl_tabline_fill.bg } },
+    right_sep = { " ", hl = { fg = hl_tabline.fr, bg = hl_tabline_fill.bg } },
   },
 }
 
