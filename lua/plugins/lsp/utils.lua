@@ -19,15 +19,6 @@ return {
     },
   },
   {
-    "jinzhongjia/LspUI.nvim",
-
-    name = "LSP UI",
-
-    event = { "BufReadPre", "BufNewFile" },
-
-    config = function() require("LspUI").setup {} end,
-  },
-  {
     "j-hui/fidget.nvim",
 
     name = "Fidget",
