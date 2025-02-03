@@ -149,7 +149,7 @@ return {
     },
     {
       ";l",
-      "<CMD>Telescope licenses<CR>",
+      "<CMD>Telescope software-licenses<CR>",
       { noremap = true, silent = true, desc = "List and select all available licenses" },
     },
     {
