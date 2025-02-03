@@ -89,9 +89,6 @@ keymap("n", "<LEADER><SPACE>", "<cmd>nohlsearch<CR>", opts)
 opts.desc = "Open logs"
 keymap("n", "<LEADER>lo", function() require("whoa.core").WLogger.ft_view_logs() end, opts)
 
-opts.desc = "Open features config"
-keymap("n", "<LEADER>ft", function() require("whoa.core").WFeatures.open() end, opts)
-
 opts.desc = "Select theme"
 keymap("n", "<leader>st", function() require("whoa.core").WTheme.ft_list_themes() end, opts)
 
