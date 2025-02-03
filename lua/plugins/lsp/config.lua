@@ -115,21 +115,31 @@ return {
     end
 
     -- Setup server name
-    local server_name = {
-      "bashls",
-      "cssls",
-      "html",
-      "jsonls",
-      "ts_ls",
-      "vimls",
-      "yamlls",
-      "clangd",
-      "tailwindcss",
-      "sourcekit",
-      "eslint_d",
+    local servers = {
+      "ts_ls", -- TypeScript / JavaScript
+      "eslint", -- ESLint
+      "tailwindcss", -- Tailwind CSS
+      "html", -- HTML
+      "cssls", -- CSS
+      "bashls", -- Bash / Shell
+      "docker_compose_language_service", -- Docker Compose
+      "dockerls", -- Dockerfile
+      "yamlls", -- YAML
+      "taplo", -- TOML (config)
+      "jsonls", -- JSON
+      "marksman", -- Markdown
+      "graphql", -- GraphQL
+      "vimls", -- Vim
+      "lua_ls", -- Lua
+      "emmet_ls", -- Emmet pour HTML/CSS
     }
 
-    for _, server in ipairs(server_name) do
+    mason_lspconfig.setup {
+      ensure_installed = servers,
+      automatic_installation = true,
+    }
+
+    for _, server in ipairs(servers) do
       lspconfig[server].setup {
         capabilities = capabilities,
         on_attach = mason_lspconfig.on_attach,

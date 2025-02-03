@@ -5,83 +5,77 @@ return {
 
   event = { "BufReadPre", "BufNewFile" },
 
+  dependencies = {
+    "williamboman/mason.nvim",
+  },
+
   config = function()
-    -- Check if the plugin is active
+    -- Check if Conform is active
     local active, conform = pcall(require, "conform")
     if not active then return end
 
-    -- Setup formatting
+    -- Setup Conform
     conform.setup {
-      -- Setup formatter for each filetype
       formatters_by_ft = {
+        -- TypeScript & JavaScript
         typescript = { "prettier" },
         javascript = { "prettier" },
-        javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
+        javascriptreact = { "prettier" },
+
+        -- CSS & HTML
         css = { "prettier" },
         html = { "prettier" },
-        hbs = { "prettier" },
+
+        -- JSON
         json = { "prettier" },
-        scss = { "prettier" },
+
+        -- Lua
         lua = { "stylua" },
-        php = { "phpcbf" },
-        twig = { "twig_formatter" },
-        c = { "c_formatter_42" },
-        cpp = { "c_formatter_42" },
+
+        -- Markdown
         markdown = { "prettier" },
+
+        -- Shell & Bash
         sh = { "shfmt" },
-        python = { "black" },
+        bash = { "shfmt" },
+
+        -- Swift
         swift = { "swiftformat" },
+
+        -- Other languages
+        yaml = { "prettier" }, -- YAML
+        toml = { "prettier" }, -- TOML
       },
 
-      -- Formatting options
+      -- Automatically format on save
       format_on_save = {
         lsp_fallback = true,
         timeout_ms = 2500,
       },
-
-      -- Specific formatters
-      formatters = {
-        prettier = {
-          extra_args = { "--print-width", "120" },
-        },
-
-        c_formatter_42 = {
-          command = "c_formatter_42",
-          args = { "$FILENAME" },
-          stdin = false,
-        },
-
-        twig_formatter = {
-          command = "prettier",
-          args = {
-            "--plugin",
-            "prettier-plugin-twig-melody",
-            "--print-width",
-            "120",
-            "--write",
-            "$FILENAME",
-          },
-          stdin = true,
-        },
-      },
-
-      --- Filetype specific formatters configuration
-      filetypes = {
-        lua = {
-          function()
-            return {
-              exe = "stylua",
-              args = { "--column-width", "120", "-" },
-              stdin = true,
-            }
-          end,
-        },
-      },
     }
+
+    -- Check if Mason registry is active & install formatters
+    local mason_active, mason_registry = pcall(require, "mason-registry")
+    if mason_active then
+      local tools = {
+        "prettier",
+        "stylua",
+        "shfmt",
+        "swiftformat",
+      }
+      for _, tool in ipairs(tools) do
+        local p = mason_registry.get_package(tool)
+        if not p:is_installed() then p:install() end
+      end
+    end
   end,
 
   keys = {
-    { "<LEADER>ci", "<CMD>ConformInfo<CR>", { noremap = true, silent = true, desc = "Show Conform information" } },
+    {
+      "<LEADER>ci",
+      "<CMD>ConformInfo<CR>",
+      { noremap = true, silent = true, desc = "Show informations about Conform" },
+    },
   },
 }

@@ -6,8 +6,8 @@ return {
   event = "VeryLazy",
 
   dependencies = {
-    "kylechui/nvim-surround",
-    "folke/which-key.nvim",
+    { "kylechui/nvim-surround", name = "Nvim Surround" },
+    { "folke/which-key.nvim", name = "Which Key" },
   },
 
   config = function()

@@ -66,7 +66,7 @@ end
 function M.ft_report_errors()
   local errors = {}
 
-  if not M.ft_check_lsp_servers { "bashls", "pyright", "tsserver" } then
+  if not M.ft_check_lsp_servers { "bashls", "pyright", "ts_ls" } then
     table.insert(errors, "Missing LSP servers.")
   end
 

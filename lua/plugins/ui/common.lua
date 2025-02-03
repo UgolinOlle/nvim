@@ -101,15 +101,13 @@ return {
 
     event = "VeryLazy",
 
-    config = function()
-      vim.notify = require "notify"
-    end,
+    config = function() vim.notify = require "notify" end,
 
     opts = {
       timeout = 100,
       stages = "slide",
       top_down = true,
-      render = "wrapped-compact",
+      render = "default",
       fps = 120,
     },
 

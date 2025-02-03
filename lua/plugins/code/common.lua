@@ -62,11 +62,9 @@ return {
     -- ft = { "markdown", "Avante" },
   },
   {
-    "echasnovski/mini.align",
+    "RRethy/nvim-align",
 
-    name = "Mini Align",
-
-    version = "*",
+    name = "Align",
 
     event = "BufReadPre",
   },

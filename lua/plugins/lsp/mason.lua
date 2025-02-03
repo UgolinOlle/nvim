@@ -4,58 +4,75 @@ local utils = require "whoa.core.utils"
 return {
   "williamboman/mason.nvim",
 
-  name = "Mason",
-
   dependencies = {
-    { "williamboman/mason-lspconfig.nvim", name = "Mason LSP Config" },
-    { "WhoIsSethDaniel/mason-tool-installer.nvim", name = "Mason Tool Installer" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "WhoIsSethDaniel/mason-tool-installer.nvim" },
   },
 
   cmd = { "Mason", "MasonInstall", "MasonUpdate" },
 
   config = function()
-    -- Check if Mason is active
-    local active_mason, mason = pcall(require, "mason")
-    if not active_mason then return end
-
-    -- Check if Mason LSPConfig is active
-    local active_mason_lspconfig, mason_lspconfig = pcall(require, "mason-lspconfig")
-    if not active_mason_lspconfig then return end
-
-    -- Check if Mason Tool Installer is active
-    local active_tool_installer, mason_tool_installer = pcall(require, "mason-tool-installer")
-    if not active_tool_installer then vim.notify("Mason Tool Installer n'est pas installé", vim.log.levels.WARN) end
-
-    -- Setup Mason
-    mason.setup {
+    require("mason").setup {
       ui = {
         icons = {
-          package_installed = utils.get_icons("Git.Staged", 1),
-          package_pending = utils.get_icons("Git.Modified", 1),
-          package_uninstalled = utils.get_icons("Git.Untracked", 1),
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
         },
       },
     }
 
-    -- Setup LSP servers
-    mason_lspconfig.setup {
+    require("mason-lspconfig").setup {
       ensure_installed = {
-        "lua_ls",
-        "ts_ls",
-        "cssls",
-        "tailwindcss",
-        "emmet_ls",
+        -- Lua
+        "lua_ls", -- Serveur LSP pour Lua
+
+        -- JavaScript / TypeScript / Node.js / Next.js / Nest.js
+        "tl_ls", -- Serveur LSP pour JavaScript et TypeScript
+        "eslint", -- Serveur LSP pour ESLint (analyse de code)
+        "tailwindcss", -- Serveur LSP pour Tailwind CSS
+
+        -- HTML / CSS
+        "html", -- Serveur LSP pour HTML
+        "cssls", -- Serveur LSP pour CSS
+        "emmet_ls", -- Serveur LSP pour Emmet (accélère l'écriture de HTML et CSS)
+
+        -- Bash / Shell
+        "bashls", -- Serveur LSP pour les scripts Bash et Shell
+
+        -- YAML
+        "yamlls", -- Serveur LSP pour YAML
+
+        -- Fichiers de configuration
+        "taplo", -- Serveur LSP pour TOML
+        "jsonls", -- Serveur LSP pour JSON
+        "dockerls", -- Serveur LSP pour Dockerfile
+        "docker_compose_language_service", -- Serveur LSP pour Docker Compose
+        "marksman", -- Serveur LSP pour Markdown
+        "graphql", -- Serveur LSP pour GraphQL
       },
 
       automatic_installation = true,
     }
 
-    mason_tool_installer.setup {
+    require("mason-tool-installer").setup {
       ensure_installed = {
-        "prettier",
-        "eslint_d",
-        "stylua",
+        -- Formatters
+        "prettier", -- Formateur pour JavaScript, TypeScript, JSON, etc.
+        "eslint_d", -- Linter pour JavaScript et TypeScript (version daemon pour des performances accrues)
+        "stylua", -- Formateur pour Lua
+        "shfmt", -- Formateur pour les scripts Shell
+        "stylelint", -- Linter pour CSS, SCSS, Less
+        "jsonlint", -- Linter pour JSON
+        "markdownlint", -- Linter pour Markdown
+
+        -- Linters
+        "luacheck", -- Linter pour Lua
+        "shellcheck", -- Linter pour les scripts Shell
+        "swiftlint", -- Linter pour Swift
       },
+
+      automatic_installation = true,
     }
   end,
 
