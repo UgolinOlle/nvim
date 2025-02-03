@@ -126,6 +126,7 @@ return {
       "clangd",
       "tailwindcss",
       "sourcekit",
+      "eslint_d",
     }
 
     for _, server in ipairs(server_name) do

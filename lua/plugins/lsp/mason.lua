@@ -6,12 +6,12 @@ return {
 
   name = "Mason",
 
-  event = "BufReadPre",
-
   dependencies = {
-    { "williamboman/mason-lspconfig.nvim", name = "Mason LSP Config", lazy = true },
-    { "WhoIsSethDaniel/mason-tool-installer.nvim", name = "Mason Tool Installer", lazy = true },
+    { "williamboman/mason-lspconfig.nvim", name = "Mason LSP Config" },
+    { "WhoIsSethDaniel/mason-tool-installer.nvim", name = "Mason Tool Installer" },
   },
+
+  cmd = { "Mason", "MasonInstall", "MasonUpdate" },
 
   config = function()
     -- Check if Mason is active

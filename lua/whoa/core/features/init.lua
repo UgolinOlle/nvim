@@ -104,21 +104,12 @@ local function create_popup()
     end,
   })
 
-  -- Keybinding to toggle the selected feature with Space
-  vim.api.nvim_buf_set_keymap(
-    buf,
-    "n",
-    "<Space>",
-    "<cmd>lua require('whoa.core.features').toggle_selected()<CR>",
-    { noremap = true, silent = true }
-  )
-
   -- Keybinding to close the popup
   vim.api.nvim_buf_set_keymap(buf, "n", "q", "<cmd>q<CR>", { noremap = true, silent = true })
 end
 
 -- Toggle the feature currently under the cursor
-function M.toggle_selected()
+function M.ft_toggle_selected()
   local line = vim.fn.line "."
   local index = tonumber(vim.fn.getline(line):match "^%d+")
   if index then M.toggle_and_update(index, vim.api.nvim_get_current_buf()) end
