@@ -26,18 +26,7 @@ return {
 
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave", "TextChanged" }, {
       group = lint_augroup,
-      callback = function()
-        local bufnr = vim.api.nvim_get_current_buf()
-        print("Linting triggered for buffer:", bufnr)
-
-        local ft = vim.bo[bufnr].filetype
-        print("Filetype:", ft)
-
-        local linters = require("lint").linters_by_ft[ft]
-        print("Linters:", vim.inspect(linters))
-
-        require("lint").try_lint()
-      end,
+      callback = function() require("lint").try_lint() end,
     })
   end,
 }
