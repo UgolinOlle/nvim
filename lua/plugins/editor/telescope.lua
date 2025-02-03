@@ -6,7 +6,6 @@ return {
   event = "BufReadPre",
 
   dependencies = {
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "nvim-telescope/telescope-symbols.nvim", name = "Telescope symbols" },
     { "nvim-telescope/telescope-node-modules.nvim", name = "Telescope node modules" },
     { "nvim-telescope/telescope-file-browser.nvim", name = "Telescope find files" },
@@ -84,7 +83,6 @@ return {
     }
 
     --- Load extensions
-    telescope.load_extension "fzf"
     telescope.load_extension "node_modules"
     telescope.load_extension "nerdy"
     telescope.load_extension "file_browser"
