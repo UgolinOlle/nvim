@@ -62,7 +62,6 @@ return {
         "prettier",
         "stylua",
         "shfmt",
-        "swiftformat",
       }
       for _, tool in ipairs(tools) do
         local p = mason_registry.get_package(tool)
