@@ -74,6 +74,9 @@ keymap("i", "jk", "<ESC>", opts)
 opts.desc = "Exit insert mode"
 keymap("i", "kj", "<ESC>", opts)
 
+opts.desc = "Exit insert mode"
+keymap("i", "jj", "<ESC>", opts)
+
 -- Indent
 opts.desc = "Indent line"
 keymap("v", "<", "<gv^", opts)
