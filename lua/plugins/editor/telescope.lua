@@ -45,16 +45,13 @@ return {
 
       pickers = {
         find_files = {
-          theme = "dropdown",
-          layout_config = {
-            prompt_position = "top",
-          },
           previewer = false,
+          theme = "dropdown",
           sorting_strategy = "ascending",
         },
 
         buffers = {
-          previewer = false,
+          previewer = true,
           layout_strategy = "vertical",
           layout_config = {
             height = 0.4,
@@ -68,10 +65,16 @@ return {
           },
           initial_mode = "normal",
         },
+
         diagnostics = {
           theme = "ivy",
           initial_mode = "normal",
         },
+      },
+
+      diagnostics = {
+        theme = "ivy",
+        initial_mode = "normal",
       },
 
       extensions = {
@@ -102,6 +105,21 @@ return {
       ";f",
       "<CMD>Telescope file_browser<CR>",
       { noremap = true, silent = true, desc = "File browser" },
+    },
+    {
+      "<SPACE><SPACE>",
+      function()
+        local builtin = require "telescope.builtin"
+        builtin.find_files {
+          previewer = true,
+          layout_strategy = "horizontal",
+          layout_config = {
+            prompt_position = "top",
+          },
+          sorting_strategy = "ascending",
+        }
+      end,
+      { noremap = true, silent = true, desc = "Git files" },
     },
     {
       ";r",
@@ -144,11 +162,6 @@ return {
       ";s",
       "<CMD>Telescope symbols<CR>",
       { noremap = true, silent = true, desc = "List and select all available symbols" },
-    },
-    {
-      ";l",
-      "<CMD>Telescope software-licenses<CR>",
-      { noremap = true, silent = true, desc = "List and select all available licenses" },
     },
     {
       ";n",
