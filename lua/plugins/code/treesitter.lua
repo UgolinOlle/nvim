@@ -60,6 +60,7 @@ return {
         "yaml",
         "dockerfile",
         "gitignore",
+        "prisma",
       },
     },
   },

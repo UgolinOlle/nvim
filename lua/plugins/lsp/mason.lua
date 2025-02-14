@@ -44,6 +44,7 @@ return {
         "yamlls", -- Serveur LSP pour YAML
 
         -- Fichiers de configuration
+        "prismals", -- Serveur LSP pour Prisma
         "taplo", -- Serveur LSP pour TOML
         "jsonls", -- Serveur LSP pour JSON
         "dockerls", -- Serveur LSP pour Dockerfile
