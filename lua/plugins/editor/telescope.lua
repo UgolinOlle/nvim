@@ -102,12 +102,12 @@ return {
       { noremap = true, silent = true, desc = "Find files" },
     },
     {
-      ";f",
+      "<SPACE><SPACE>",
       "<CMD>Telescope file_browser<CR>",
       { noremap = true, silent = true, desc = "File browser" },
     },
     {
-      "<SPACE><SPACE>",
+      ";f",
       function()
         local builtin = require "telescope.builtin"
         builtin.find_files {
