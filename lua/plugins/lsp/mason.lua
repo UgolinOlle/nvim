@@ -51,6 +51,7 @@ return {
         "docker_compose_language_service", -- Serveur LSP pour Docker Compose
         "marksman", -- Serveur LSP pour Markdown
         "graphql", -- Serveur LSP pour GraphQL
+        "sqlls", -- Serveur LSP pour SQL
       },
 
       automatic_installation = true,
@@ -66,6 +67,7 @@ return {
         "stylelint", -- Linter pour CSS, SCSS, Less
         "jsonlint", -- Linter pour JSON
         "markdownlint", -- Linter pour Markdown
+        "sql-formatter", -- Formateur pour SQL
 
         -- Linters
         "luacheck", -- Linter pour Lua

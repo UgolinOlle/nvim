@@ -46,6 +46,7 @@ return {
         -- Other languages
         yaml = { "prettier" }, -- YAML
         toml = { "prettier" }, -- TOML
+        sql = { "sql-formatter" }, -- SQL
       },
 
       -- Automatically format on save

@@ -45,6 +45,7 @@ return {
       -- Other languages
       yaml = { "yamllint" }, -- YAML
       toml = { "taplo" }, -- TOML
+      sql = { "checkstyle" }, -- SQL
     }
 
     -- Check if Mason registry is active & install linters

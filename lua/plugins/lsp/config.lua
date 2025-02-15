@@ -132,6 +132,7 @@ return {
       "vimls", -- Vim
       "lua_ls", -- Lua
       "emmet_ls", -- Emmet pour HTML/CSS
+      "sqlls", -- SQL
     }
 
     mason_lspconfig.setup {
