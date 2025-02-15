@@ -94,7 +94,7 @@ return {
 
   keys = {
     {
-      "<LEADER>f",
+      "<SPACE><SPACE>",
       function()
         local builtin = require "telescope.builtin"
         builtin.find_files()
@@ -102,12 +102,12 @@ return {
       { noremap = true, silent = true, desc = "Find files" },
     },
     {
-      "<SPACE><SPACE>",
+      ";f",
       "<CMD>Telescope file_browser<CR>",
       { noremap = true, silent = true, desc = "File browser" },
     },
     {
-      ";f",
+      "<LEADER>f",
       function()
         local builtin = require "telescope.builtin"
         builtin.find_files {
