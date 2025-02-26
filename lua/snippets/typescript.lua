@@ -7,10 +7,10 @@ local fmt = require("luasnip.extras.fmt").fmt
 --- Snippets definitions
 ls.add_snippets("typescript", {
   -- Console log
-  s("cl", fmt("console.log({});", { i(1, "message") })),
-  s("ci", fmt("console.info( {})", { i(1, "message") })),
-  s("ce", fmt("console.error( {})", { i(1, "message") })),
-  s("cc", fmt("console.log( {})", { i(1, "message") })),
+  s("cl", fmt("console.log('{}');", { i(1, "message") })),
+  s("ci", fmt("console.info(' {}')", { i(1, "message") })),
+  s("ce", fmt("console.error(' {}')", { i(1, "message") })),
+  s("cc", fmt("console.log(' {}')", { i(1, "message") })),
 
   -- Arrow function
   s(
